@@ -23,13 +23,13 @@
     "watch": "rollup -c --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:fix": "prettier-eslint '**/*.ts' --write",
+    "lint:fix": "prettier-eslint '**/*.js' --write",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
     "prepublish": "yarn build"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "src/**/*.{js,jsx}": [
       "yarn lint:fix"
     ]
   },
@@ -69,6 +69,7 @@
     "@storybook/addon-essentials": "^6.2.8",
     "@storybook/addon-links": "^6.2.8",
     "@storybook/react": "^6.2.8",
+    "@types/node": "^14.14.41",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -81,6 +82,7 @@
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-config-standard-react": "^11.0.1",
+    "eslint-multiple-parsers": "^1.0.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",

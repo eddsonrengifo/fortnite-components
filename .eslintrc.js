@@ -1,34 +1,47 @@
 module.exports = {
-  parser: ['babel-eslint', '@typescript-eslint/parser'],
+  parser: 'eslint-multiple-parsers',
   plugins: ['@typescript-eslint', '@emotion'],
   env: {
     node: true,
     jest: true,
     es6: true,
-    browser: true,
+    browser: true
   },
   extends: [
     'standard',
     'standard-react',
-    'plugin:prettier/recommended',
-    'prettier/standard',
-    'prettier/react',
+    // 'plugin:prettier/recommended',
+    // 'prettier/standard'
+    // 'prettier/react',
     'plugin:@typescript-eslint/eslint-recommended',
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended'
+    // 'plugin:@typescript-eslint/recommended'
   ],
   parserOptions: {
+    parsers: [
+      {
+        test: '.*\\.js$',
+        path: 'babel-eslint',
+        options: {
+          sourceType: 'module'
+        }
+      },
+      {
+        test: '.*\\.ts$',
+        path: '@typescript-eslint/parser'
+      }
+    ],
     ecmaVersion: 2020,
     ecmaFeatures: {
       legacyDecorators: true,
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
   rules: {
     'space-before-function-paren': 0,
@@ -48,14 +61,14 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       2,
       {
-        argsIgnorePattern: '^_',
-      },
+        argsIgnorePattern: '^_'
+      }
     ],
     'no-console': [
       2,
       {
-        allow: ['warn', 'error'],
-      },
-    ],
-  },
+        allow: ['warn', 'error']
+      }
+    ]
+  }
 }
