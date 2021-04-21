@@ -1,0 +1,111 @@
+{
+  "name": "fortnite-components",
+  "version": "1.0.0",
+  "description": "A library of fortnite components",
+  "author": "EddsonRT",
+  "repository": "EddsonRT/fortnite-components",
+  "license": "MIT",
+  "keywords": [
+    "Fortnite",
+    "Component"
+  ],
+  "module": "dist/components.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "yarn build && cd example && yarn && yarn start",
+    "prebuild": "rimraf dist",
+    "build:types": "tsc",
+    "build:js": "rollup -c",
+    "build": "yarn build:types && yarn build:js",
+    "watch": "rollup -c --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "lint:fix": "prettier-eslint '**/*.ts' --write",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "prepublish": "yarn build"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn lint:fix"
+    ]
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "emotion"
+    }
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@types/react": "^17.0.2",
+    "react": "^17.0.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/eslint-plugin": "^11.2.0",
+    "@rollup/plugin-image": "^2.0.6",
+    "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-controls": "^6.1.21",
+    "@storybook/addon-docs": "^6.1.21",
+    "@storybook/addon-essentials": "^6.2.8",
+    "@storybook/addon-links": "^6.2.8",
+    "@storybook/react": "^6.2.8",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^10.2.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-macros": "^3.0.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "postcss": "^8.2.7",
+    "prettier": "^2.2.1",
+    "prettier-eslint-cli": "^5.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "react-scripts": "^4.0.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.40.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0",
+    "typescript": "^4.2.2",
+    "webpack": "4.44.2",
+    "webpack-merge": "^5.7.3"
+  }
+}
