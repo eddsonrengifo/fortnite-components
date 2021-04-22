@@ -11,11 +11,11 @@ export default {
     name: {
       name: 'Name',
       type: { name: 'string', required: true },
-      defaultValue: 'Pocket change',
+      defaultValue: 'Achievement',
       description: 'Name of achievement',
       table: {
         category: 'Card',
-        defaultValue: { summary: 'Pocket change' }
+        defaultValue: { summary: 'Achievement' }
       }
     },
     image: {
@@ -35,26 +35,24 @@ export default {
     description: {
       name: 'Description',
       type: { name: 'string', required: true },
-      defaultValue:
-        'Collected all the coins from a Purple XP Coin during Season 6.',
+      defaultValue: '',
       description: 'Description',
       table: {
         category: 'Card',
         defaultValue: {
-          summary:
-            'Collected all the coins from a Purple XP Coin during Season 6.'
+          summary: ''
         }
       }
     },
     time: {
       name: 'Time',
       type: { name: 'string', required: true },
-      defaultValue: '10:52 PM',
+      defaultValue: '',
       description: 'Time of the achievement',
       table: {
         category: 'Card',
         defaultValue: {
-          summary: '10:52 PM'
+          summary: ''
         }
       }
     },
