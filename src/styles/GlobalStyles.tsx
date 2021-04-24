@@ -14,6 +14,22 @@ import starwars from './../components/assets/backgrounds/starwarsBackground.png'
 import burbank from './../components/assets/fonts/BurbankBigCondensed-Black.ttf'
 
 const customStyles = css`
+  .fishAnimation {
+    animation: fish 5s ease-in-out infinite;
+  }
+
+  @keyframes fish {
+    0% {
+      transform: translateY(10px) scaleX(-1);
+    }
+    50% {
+      transform: translateY(-5px) scaleX(-1);
+    }
+    100% {
+      transform: translateY(10px) scaleX(-1);
+    }
+  }
+
   @font-face {
     font-family: 'Burbank Big Condensed black';
     src: url(${burbank});
