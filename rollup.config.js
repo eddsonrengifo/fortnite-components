@@ -7,7 +7,7 @@ import image from '@rollup/plugin-image'
 
 const config = {
   name: 'Fortnite components',
-  extensions: ['.ts', '.tsx'],
+  extensions: ['.ts', '.tsx']
 }
 
 export default {
@@ -16,20 +16,20 @@ export default {
     {
       file: pkg.module,
       format: 'es',
-      sourcemap: true,
-    },
+      sourcemap: true
+    }
   ],
   plugins: [
     image(),
     peerDepsExternal(),
     resolve({ extensions: config.extensions }),
     commonjs({
-      include: 'node_modules/**',
+      include: 'node_modules/**'
     }),
     babel({
       extensions: config.extensions,
       include: ['src/**/*'],
-      exclude: 'node_modules/**',
-    }),
-  ],
+      exclude: 'node_modules/**'
+    })
+  ]
 }
