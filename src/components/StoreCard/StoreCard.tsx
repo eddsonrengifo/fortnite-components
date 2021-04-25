@@ -1,10 +1,10 @@
 import React from 'react'
 import tw from 'twin.macro'
 import { StoreProps } from './types'
-import vBucks from '../assets/icons/vBucks.png'
-import battlepassFree from '../assets/icons/battlepassFree.png'
-import battlepassPaid from '../assets/icons/battlepassPaid.png'
-import styles from '../assets/icons/styles.png'
+import vBucks from '../../assets/icons/vBucks.png'
+import battlepassFree from '../../assets/icons/battlepassFree.png'
+import battlepassPaid from '../../assets/icons/battlepassPaid.png'
+import styles from '../../assets/icons/styles.png'
 
 const StoreCard: React.FC<StoreProps> = ({
   name = 'Name',

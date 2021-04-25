@@ -1,11 +1,11 @@
 import React from 'react'
 import tw, { styled } from 'twin.macro'
 import { LockerProps } from './types'
-import variants from '../assets/icons/styles.png'
-import reactive from '../assets/icons/reactive.png'
-import traversal from '../assets/icons/traversal.png'
-import animated from '../assets/icons/animated.png'
-import synced from '../assets/icons/synced.png'
+import variants from '../../assets/icons/styles.png'
+import reactive from '../../assets/icons/reactive.png'
+import traversal from '../../assets/icons/traversal.png'
+import animated from '../../assets/icons/animated.png'
+import synced from '../../assets/icons/synced.png'
 
 const LockerCard: React.FC<LockerProps> = ({
   rarity = 'rare',
