@@ -8,21 +8,21 @@ export default {
   title: 'Example/EventCard',
   component: EventCard,
   argTypes: {
-    topText: {
-      name: 'Top Text',
+    line1: {
+      name: 'Line 1',
       type: { name: 'string', required: true },
       defaultValue: 'Text',
-      description: 'Top Text',
+      description: 'Line 1',
       table: {
         category: 'Poster',
         defaultValue: { summary: 'Text' }
       }
     },
-    bottomText: {
-      name: 'Bottom Text',
+    line2: {
+      name: 'Line 2',
       type: { name: 'string', required: true },
       defaultValue: 'Text 2',
-      description: 'Bottom Text',
+      description: 'Line 1',
       table: {
         category: 'Poster',
         defaultValue: { summary: 'Text 2' }
@@ -59,12 +59,12 @@ export default {
     schedule: {
       name: 'Schedule',
       type: { name: 'string' },
-      defaultValue: 'Schedule',
+      defaultValue: '',
       description: 'Schedule of Event',
       table: {
         category: 'Poster',
         defaultValue: {
-          summary: 'Schedule'
+          summary: ''
         }
       }
     },
@@ -79,11 +79,11 @@ export default {
         }
       }
     },
-    shortDescription: {
-      name: 'Short Description',
+    description: {
+      name: 'Description',
       type: { name: 'string' },
       defaultValue: '',
-      description: 'Short Description of Event',
+      description: 'Description of Event',
       table: {
         category: 'Info',
         defaultValue: {
@@ -126,18 +126,6 @@ export default {
         {
           start: '2021-03-18T00:30:00+00:00',
           end: '2021-03-18T03:30:00+00:00'
-        },
-        {
-          start: '2021-03-25T00:30:00+00:00',
-          end: '2021-03-25T03:30:00+00:00'
-        },
-        {
-          start: '2021-04-01T00:30:00+00:00',
-          end: '2021-04-01T03:30:00+00:00'
-        },
-        {
-          start: '2021-04-15T00:30:00+00:00',
-          end: '2021-04-15T03:30:00+00:00'
         }
       ],
       description: 'Dates of the Event',
@@ -152,20 +140,44 @@ export default {
             {
               start: '2021-03-18T00:30:00+00:00',
               end: '2021-03-18T03:30:00+00:00'
-            },
-            {
-              start: '2021-03-25T00:30:00+00:00',
-              end: '2021-03-25T03:30:00+00:00'
-            },
-            {
-              start: '2021-04-01T00:30:00+00:00',
-              end: '2021-04-01T03:30:00+00:00'
-            },
-            {
-              start: '2021-04-15T00:30:00+00:00',
-              end: '2021-04-15T03:30:00+00:00'
             }
           ]
+        }
+      }
+    },
+    title: {
+      name: 'Title',
+      type: { name: 'string' },
+      defaultValue: 'Title',
+      description: 'Title',
+      table: {
+        category: 'Info',
+        defaultValue: {
+          summary: 'Title'
+        }
+      }
+    },
+    datesColor: {
+      name: 'Dates Color',
+      type: { name: 'string' },
+      defaultValue: '#000',
+      description: 'Dates Color',
+      table: {
+        category: 'Info',
+        defaultValue: {
+          summary: '#000'
+        }
+      }
+    },
+    format: {
+      name: 'Format',
+      type: { name: 'string' },
+      defaultValue: 'Tournament',
+      description: 'Tournament',
+      table: {
+        category: 'Info',
+        defaultValue: {
+          summary: 'Tournament'
         }
       }
     },
@@ -181,39 +193,57 @@ const Template: Story<EventCardProps> = (args) => <EventCard {...args} />
 
 export const Fncs = Template.bind({})
 Fncs.args = {
-  topText: 'Week 4',
-  bottomText: 'Fncs',
+  line1: 'Fncs',
+  line2: 'Week 4',
   schedule: 'April 10th - 12th',
   posterFront:
     'https://cdn2.unrealengine.com/Fortnite/fortnite-game/tournamentinformation/12BR_Competitive_In-Game_FNCS_Week4_Poster_Front-750x1080-c5ae877fbb33dfe3365ac45cf3d6837a25330689.jpg',
   posterBack:
     'https://cdn2.unrealengine.com/Fortnite/fortnite-game/tournamentinformation/12BR_Competitive_In-Game_FNCS_Poster_Back_ALL-750x1080-1ed3adf9261d51f716889ccbadd77463015dc009.jpg',
-  shortDescription:
-    'Compete in the Fortnite Champion Series: Chapter 2 - Season 2 for a share of the $5,000,000 total prize pool.'
+  description:
+    'Compete in the Fortnite Champion Series: Chapter 2 - Season 2 for a share of the $5,000,000 total prize pool.',
+  format: 'Fncs',
+  datesColor: '#B2A01A'
 }
 
 export const DreamHack = Template.bind({})
 DreamHack.args = {
-  topText: 'DreamHack Online Open',
-  bottomText: 'Finals',
+  title: 'DreamHack Online Open Featuring Fortnite',
+  line1: 'DreamHack Online Open',
+  line2: 'Finals',
   region: 'NAE',
   schedule: 'January 31st',
   posterFront:
     'https://cdn2.unrealengine.com/13br-competitive-in-game-dreamhackopen-poster-front-2-750x1080-319776257.jpg',
   posterBack:
     'https://cdn2.unrealengine.com/13br-competitive-in-game-dreamhackopen-poster-back-750x1080-319770605.jpg',
-  shortDescription:
-    'This community focused tournament features a $250,000 prize pool up for grabs. Best of luck!'
+  description:
+    'This community focused tournament features a $250,000 prize pool up for grabs. Best of luck!',
+  format: 'Duos Tournament'
 }
 
 export const CashCup = Template.bind({})
 CashCup.args = {
-  topText: 'Cash Cup',
-  bottomText: 'Trios',
+  line1: 'Trios',
+  line2: 'Cash Cup',
   schedule: 'Every Monday',
   posterFront:
     'https://cdn2.unrealengine.com/16br-comp-in-game-trioscashcup-poster-front-750x1080-46be00f23547.jpg',
   posterBack:
     'https://cdn2.unrealengine.com/15br-comp-in-game-contendercup-poster-back-750x1080-68e13f266f52.jpg',
-  shortDescription: 'Compete among the best in Fortnite for prizes!'
+  description: 'Compete among the best in Fortnite for prizes!',
+  format: 'Trios Tournament'
+}
+
+export const LTM = Template.bind({})
+LTM.args = {
+  title: 'LTM Tournament - High Explosives',
+  line1: 'LTM Tournament',
+  line2: 'High Explosives',
+  posterFront:
+    'https://cdn2.unrealengine.com/16br-comp-in-game-ltmcup-poster-front-750x1080-3551abed616e.jpg',
+  posterBack:
+    'https://cdn2.unrealengine.com/16br-comp-in-game-ltmcup-poster-back-750x1080-deab055de9c7.jpg',
+  description: 'Mixing it up each week!',
+  format: 'Solo Tournament'
 }

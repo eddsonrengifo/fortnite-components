@@ -14,13 +14,13 @@ const LockerCard: React.FC<LockerProps> = ({
   tag = 'none',
   banner = 'none',
   bannerText = 'New!',
-  onClick,
+  onClick
 }) => {
   const banners = () => {
     if (banner !== 'none')
       return (
         <span
-          tw="text-black background-color[#fcff00] absolute z-10 -m-2 top-0 left-0 uppercase italic whitespace-nowrap tracking-wide font-medium border-4 border-white font-burbank font-size[22px] line-height[1.6rem] padding-top[4px] padding-left[7px] padding-right[12px] transform-origin[50%] transform[perspective(245px) rotateX(-25deg)]"
+          tw='text-black background-color[#fcff00] absolute z-10 -m-2 top-0 left-0 uppercase italic whitespace-nowrap tracking-wide font-medium border[4px solid white] font-burbank font-size[22px] line-height[1.6rem] padding-top[4px] padding-left[7px] padding-right[12px] transform-origin[50%] transform[perspective(245px) rotateX(-25deg)]'
           className={`banner-${banner}`}
         >
           {bannerText}
@@ -32,21 +32,21 @@ const LockerCard: React.FC<LockerProps> = ({
   const Icon = styled.img(tw`absolute w-10 m-1.5 bottom-0 right-0 z-20`)
 
   const icon = () => {
-    if (tag === 'variants') return <Icon src={variants} alt="Variants" />
-    else if (tag === 'reactive') return <Icon src={reactive} alt="Reactive" />
+    if (tag === 'variants') return <Icon src={variants} alt='Variants' />
+    else if (tag === 'reactive') return <Icon src={reactive} alt='Reactive' />
     else if (tag === 'traversal')
-      return <Icon src={traversal} alt="Traversal" />
-    else if (tag === 'animated') return <Icon src={animated} alt="Animated" />
-    else if (tag === 'synced') return <Icon src={synced} alt="Synced" />
+      return <Icon src={traversal} alt='Traversal' />
+    else if (tag === 'animated') return <Icon src={animated} alt='Animated' />
+    else if (tag === 'synced') return <Icon src={synced} alt='Synced' />
     else return null
   }
   return (
     <div
-      className="group"
+      className='group'
       css={[
         tw`cursor-pointer relative`,
-        size === 'medium' && tw`width[271px] height[470px]`,
-        size === 'small' && tw`width[200px] height[250px]`,
+        size === 'medium' && tw`max-width[271px] height[470px]`,
+        size === 'small' && tw`max-width[200px] height[250px]`
       ]}
       onClick={onClick}
     >
@@ -54,19 +54,19 @@ const LockerCard: React.FC<LockerProps> = ({
       {banners()}
       <div
         className={`rarity-${rarity}`}
-        tw="bg-gradient-to-t from-bgDefaultBottom to-bgDefaultTop h-full w-full flex relative justify-center m-auto shadow-xl overflow-hidden"
+        tw='bg-gradient-to-t from-bgDefaultBottom to-bgDefaultTop h-full w-full flex relative justify-center m-auto shadow-xl overflow-hidden'
       >
         <img
           css={[
             tw`h-full max-w-none transform group-hover:scale-110 transition ease-in-out duration-500`,
-            size === 'medium' && tw`group-hover:translate-y-6 `,
+            size === 'medium' && tw`group-hover:translate-y-6 `
           ]}
           src={image}
           alt={image}
         />
         <div
           className={`linearRarity-${rarity}`}
-          tw="absolute h-11 w-full border-t-8 border-opacity-100 opacity-80 transform -rotate-6 scale-105 -bottom-5 background[#02e7fc] border-color[#02ffff]"
+          tw='absolute h-11 w-full border-t-8 border-opacity-100 opacity-80 transform -rotate-6 scale-105 -bottom-5 background[#02e7fc] border-color[#02ffff]'
         />
       </div>
     </div>

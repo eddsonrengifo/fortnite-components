@@ -1,5 +1,5 @@
 export interface StoreProps {
-  label: string
+  name: string
   type: string
   rarity?:
     | 'unattainable'

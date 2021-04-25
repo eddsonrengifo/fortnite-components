@@ -8,7 +8,7 @@ export default {
   title: 'Example/StoreCard',
   component: StoreCard,
   argTypes: {
-    label: {
+    name: {
       name: 'Name',
       type: { name: 'string', required: true },
       defaultValue: 'Safari',
@@ -185,7 +185,7 @@ const Template: Story<StoreProps> = (args) => <StoreCard {...args} />
 
 export const ExtraLarge = Template.bind({})
 ExtraLarge.args = {
-  label: 'Fortnite crew: 1 month',
+  name: 'Fortnite crew: 1 month',
   type: 'Subscription',
   rarity: 'rare',
   size: 'extraLarge',
@@ -197,7 +197,7 @@ ExtraLarge.args = {
 
 export const Large = Template.bind({})
 Large.args = {
-  label: 'Survivors in arms',
+  name: 'Survivors in arms',
   type: 'Item bundle',
   rarity: 'epic',
   size: 'large',
@@ -211,7 +211,7 @@ Large.args = {
 
 export const Medium = Template.bind({})
 Medium.args = {
-  label: 'Safari',
+  name: 'Safari',
   rarity: 'rare',
   size: 'medium',
   banner: 'v1',
@@ -222,7 +222,7 @@ Medium.args = {
 
 export const Small = Template.bind({})
 Small.args = {
-  label: 'Flail Bladesfari',
+  name: 'Flail Bladesfari',
   type: 'Pickaxe',
   rarity: 'uncommon',
   size: 'small',

@@ -38,7 +38,7 @@ const FishCard: React.FC<FishProps> = ({
             tw`flex relative justify-center items-center h-full max-w-full background[linear-gradient(#005aa0, #005190 139px, #3ba7fc 83%)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
             unknown &&
               tw`background[linear-gradient(#000521, #00165f 181px, #001e86)]`,
-            none && tw`background[rgba(0, 0, 0, 0.8)]`
+            none && tw`background[rgba(0, 0, 0, 0.5)]`
           ]}
         >
           {none ? (
