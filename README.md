@@ -2,34 +2,35 @@
 
 > A library of fortnite's components
 
-[![NPM](https://img.shields.io/npm/v/fortnite-components.svg)](https://www.npmjs.com/package/fortnite-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/fortnite-components.svg)](https://www.npmjs.com/package/fortnite-components)
 
 ## Install
 
 ```bash
-NPM: npm install --save fortnite-components
+NPM: npm install fortnite-components --save-dev
 ```
 
 ```bash
-YARN: yarn add fortnite-components
+YARN: yarn add fortnite-components --dev
 ```
 
 ## Usage
 
 ```tsx
 import React from 'react'
-
 import { StoreCard } from 'fortnite-components'
 
-const Example = () => {
-  return (
-    <div>
-      <StoreCard />
-    </div>
-  )
+const App = () => {
+  return <StoreCard name='Safari' />
 }
 ```
 
 ## License
 
 MIT © [EddsonRT](https://github.com/EddsonRT)
+
+## Help me
+
+```bash
+Use code EddsonRT
+```
