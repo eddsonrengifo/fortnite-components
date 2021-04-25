@@ -7,9 +7,9 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
   image = 'https://media.fortniteapi.io/images/feats/s16_T_Ui_Explore_Comical.png',
   description = '',
   time = '',
-  topColor = '#7c3aed',
+  topColor = '#F6A300',
   bottomColor = '#4F8EFF',
-  imageColor = '#7c3aed',
+  imageColor = '#F6A300',
   topBackground = '#326DD7',
   bottomBackground = '#3A39D0',
   onClick
@@ -26,16 +26,16 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       <div tw='absolute top-0 w-full h-10 overflow-hidden transition[300ms all ease]'>
         <div
           style={{ background: topColor }}
-          tw='relative transform -rotate-1 bottom-2.5 w-80 h-6 group-hover:rotate-2 group-hover:bottom-3 group-hover:h-10'
+          tw='relative transform -rotate-1 bottom-2.5 w-80 h-6 group-hover:rotate-2 group-hover:bottom-3 group-hover:h-10 transition[300ms all ease]'
         />
       </div>
-      <div tw='relative my-14 bottom-6 group-hover:bottom-20 transition[300ms all ease]'>
+      <div tw='relative text-center my-14 bottom-6 group-hover:bottom-20 transition[300ms all ease]'>
         <img
           style={{
             background: imageColor,
-            borderColor: imageColor
+            border: `6px solid ${imageColor}`
           }}
-          tw='relative m-auto border-width[6px] w-28'
+          tw='relative m-auto w-28'
           src={image}
           alt={name}
         />
@@ -52,7 +52,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       <div tw='hidden absolute bottom-0 w-full h-12 overflow-hidden group-hover:block transition[300ms all ease]'>
         <div
           style={{ background: bottomColor }}
-          tw='relative transform w-64 h-12 group-hover:top[11px] group-hover:-rotate-2'
+          tw='relative transform w-64 h-12 group-hover:top[11px] group-hover:-rotate-2 transition[300ms all ease]'
         />
       </div>
       <div
