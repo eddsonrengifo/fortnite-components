@@ -9,10 +9,10 @@
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "dependencies": {
-    "fortnite-components": "file:../",
-    "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom",
-    "react-scripts": "file:../node_modules/react-scripts"
+    "fortnite-components": "link:../",
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom",
+    "react-scripts": "link:../node_modules/react-scripts"
   },
   "browserslist": [
     ">0.2%",
