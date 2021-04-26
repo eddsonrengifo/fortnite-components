@@ -92,12 +92,12 @@ const FishCard: React.FC<FishProps> = ({
               none && tw`opacity-30`
             ]}
           >
-            {number}
+            {number > 99 ? '99' : number > 0 ? number : '0'}
           </span>
           {featured
             ? unknown === false &&
               none === false && (
-                <div tw='font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a]'>
+                <div tw='font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a] group-hover:bg-white group-hover:text-black transition[100ms all ease]'>
                   {text}
                 </div>
               )
