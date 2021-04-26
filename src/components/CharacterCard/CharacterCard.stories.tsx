@@ -12,7 +12,7 @@ export default {
       name: 'Number',
       type: { name: 'number' },
       defaultValue: 0,
-      description: 'Number of the fish',
+      description: 'Number of the character',
       table: {
         category: 'Card',
         defaultValue: {
@@ -24,7 +24,7 @@ export default {
       name: 'Image',
       defaultValue:
         'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png',
-      description: 'Image of the fish',
+      description: 'Image of the character',
       table: {
         category: 'Card',
         defaultValue: {
@@ -36,7 +36,7 @@ export default {
     alert: {
       name: 'Alert',
       defaultValue: false,
-      description: 'Alert of the fish',
+      description: 'Alert of the character',
       table: {
         category: 'Card',
         defaultValue: { summary: false }
@@ -54,7 +54,7 @@ export default {
     featured: {
       name: 'Featured',
       defaultValue: false,
-      description: 'Featured of the fish',
+      description: 'Featured of the character',
       table: {
         category: 'Featured',
         defaultValue: { summary: false }
