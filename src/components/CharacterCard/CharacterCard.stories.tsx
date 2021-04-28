@@ -23,13 +23,13 @@ export default {
     image: {
       name: 'Image',
       defaultValue:
-        'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png',
+        'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
       description: 'Image of the character',
       table: {
         category: 'Card',
         defaultValue: {
           summary:
-            'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png'
+            'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
         }
       }
     },
