@@ -24,12 +24,12 @@ export default {
     },
     size: {
       name: 'Size',
-      defaultValue: 'small',
+      defaultValue: 'medium',
       description: 'Card Size',
       table: {
         category: 'Card',
         defaultValue: {
-          summary: 'small'
+          summary: 'medium'
         }
       }
     },
@@ -46,31 +46,70 @@ export default {
         defaultValue: { summary: 'rare' }
       }
     },
+    type: {
+      name: 'Type',
+      defaultValue: 'outfit',
+      description: 'Type of the Card',
+      table: {
+        category: 'Card',
+        defaultValue: { summary: 'outfit' }
+      }
+    },
+    alert: {
+      name: 'Alert',
+      defaultValue: false,
+      description: 'Alert',
+      table: {
+        category: 'Card',
+        defaultValue: { summary: false }
+      }
+    },
+    newItems: {
+      name: 'New Items',
+      type: { name: 'number' },
+      defaultValue: 0,
+      description: 'New Items',
+      table: {
+        category: 'Card',
+        defaultValue: { summary: 0 }
+      }
+    },
     tag: {
       name: 'Tag',
-      defaultValue: 'variants',
+      defaultValue: false,
       description: 'Item Tag',
       table: {
         category: 'Card',
-        defaultValue: { summary: 'variants' }
+        defaultValue: { summary: false }
       }
     },
-    banner: {
-      name: 'Banner',
-      defaultValue: 'none',
-      description: "What's the type of the banner?",
+    favorite: {
+      name: 'Favorite',
+      defaultValue: false,
+      description: 'Favorite?',
       table: {
-        category: 'Banner',
-        defaultValue: { summary: 'none' }
+        category: 'Card',
+        defaultValue: { summary: false }
       }
     },
-    bannerText: {
-      name: 'Banner Text',
-      defaultValue: 'New!',
-      description: "What's the text of the banner?",
+    random: {
+      name: 'Random',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'Random',
       table: {
-        category: 'Banner',
-        defaultValue: { summary: 'New!' }
+        category: 'Card',
+        defaultValue: { summary: false }
+      }
+    },
+    none: {
+      name: 'None',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'None?',
+      table: {
+        category: 'Card',
+        defaultValue: { summary: false }
       }
     },
     onClick: {
@@ -85,20 +124,20 @@ const Template: Story<LockerProps> = (args) => <LockerCard {...args} />
 
 export const Medium = Template.bind({})
 Medium.args = {
-  rarity: 'epic',
+  rarity: 'rare',
+  type: 'outfit',
   size: 'medium',
-  tag: 'reactive',
+  tag: true,
   image:
-    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_760_F_NeonTightSuit/MI_CID_760_F_NeonTightSuit.png'
+    'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
 }
 
 export const Small = Template.bind({})
 Small.args = {
-  banner: 'v1',
-  bannerText: 'New!',
+  favorite: true,
   rarity: 'rare',
+  type: 'emote',
   size: 'small',
-  tag: 'variants',
   image:
-    'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
+    'https://media.fortniteapi.io/images/e47b426b5a69b3e3ea1f4d9eb174cd20/transparent.png'
 }

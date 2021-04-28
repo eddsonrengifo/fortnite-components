@@ -19,9 +19,23 @@ export interface LockerProps {
     | 'uncommon'
     | 'common'
   size?: 'medium' | 'small'
+  type?:
+    | 'outfit'
+    | 'backpack'
+    | 'pickaxe'
+    | 'glider'
+    | 'contrail'
+    | 'emote'
+    | 'wrap'
+    | 'bannertoken'
+    | 'music'
+    | 'loadingscreen'
+  favorite?: boolean
+  random?: boolean
+  none?: boolean
   image: string
-  tag?: 'none' | 'variants' | 'reactive' | 'traversal' | 'animated' | 'synced'
-  banner?: 'none' | 'v1' | 'v2'
-  bannerText: string
+  tag?: boolean
+  alert?: boolean
+  newItems?: number
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
