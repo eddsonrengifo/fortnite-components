@@ -6,7 +6,7 @@ import fish from '../../assets/icons/fish.png'
 const FishCard: React.FC<FishProps> = ({
   number = 0,
   stars = 1,
-  image = 'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png',
+  image = 'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Orange_L.png',
   size = 'large',
   none = false,
   unknown = false,
@@ -21,7 +21,7 @@ const FishCard: React.FC<FishProps> = ({
       tw='relative max-width[200px] height[250px] shadow-2xl'
       onClick={onClick}
     >
-      {none === false && alert && (
+      {alert === true && none !== true && (
         <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbank font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
           !
         </span>
@@ -29,19 +29,19 @@ const FishCard: React.FC<FishProps> = ({
       <div
         css={[
           tw`overflow-hidden bg-white group-hover:border-2 border-white h-full max-w-full group-hover:max-width[204px] group-hover:height[254px] transition[100ms all ease]`,
-          none &&
+          none === true &&
             tw`border-0 group-hover:border-0 border-transparent bg-transparent`
         ]}
       >
         <div
           css={[
             tw`flex relative justify-center items-center h-full max-w-full background[linear-gradient(#005aa0, #005190 139px, #3ba7fc 83%)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
-            unknown &&
+            unknown === true &&
               tw`background[linear-gradient(#000521, #00165f 181px, #001e86)]`,
-            none && tw`background[rgba(0, 0, 0, 0.5)]`
+            none === true && tw`background[rgba(0, 0, 0, 0.5)]`
           ]}
         >
-          {none ? (
+          {none === true ? (
             <img
               tw='w-40 group-hover:w-48 transition[100ms all ease] opacity-50'
               src={fish}
@@ -49,20 +49,19 @@ const FishCard: React.FC<FishProps> = ({
             />
           ) : (
             <img
-              className='fishAnimation'
               css={[
-                tw`w-40 group-hover:w-48 transition[100ms all ease] transform[scaleX(-1)]`,
+                tw`animate-fish w-40 group-hover:w-48 transition[100ms all ease] transform[scaleX(-1)]`,
                 size === 'large' && tw`w-40 group-hover:w-48`,
                 size === 'medium' && tw`w-32 group-hover:w-36`,
                 size === 'small' && tw`w-20 group-hover:w-24`,
-                unknown &&
+                unknown === true &&
                   tw`w-32 group-hover:w-36 filter[invert(50%) sepia(38%) saturate(3130%) hue-rotate(-159deg) brightness(19%) contrast(110%)]`
               ]}
               src={image}
               alt='Fish'
             />
           )}
-          {unknown === false && none === false && (
+          {unknown !== true && none !== true && (
             <div tw='flex absolute left-0 top-0 m-1'>
               <div
                 css={[
@@ -89,50 +88,49 @@ const FishCard: React.FC<FishProps> = ({
           <span
             css={[
               tw`color[#0174e9] group-hover:color[#008af5] opacity-50 absolute top-0 right-0 mt-1.5 mr-4 text-5xl font-burbank italic transition[200ms all ease]`,
-              none && tw`opacity-30`
+              none === true && tw`opacity-30`
             ]}
           >
             {number > 99 ? '99' : number > 0 ? number : '0'}
           </span>
-          {featured
-            ? unknown === false &&
-              none === false && (
-                <div tw='font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a] group-hover:bg-white group-hover:text-black transition[100ms all ease]'>
-                  {text}
-                </div>
-              )
-            : none === false && (
-                <>
-                  {unknown ? (
-                    <div tw='absolute bottom-0 width[85%] background[linear-gradient(to left, rgb(14 33 88) 16px, rgb(76 112 214), rgb(14 33 88) 158px)] h-3 transform[skew(-8deg, -1deg)] m-3 margin-bottom[9px] opacity-50' />
-                  ) : (
-                    <div
-                      css={[
-                        tw`absolute bottom-0 width[85%] bg-blue-900 h-3 transform[skew(-8deg, -1deg)] m-3 margin-bottom[9px]`,
-                        size === 'large' &&
-                          tw`background[linear-gradient(to left, rgb(30, 58, 138) 4px, rgb(76 106 191) 17px, rgb(76 106 191), rgb(30, 58, 138) 63px)]`,
-                        size === 'medium' &&
-                          tw`background[linear-gradient(to left, rgb(30, 58, 138) 53px, rgb(76 106 191) 59px, rgb(76 106 191), rgb(30, 58, 138) 125px)]`,
-                        size === 'small' &&
-                          tw`background[linear-gradient(to left, rgb(30, 58, 138) 125px, rgb(76 106 191), rgb(76 106 191), rgb(30, 58, 138) 173px)]`
-                      ]}
-                    />
-                  )}
-
-                  {none === false && unknown === false && (
-                    <div
-                      css={[
-                        tw`flex justify-end absolute bottom[3px] width[85%] group-hover:bottom-0`,
-                        size === 'large' && tw`justify-end`,
-                        size === 'medium' && tw`justify-center`,
-                        size === 'small' && tw`justify-start`
-                      ]}
-                    >
-                      <div tw='relative z-10 w-0 h-0 border-top[0px solid transparent] border-left[9px solid transparent] border-right[9px solid transparent] border-bottom[15px solid white]' />
-                    </div>
-                  )}
-                </>
+          {featured === true && unknown !== true && none !== true && (
+            <div tw='font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a] group-hover:bg-white group-hover:text-black transition[100ms all ease]'>
+              {typeof text === 'string' ? text : 'New Best!'}
+            </div>
+          )}
+          {none !== true && (
+            <>
+              {unknown === true ? (
+                <div tw='absolute bottom-0 width[85%] background[linear-gradient(to left, rgb(14 33 88) 16px, rgb(76 112 214), rgb(14 33 88) 158px)] h-3 transform[skew(-8deg, -1deg)] m-3 margin-bottom[9px] opacity-50' />
+              ) : (
+                featured !== true && (
+                  <div
+                    css={[
+                      tw`absolute bottom-0 width[85%] background[linear-gradient(to left, rgb(30, 58, 138) 4px, rgb(76 106 191) 17px, rgb(76 106 191), rgb(30, 58, 138) 63px)] h-3 transform[skew(-8deg, -1deg)] m-3 margin-bottom[9px]`,
+                      size === 'large' &&
+                        tw`background[linear-gradient(to left, rgb(30, 58, 138) 4px, rgb(76 106 191) 17px, rgb(76 106 191), rgb(30, 58, 138) 63px)]`,
+                      size === 'medium' &&
+                        tw`background[linear-gradient(to left, rgb(30, 58, 138) 53px, rgb(76 106 191) 59px, rgb(76 106 191), rgb(30, 58, 138) 125px)]`,
+                      size === 'small' &&
+                        tw`background[linear-gradient(to left, rgb(30, 58, 138) 125px, rgb(76 106 191), rgb(76 106 191), rgb(30, 58, 138) 173px)]`
+                    ]}
+                  />
+                )
               )}
+              {unknown !== true && featured !== true && (
+                <div
+                  css={[
+                    tw`flex justify-end absolute bottom[3px] width[85%] group-hover:bottom-0`,
+                    size === 'large' && tw`justify-end`,
+                    size === 'medium' && tw`justify-center`,
+                    size === 'small' && tw`justify-start`
+                  ]}
+                >
+                  <div tw='relative z-10 w-0 h-0 border-top[0px solid transparent] border-left[9px solid transparent] border-right[9px solid transparent] border-bottom[15px solid white]' />
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

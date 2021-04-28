@@ -2,7 +2,7 @@ export interface FishProps {
   number?: number
   stars?: 1 | 2 | 3
   image?: string
-  size?: 'small' | 'medium' | 'large'
+  size?: 'large' | 'small' | 'medium'
   alert?: boolean
   featured?: boolean
   text?: string

@@ -12,7 +12,19 @@ module.exports = {
       bgDefaultBottom: '#143977'
     }),
     extend: {
-      colors: {}
+      keyframes: {
+        fish: {
+          '0%, 100%': {
+            transform: 'translateY(10px) scaleX(-1)'
+          },
+          '50%': {
+            transform: 'translateY(-5px) scaleX(-1)'
+          }
+        }
+      },
+      animation: {
+        fish: 'fish 5s ease-in-out infinite'
+      }
     },
     screens: {
       extra: { max: '896px' },

@@ -23,13 +23,13 @@ export default {
     image: {
       name: 'Image',
       defaultValue:
-        'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png',
+        'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Orange_L.png',
       description: 'Image of the fish',
       table: {
         category: 'Card',
         defaultValue: {
           summary:
-            'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png'
+            'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Orange_L.png'
         }
       }
     },
@@ -46,11 +46,11 @@ export default {
     },
     size: {
       name: 'Size',
-      defaultValue: 'medium',
+      defaultValue: 'large',
       description: 'Size of the fish',
       table: {
         category: 'Card',
-        defaultValue: { summary: 'medium' }
+        defaultValue: { summary: 'large' }
       }
     },
     alert: {
@@ -112,8 +112,7 @@ export const Simple = Template.bind({})
 Simple.args = {
   number: 23,
   stars: 2,
-  image: 'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png',
-  size: 'medium'
+  image: 'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Flopper_Blue_L.png'
 }
 
 export const Featured = Template.bind({})
@@ -130,8 +129,7 @@ Unknown.args = {
   unknown: true,
   number: 14,
   image:
-    'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Jellyfish_Black_L.png',
-  size: 'medium'
+    'https://media.fortniteapi.io/images/s16_T_Ui_Fish_Jellyfish_Black_L.png'
 }
 
 export const None = Template.bind({})
