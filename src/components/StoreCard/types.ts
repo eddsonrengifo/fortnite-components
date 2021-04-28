@@ -33,5 +33,7 @@ export interface StoreProps {
   passType?: 'free' | 'paid'
   money?: string
   moreText?: string
+  owned?: boolean
+  ownedText?: string
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

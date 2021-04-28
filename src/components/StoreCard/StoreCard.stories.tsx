@@ -96,23 +96,23 @@ export default {
     price: {
       name: 'Price v-bucks',
       type: { name: 'number', required: false },
-      defaultValue: 1200,
+      defaultValue: 0,
       description: "What's the price of vBucks?",
       table: {
         category: 'Price',
         subcategory: 'vBucks',
-        defaultValue: { summary: 1200 }
+        defaultValue: { summary: 0 }
       }
     },
     fullPrice: {
       name: 'Full v-bucks',
       type: { name: 'number', required: false },
-      defaultValue: 1200,
+      defaultValue: 0,
       description: "What's the full price of vBucks?",
       table: {
         category: 'Price',
         subcategory: 'vBucks',
-        defaultValue: { summary: 1200 }
+        defaultValue: { summary: 0 }
       }
     },
     passText: {
