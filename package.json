@@ -15,22 +15,19 @@
     "dist"
   ],
   "scripts": {
-    "dev": "cd example && yarn && yarn start",
-    "preview": "yarn build && cd example && yarn && yarn start",
+    "dev": "yarn build && cd example && yarn && yarn start",
     "prebuild": "rimraf dist",
-    "build:types": "tsc",
-    "build:js": "rollup -c",
-    "build": "yarn build:types && yarn build:js",
-    "watch": "rollup -c --watch",
+    "build": "tsc && rollup -c",
+    "build:watch": "rollup -c --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:fix": "prettier-eslint '**/*.js' --write",
+    "lint:fix": "prettier-eslint '**/*.ts' --write",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
     "prepublish": "yarn build"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*.{ts,tsx}": [
       "yarn lint:fix"
     ]
   },
