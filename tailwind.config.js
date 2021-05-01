@@ -1,17 +1,17 @@
 module.exports = {
   theme: {
-    fontFamily: {
-      burbank: 'Burbank Big Condensed black',
-      sans: ['ui-sans-serif', 'system-ui'],
-      serif: ['ui-serif', 'Georgia'],
-      mono: ['ui-monospace', 'SFMono-Regular']
-    },
     gradientColorStops: (theme) => ({
       ...theme('colors'),
       bgDefaultTop: '#2cc1ff',
       bgDefaultBottom: '#143977'
     }),
     extend: {
+      fontFamily: {
+        burbank: ['Burbank Big Condensed black', 'system-ui'],
+        sans: ['ui-sans-serif', 'system-ui'],
+        serif: ['ui-serif', 'Georgia'],
+        mono: ['ui-monospace', 'SFMono-Regular']
+      },
       keyframes: {
         fish: {
           '0%, 100%': {

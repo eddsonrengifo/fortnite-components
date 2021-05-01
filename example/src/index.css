@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* justify-items: center; */
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+  gap: 20px;
+  padding: 30px;
+  color: #fff;
+  background: #2d2d2d;
+}
+.item {
+  width: 100%;
+}
+@media screen and (max-width: 1100px) {
+  .all {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .all {
+    display: block;
+    padding: 0;
+  }
+  .item {
+    width: auto;
+  }
+}

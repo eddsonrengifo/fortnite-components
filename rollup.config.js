@@ -4,6 +4,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from 'rollup-plugin-node-resolve'
 import pkg from './package.json'
 import image from '@rollup/plugin-image'
+import postcss from 'rollup-plugin-postcss'
 
 const config = {
   name: 'Fortnite components',
@@ -20,6 +21,9 @@ export default {
     }
   ],
   plugins: [
+    postcss({
+      plugins: []
+    }),
     image(),
     peerDepsExternal(),
     resolve({ extensions: config.extensions }),

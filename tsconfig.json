@@ -28,5 +28,5 @@
     }
   },
   "include": ["src/**/*.tsx", "types", "src"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "src/styles"]
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx"]
 }
