@@ -21,7 +21,7 @@
     "build:watch": "rollup -c --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:fix": "prettier-eslint '**/*.ts' --write",
+    "lint:fix": "prettier-eslint 'src/**/*.ts' --write",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
     "prepublish": "yarn build"
