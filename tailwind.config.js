@@ -7,7 +7,7 @@ module.exports = {
     }),
     extend: {
       fontFamily: {
-        burbank: ['Burbank Big Condensed black', 'system-ui'],
+        burbankFont: ['Burbank Big Condensed', 'system-ui'],
         sans: ['ui-sans-serif', 'system-ui'],
         serif: ['ui-serif', 'Georgia'],
         mono: ['ui-monospace', 'SFMono-Regular']

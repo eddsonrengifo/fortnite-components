@@ -22,7 +22,7 @@ const CharacterCard: React.FC<CharacterProps> = ({
       onClick={onClick}
     >
       {alert === true && none === false && (
-        <span tw='z-20 transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] pt-1.5 font-burbank font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
+        <span tw='z-20 transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
           !
         </span>
       )}
@@ -61,14 +61,14 @@ const CharacterCard: React.FC<CharacterProps> = ({
           )}
           <span
             css={[
-              tw`color[#00b2d0] opacity-50 absolute top-0 right-0 mt-1.5 mr-4 text-5xl font-burbank italic transition[200ms all ease]`,
+              tw`color[#00b2d0] opacity-50 absolute top-0 right-0 mt-1.5 mr-4 text-5xl font-burbankFont italic transition[200ms all ease]`,
               none === true && tw`color[#005cd0] opacity-30`
             ]}
           >
             {number > 99 ? '99' : number > 0 ? number : '0'}
           </span>
           {featured === true && none !== true && (
-            <div tw='z-20 font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute background[#fcff00] text-black group-hover:bg-white transition[100ms all ease]'>
+            <div tw='z-20 font-burbankFont italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute background[#fcff00] text-black group-hover:bg-white transition[100ms all ease]'>
               {text}
             </div>
           )}

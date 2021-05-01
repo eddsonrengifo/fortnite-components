@@ -41,14 +41,14 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
           src={image}
           alt={name}
         />
-        <h1 tw='italic uppercase font-burbank text-white text-center font-bold text-2xl mx-2 mt-2 mb-0'>
+        <h1 tw='italic uppercase font-burbankFont text-white text-center font-bold text-2xl mx-2 mt-2 mb-0'>
           {name}
         </h1>
         <p tw='font-sans hidden text-center text-blue-300 group-hover:block text-lg font-semibold mx-2.5 my-0 leading-6'>
           {description}
         </p>
       </div>
-      <span tw='absolute text-xl color[#3CD3FE] group-hover:text-white text-center z-10 bottom-0 left-0 right-0 font-burbank margin-bottom[3px]'>
+      <span tw='absolute text-xl color[#3CD3FE] group-hover:text-white text-center z-10 bottom-0 left-0 right-0 font-burbankFont margin-bottom[3px]'>
         {time}
       </span>
       <div tw='hidden absolute bottom-0 w-full h-12 overflow-hidden group-hover:block transition[300ms all ease]'>

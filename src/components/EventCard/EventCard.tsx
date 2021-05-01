@@ -53,18 +53,18 @@ const EventCard: React.FC<EventCardProps> = ({
           />
         )}
         {region !== 'none' && (
-          <span tw='absolute bottom-0 left-0 font-burbank text-white text-3xl mx-2.5'>
+          <span tw='absolute bottom-0 left-0 font-burbankFont text-white text-3xl mx-2.5'>
             {region}
           </span>
         )}
         <div tw='absolute bottom-10 left-0 right-0 w-10/12 m-auto'>
-          <span tw='block uppercase text-5xl font-burbank text-white text-center mt-4'>
+          <span tw='block uppercase text-5xl font-burbankFont text-white text-center mt-4'>
             {line1}
           </span>
-          <span tw='block uppercase text-6xl font-burbank text-white text-center'>
+          <span tw='block uppercase text-6xl font-burbankFont text-white text-center'>
             {line2}
           </span>
-          <span tw='block uppercase font-burbank text-white text-2xl text-center'>
+          <span tw='block uppercase font-burbankFont text-white text-2xl text-center'>
             {schedule}
           </span>
         </div>
@@ -78,13 +78,13 @@ const EventCard: React.FC<EventCardProps> = ({
         tw='w-full overflow-hidden h-full transition ease-in-out duration-500 absolute bottom-0 bg-gradient-to-t from-blue-500 to-blue-400 z-10 opacity-0 group-hover:opacity-100'
       >
         <div tw='ml-16 mt-8 mb-4'>
-          <span tw='block uppercase text-2xl font-burbank text-white italic'>
+          <span tw='block uppercase text-2xl font-burbankFont text-white italic'>
             {line1}
           </span>
-          <span tw='block uppercase text-3xl font-burbank text-white italic'>
+          <span tw='block uppercase text-3xl font-burbankFont text-white italic'>
             {line2}
           </span>
-          <span tw='font-bold uppercase text-white font-burbank italic'>
+          <span tw='font-bold uppercase text-white font-burbankFont italic'>
             {title}
           </span>
         </div>
@@ -93,7 +93,7 @@ const EventCard: React.FC<EventCardProps> = ({
         </p>
         {dates && (
           <>
-            <span tw='block uppercase text-2xl font-burbank text-white text-center mt-3'>
+            <span tw='block uppercase text-2xl font-burbankFont text-white text-center mt-3'>
               Event Dates
             </span>
             <div tw='text-center'>
@@ -108,7 +108,7 @@ const EventCard: React.FC<EventCardProps> = ({
                           }
                         : {}
                     }
-                    tw='block font-burbank text-white text-2xl'
+                    tw='block font-burbankFont text-white text-2xl'
                   >
                     {new Date(i.start).toLocaleDateString()}{' '}
                     {new Date(i.start)
@@ -129,12 +129,12 @@ const EventCard: React.FC<EventCardProps> = ({
           </>
         )}
         <div tw='flex flex-col absolute m-2.5 bottom[2px] left-0 right-0 gap[3px]'>
-          <span tw='line-height[1] uppercase font-burbank text-white font-size[1.5rem] text-center'>
+          <span tw='line-height[1] uppercase font-burbankFont text-white font-size[1.5rem] text-center'>
             {format}
           </span>
           <div tw='flex justify-between m-0'>
             <span tw='text-white'>------------</span>
-            <span tw='line-height[1] uppercase font-burbank text-white font-size[1.5rem] text-center'>
+            <span tw='line-height[1] uppercase font-burbankFont text-white font-size[1.5rem] text-center'>
               {schedule}
             </span>
             <span tw='text-white'>------------</span>

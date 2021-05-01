@@ -26,7 +26,7 @@ const PresetCard: React.FC<PresetProps> = ({
     <div className='group' tw='w-64'>
       <span
         css={[
-          tw`flex justify-center p-1.5 pt-2 font-burbank italic text-white text-2xl tracking-wide`,
+          tw`flex justify-center p-1.5 pt-2 font-burbankFont italic text-white text-2xl tracking-wide`,
           add === true && tw`opacity-0`,
           none === true && tw`opacity-0`
         ]}

@@ -4,7 +4,7 @@ import { GlobalStyles as BaseStyles } from 'twin.macro'
 
 const customStyles = css`
   @font-face {
-    font-family: 'Burbank Big Condensed black';
+    font-family: 'Burbank Big Condensed';
     src: url('http://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot'); /* IE9*/
     src: url('http://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix')
         format('embedded-opentype'),

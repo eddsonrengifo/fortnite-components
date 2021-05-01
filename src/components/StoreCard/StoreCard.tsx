@@ -44,7 +44,7 @@ const StoreCard: React.FC<StoreProps> = ({
       return (
         <span
           css={[
-            tw`absolute z-10 -m-2 top-0 left-0 uppercase italic whitespace-nowrap tracking-wide font-medium font-burbank font-size[22px] line-height[1.6rem] padding-top[4px] padding-left[7px] padding-right[12px] transform-origin[50%] transform[perspective(245px) rotateX(-25deg)]`,
+            tw`absolute z-10 -m-2 top-0 left-0 uppercase italic whitespace-nowrap tracking-wide font-medium font-burbankFont font-size[22px] line-height[1.6rem] padding-top[4px] padding-left[7px] padding-right[12px] transform-origin[50%] transform[perspective(245px) rotateX(-25deg)]`,
             banner === 'v2'
               ? tw`text-white background[#d3016a] border[4px solid #ff2b74]`
               : tw`text-black background[#fcff00] border[4px solid #fff]`
@@ -76,7 +76,7 @@ const StoreCard: React.FC<StoreProps> = ({
               src={styles}
               alt={tag}
             />
-            <span tw='transform skew-x-12 uppercase text-white italic text-xl font-medium font-burbank'>
+            <span tw='transform skew-x-12 uppercase text-white italic text-xl font-medium font-burbankFont'>
               {tag}
             </span>
           </div>
@@ -90,16 +90,16 @@ const StoreCard: React.FC<StoreProps> = ({
       return (
         <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#b9f8f6]'>
           {fullPrice > price && typeof fullPrice === 'number' && (
-            <span tw='relative line-through font-burbank italic text-lg opacity-50 top-0.5 text-white group-hover:color[#1d7d8b]'>
+            <span tw='relative line-through font-burbankFont italic text-lg opacity-50 top-0.5 text-white group-hover:color[#1d7d8b]'>
               {fullPrice.toLocaleString()}
             </span>
           )}
           {typeof price === 'number' ? (
-            <span tw='relative font-burbank italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
+            <span tw='relative font-burbankFont italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
               {price.toLocaleString()}
             </span>
           ) : (
-            <span tw='relative font-burbank italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
+            <span tw='relative font-burbankFont italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
               0
             </span>
           )}
@@ -113,7 +113,7 @@ const StoreCard: React.FC<StoreProps> = ({
     if (priceType === 'money')
       return (
         <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#cebb00]'>
-          <span tw='relative font-burbank italic text-white text-lg opacity-60 mx-2 top-0.5 group-hover:color[#3d3000]'>
+          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-2 top-0.5 group-hover:color[#3d3000]'>
             {money}USD
           </span>
         </div>
@@ -121,7 +121,7 @@ const StoreCard: React.FC<StoreProps> = ({
     if (priceType === 'more')
       return (
         <div tw='flex bg-black overflow-hidden h-6 items-center justify-end'>
-          <span tw='relative font-burbank italic text-white text-lg opacity-60 mx-2 top-0.5'>
+          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-2 top-0.5'>
             {typeof moreText === 'string' && moreText}
           </span>
         </div>
@@ -129,7 +129,7 @@ const StoreCard: React.FC<StoreProps> = ({
     if (priceType === 'battlepass')
       return (
         <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#07392e]'>
-          <span tw='relative font-burbank italic text-white text-lg opacity-60 mx-1.5 top-0.5'>
+          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-1.5 top-0.5'>
             {typeof passText === 'string' && passText}
           </span>
           {passType === 'free' ? (
@@ -294,16 +294,16 @@ const StoreCard: React.FC<StoreProps> = ({
           />
         )}
         <div tw='background[#1c1b1a] overflow-hidden group-hover:bg-white'>
-          <h1 tw='relative text-white uppercase font-burbank italic px-3 text-center mx-auto mt-3.5 group-hover:mt-3 mb-1 font-size[1.6rem] group-hover:mb-0 group-hover:bg-white group-hover:text-black line-height[1.6rem] group-hover:top-0.5'>
+          <h1 tw='relative text-white uppercase font-burbankFont italic px-3 text-center mx-auto mt-3.5 group-hover:mt-3 mb-1 font-size[1.6rem] group-hover:mb-0 group-hover:bg-white group-hover:text-black line-height[1.6rem] group-hover:top-0.5'>
             {name}
           </h1>
-          <span tw='hidden bg-white color[#a1a1a4] uppercase font-burbank px-3 text-center mx-auto mt-0.5 mb-1.5 font-size[1.125rem] group-hover:block line-height[1.2rem]'>
+          <span tw='hidden bg-white color[#a1a1a4] uppercase font-burbankFont px-3 text-center mx-auto mt-0.5 mb-1.5 font-size[1.125rem] group-hover:block line-height[1.2rem]'>
             {type}
           </span>
         </div>
         {owned === true ? (
           <div tw='flex background[#126D45] overflow-hidden h-6 items-center justify-end'>
-            <span tw='relative font-burbank italic text-white text-lg opacity-60 my-0 mx-2 top-0.5 uppercase'>
+            <span tw='relative font-burbankFont italic text-white text-lg opacity-60 my-0 mx-2 top-0.5 uppercase'>
               {typeof ownedText === 'string' && ownedText}
             </span>
           </div>

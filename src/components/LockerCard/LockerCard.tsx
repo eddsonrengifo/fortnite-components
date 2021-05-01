@@ -85,12 +85,12 @@ const LockerCard: React.FC<LockerProps> = ({
       onClick={onClick}
     >
       {alert === true && random !== true && none !== true && (
-        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbank font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
+        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
           !
         </span>
       )}
       {typeof newItems === 'number' && newItems > 0 && alert !== true && (
-        <span tw='box-shadow[black 1px 2px] z-20 transition[100ms all ease] top[-6px] right-0 pt-1.5 font-burbank font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black'>
+        <span tw='box-shadow[black 1px 2px] z-20 transition[100ms all ease] top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black'>
           {newItems > 99 ? '+99' : newItems}
         </span>
       )}

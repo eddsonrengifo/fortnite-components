@@ -15,7 +15,7 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
   return (
     <div className='group' tw='transform -skew-x-6 w-32' onClick={onClick}>
       {free === true && (
-        <span tw='uppercase block italic bg-white text-2xl text-black text-center pt-1 font-burbank border-2 border-b-0 border-gray-200 overflow-hidden'>
+        <span tw='uppercase block italic bg-white text-2xl text-black text-center pt-1 font-burbankFont border-2 border-b-0 border-gray-200 overflow-hidden'>
           {freeText}
         </span>
       )}
@@ -63,7 +63,7 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
           ]}
         />
       </div>
-      <span tw='block italic mt-2 bg-blue-800 text-2xl text-blue-500 text-center pt-1 font-burbank border-4 border-blue-600 overflow-hidden'>
+      <span tw='block italic mt-2 bg-blue-800 text-2xl text-blue-500 text-center pt-1 font-burbankFont border-4 border-blue-600 overflow-hidden'>
         {tier}
       </span>
     </div>

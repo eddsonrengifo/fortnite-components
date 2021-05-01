@@ -24,7 +24,7 @@ const FishCard: React.FC<FishProps> = ({
       onClick={onClick}
     >
       {alert === true && none !== true && (
-        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbank font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
+        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
           !
         </span>
       )}
@@ -90,14 +90,14 @@ const FishCard: React.FC<FishProps> = ({
           )}
           <span
             css={[
-              tw`color[#0174e9] group-hover:color[#008af5] opacity-50 absolute top-0 right-0 mt-1.5 mr-4 text-5xl font-burbank italic transition[200ms all ease]`,
+              tw`color[#0174e9] group-hover:color[#008af5] opacity-50 absolute top-0 right-0 mt-1.5 mr-4 text-5xl font-burbankFont italic transition[200ms all ease]`,
               none === true && tw`opacity-30`
             ]}
           >
             {number > 99 ? '99' : number > 0 ? number : '0'}
           </span>
           {featured === true && unknown !== true && none !== true && (
-            <div tw='font-burbank italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a] group-hover:bg-white group-hover:text-black transition[100ms all ease]'>
+            <div tw='font-burbankFont italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute text-white background[#d3016a] group-hover:bg-white group-hover:text-black transition[100ms all ease]'>
               {typeof text === 'string' ? text : 'New Best!'}
             </div>
           )}
