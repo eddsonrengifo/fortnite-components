@@ -1,6 +1,8 @@
 import React from 'react'
 import tw from 'twin.macro'
+
 import { BattlepassProps } from './types'
+import '../../styles/index.css'
 
 const BattlepassCard: React.FC<BattlepassProps> = ({
   rarity = 'rare',

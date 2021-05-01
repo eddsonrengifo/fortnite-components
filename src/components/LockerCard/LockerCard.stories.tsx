@@ -141,3 +141,13 @@ Small.args = {
   image:
     'https://media.fortniteapi.io/images/e47b426b5a69b3e3ea1f4d9eb174cd20/transparent.png'
 }
+
+export const Random = Template.bind({})
+Random.args = {
+  random: true
+}
+
+export const None = Template.bind({})
+None.args = {
+  none: true
+}

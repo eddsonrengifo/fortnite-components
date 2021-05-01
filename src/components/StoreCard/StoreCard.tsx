@@ -16,6 +16,7 @@ import dc from '../../assets/backgrounds/dcSeriesBackground.png'
 import lavaSeries from '../../assets/backgrounds/lavaSeriesBackground.png'
 import gamingSeries from '../../assets/backgrounds/platformSeriesBackground.png'
 import starwars from '../../assets/backgrounds/starwarsBackground.png'
+import '../../styles/index.css'
 
 const StoreCard: React.FC<StoreProps> = ({
   name = 'Name',
@@ -225,7 +226,8 @@ const StoreCard: React.FC<StoreProps> = ({
         <img
           css={[
             tw`transition[500ms all ease] max-w-none transform group-hover:scale-110`,
-            size === 'extraLarge' && tw`height[470px]`,
+            size === 'extraLarge' &&
+              tw`height[470px] group-hover:translate-y-5`,
             size === 'large' && tw`height[470px] group-hover:translate-y-5`,
             size === 'medium' && tw`height[470px] group-hover:translate-y-5`,
             size === 'small'

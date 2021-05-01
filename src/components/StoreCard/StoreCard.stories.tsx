@@ -216,6 +216,7 @@ Medium.args = {
   size: 'medium',
   banner: 'v1',
   bannerText: 'New!',
+  price: 1200,
   image:
     'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png'
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import 'twin.macro'
+
 import { AchievementCardProps } from './types'
+import '../../styles/index.css'
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
   name = 'Achievement',
@@ -35,14 +37,14 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             background: imageColor,
             border: `6px solid ${imageColor}`
           }}
-          tw='relative m-auto w-28'
+          tw='block box-border relative m-auto w-28'
           src={image}
           alt={name}
         />
-        <h1 tw='italic uppercase font-burbank text-white text-center font-bold text-2xl mx-2 mt-2'>
+        <h1 tw='italic uppercase font-burbank text-white text-center font-bold text-2xl mx-2 mt-2 mb-0'>
           {name}
         </h1>
-        <p tw='hidden text-center text-blue-300 group-hover:block text-lg font-semibold mx-2.5 leading-6'>
+        <p tw='font-sans hidden text-center text-blue-300 group-hover:block text-lg font-semibold mx-2.5 my-0 leading-6'>
           {description}
         </p>
       </div>

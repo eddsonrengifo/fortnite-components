@@ -1,7 +1,9 @@
 import React from 'react'
 import tw from 'twin.macro'
+
 import { FishProps } from './types'
 import fish from '../../assets/icons/fish.png'
+import '../../styles/index.css'
 
 const FishCard: React.FC<FishProps> = ({
   number = 0,
@@ -28,14 +30,14 @@ const FishCard: React.FC<FishProps> = ({
       )}
       <div
         css={[
-          tw`overflow-hidden bg-white group-hover:border-2 border-white h-full max-w-full group-hover:max-width[204px] group-hover:height[254px] transition[100ms all ease]`,
+          tw`box-border border-0 border-solid overflow-hidden bg-white group-hover:border-2 border-white h-full max-w-full group-hover:max-width[204px] group-hover:height[254px] transition[100ms all ease]`,
           none === true &&
             tw`border-0 group-hover:border-0 border-transparent bg-transparent`
         ]}
       >
         <div
           css={[
-            tw`flex relative justify-center items-center h-full max-w-full background[linear-gradient(#005aa0, #005190 139px, #3ba7fc 83%)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
+            tw`box-border border-0 border-solid flex relative justify-center items-center h-full max-w-full background[linear-gradient(#005aa0, #005190 139px, #3ba7fc 83%)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
             unknown === true &&
               tw`background[linear-gradient(#000521, #00165f 181px, #001e86)]`,
             none === true && tw`background[rgba(0, 0, 0, 0.5)]`
@@ -49,6 +51,7 @@ const FishCard: React.FC<FishProps> = ({
             />
           ) : (
             <img
+              className='animate-fish'
               css={[
                 tw`animate-fish w-40 group-hover:w-48 transition[100ms all ease] transform[scaleX(-1)]`,
                 size === 'large' && tw`w-40 group-hover:w-48`,

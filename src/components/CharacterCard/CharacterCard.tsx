@@ -1,8 +1,10 @@
 import React from 'react'
 import tw from 'twin.macro'
+
 import { CharacterProps } from './types'
 import character from '../../assets/icons/character.png'
 import star from '../../assets/icons/star.png'
+import '../../styles/index.css'
 
 const CharacterCard: React.FC<CharacterProps> = ({
   number = 0,
@@ -26,14 +28,14 @@ const CharacterCard: React.FC<CharacterProps> = ({
       )}
       <div
         css={[
-          tw`overflow-hidden bg-white group-hover:border-2 border-white h-full max-w-full group-hover:max-width[204px] group-hover:height[254px] transition[100ms all ease]`,
+          tw`box-border border-0 border-solid overflow-hidden bg-white group-hover:border-2 border-white h-full max-w-full group-hover:max-width[204px] group-hover:height[254px] transition[100ms all ease]`,
           none === true &&
             tw`border-0 group-hover:border-0 border-transparent bg-transparent`
         ]}
       >
         <div
           css={[
-            tw`flex relative justify-center items-center h-full max-w-full background[radial-gradient(#00acff, #008abf)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
+            tw`box-border border-0 border-solid flex relative justify-center items-center h-full max-w-full background[radial-gradient(#00acff, #008abf)] cursor-pointer overflow-hidden group-hover:border-8 border-white transition[100ms all ease] group-hover:transform[skewY(-1.5deg)]`,
             none === true && tw`background[rgba(0, 0, 0, 0.5)]`
           ]}
         >

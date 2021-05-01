@@ -14,6 +14,7 @@ import dc from '../../assets/backgrounds/dcSeriesBackground.png'
 import lavaSeries from '../../assets/backgrounds/lavaSeriesBackground.png'
 import gamingSeries from '../../assets/backgrounds/platformSeriesBackground.png'
 import starwars from '../../assets/backgrounds/starwarsBackground.png'
+import '../../styles/index.css'
 
 const LockerCard: React.FC<LockerProps> = ({
   rarity = 'rare',
@@ -78,7 +79,7 @@ const LockerCard: React.FC<LockerProps> = ({
     <div
       className='group'
       css={[
-        tw`cursor-pointer relative hover:border[5px solid yellow] max-width[200px] height[250px] transition ease-in-out duration-500`,
+        tw`cursor-pointer relative box-border border-white hover:border[5px solid yellow] max-width[200px] height[250px] transition ease-in-out duration-500`,
         size === 'small' && tw`max-width[150px] height[200px]`
       ]}
       onClick={onClick}
@@ -146,10 +147,7 @@ const LockerCard: React.FC<LockerProps> = ({
       >
         {none === true ? (
           <img
-            css={[
-              tw`h-52 opacity-80 max-w-none transform group-hover:scale-110 transition ease-in-out duration-500`,
-              size === 'small' && tw`h-40`
-            ]}
+            css={[tw`h-52 opacity-80 max-w-none`, size === 'small' && tw`h-40`]}
             src={NoneIcons}
             alt={`${type} none`}
           />
