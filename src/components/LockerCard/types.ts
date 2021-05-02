@@ -33,6 +33,8 @@ export interface LockerProps {
   favorite?: boolean
   random?: boolean
   none?: boolean
+  conflict?: boolean
+  conflictAnimation?: boolean
   image: string
   tag?: boolean
   alert?: boolean

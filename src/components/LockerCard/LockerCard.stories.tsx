@@ -55,25 +55,6 @@ export default {
         defaultValue: { summary: 'outfit' }
       }
     },
-    alert: {
-      name: 'Alert',
-      defaultValue: false,
-      description: 'Alert',
-      table: {
-        category: 'Card',
-        defaultValue: { summary: false }
-      }
-    },
-    newItems: {
-      name: 'New Items',
-      type: { name: 'number' },
-      defaultValue: 0,
-      description: 'New Items',
-      table: {
-        category: 'Card',
-        defaultValue: { summary: 0 }
-      }
-    },
     tag: {
       name: 'Tag',
       defaultValue: false,
@@ -112,6 +93,45 @@ export default {
         defaultValue: { summary: false }
       }
     },
+    alert: {
+      name: 'Alert',
+      defaultValue: false,
+      description: 'Alert',
+      table: {
+        category: 'Alert',
+        defaultValue: { summary: false }
+      }
+    },
+    newItems: {
+      name: 'New Items',
+      type: { name: 'number' },
+      defaultValue: 0,
+      description: 'New Items',
+      table: {
+        category: 'Alert',
+        defaultValue: { summary: 0 }
+      }
+    },
+    conflict: {
+      name: 'Conflict',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'Conflict?',
+      table: {
+        category: 'Conflict',
+        defaultValue: { summary: false }
+      }
+    },
+    conflictAnimation: {
+      name: 'Conflict Animation',
+      type: { name: 'boolean' },
+      defaultValue: true,
+      description: 'Conflict Animation?',
+      table: {
+        category: 'Conflict',
+        defaultValue: { summary: true }
+      }
+    },
     onClick: {
       table: {
         category: 'Events'
@@ -140,6 +160,11 @@ Small.args = {
   size: 'small',
   image:
     'https://media.fortniteapi.io/images/e47b426b5a69b3e3ea1f4d9eb174cd20/transparent.png'
+}
+
+export const Conflict = Template.bind({})
+Conflict.args = {
+  conflict: true
 }
 
 export const Random = Template.bind({})

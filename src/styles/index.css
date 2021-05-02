@@ -31,3 +31,35 @@
     transform: translateY(10px) scaleX(-1);
   }
 }
+
+.animate-conflict {
+  animation: ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping {
+  from {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -webkit-transform: scale(1);
+    /* Safari and Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+    -moz-transform: scale(1);
+    /* Firefox */
+    opacity: 0.7;
+    margin-bottom: 0;
+  }
+  to {
+    transform: scale(2);
+    -ms-transform: scale(2);
+    /* IE 9 */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    -moz-transform: scale(2);
+    /* Firefox */
+    opacity: 0;
+    margin-bottom: 25px;
+  }
+}

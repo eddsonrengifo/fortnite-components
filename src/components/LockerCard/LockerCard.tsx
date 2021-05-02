@@ -3,6 +3,7 @@ import tw from 'twin.macro'
 
 import { LockerProps } from './types'
 import favoriteIcon from '../../assets/icons/favorite.png'
+import conflictIcon from '../../assets/icons/conflict.png'
 import variants from '../../assets/icons/styles.png'
 import darkSeries from '../../assets/backgrounds/DarkSeriesBackground.png'
 import marvel from '../../assets/backgrounds/marvelBackground.png'
@@ -27,6 +28,8 @@ const LockerCard: React.FC<LockerProps> = ({
   tag = false,
   newItems = 0,
   alert = false,
+  conflict = false,
+  conflictAnimation = true,
   onClick
 }) => {
   const NoneIcons =
@@ -79,21 +82,24 @@ const LockerCard: React.FC<LockerProps> = ({
     <div
       className='group'
       css={[
-        tw`cursor-pointer relative box-border border-white hover:border[5px solid yellow] max-width[200px] height[250px] transition ease-in-out duration-500`,
+        tw`cursor-pointer relative box-border border[#f4e933] hover:border[5px solid yellow] max-width[200px] height[250px] transition ease-in-out duration-500`,
         size === 'small' && tw`max-width[150px] height[200px]`
       ]}
       onClick={onClick}
     >
       {alert === true && random !== true && none !== true && (
-        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-10 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
+        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-30 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
           !
         </span>
       )}
-      {typeof newItems === 'number' && newItems > 0 && alert !== true && (
-        <span tw='box-shadow[black 1px 2px] z-20 transition[100ms all ease] top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black'>
-          {newItems > 99 ? '+99' : newItems}
-        </span>
-      )}
+      {none !== true && random !== true && alert === true
+        ? []
+        : typeof newItems === 'number' &&
+          newItems > 0 && (
+            <span tw='box-shadow[black 1px 2px] z-30 transition[100ms all ease] top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black'>
+              {newItems > 99 ? '+99' : newItems}
+            </span>
+          )}
       {favorite === true &&
         alert !== true &&
         random !== true &&
@@ -145,6 +151,40 @@ const LockerCard: React.FC<LockerProps> = ({
           none === true && tw`background[radial-gradient(#00219a, #0d0079)]`
         ]}
       >
+        {conflictAnimation === true &&
+          conflict === true &&
+          none !== true &&
+          random !== true && (
+            <div
+              className='animate-conflict'
+              tw='margin-bottom[25px] absolute width[100px] height[100px] z-30'
+            >
+              <span
+                style={{
+                  borderRight: '50px solid transparent',
+                  borderTop: '0 solid transparent',
+                  borderLeft: '50px solid transparent',
+                  borderBottom: '100px solid #f4e933'
+                }}
+                tw='z-30 relative inline-flex h-0 w-0 right-1 bottom[5px] transform -rotate-6'
+              />
+              <span
+                style={{
+                  borderRight: '45px solid transparent',
+                  borderTop: '0 solid transparent',
+                  borderLeft: '45px solid transparent',
+                  borderBottom: '90px solid black'
+                }}
+                tw='z-30 absolute inline-flex h-0 w-0 right[9px] bottom-2 transform -rotate-6'
+              />
+            </div>
+          )}
+        {conflict === true && none !== true && random !== true && (
+          <img tw='absolute z-30 w-36' src={conflictIcon} alt='Conflict' />
+        )}
+        {conflict === true && none !== true && random !== true && (
+          <div tw='absolute z-20 w-full h-full bg-black opacity-50' />
+        )}
         {none === true ? (
           <img
             css={[tw`h-52 opacity-80 max-w-none`, size === 'small' && tw`h-40`]}
