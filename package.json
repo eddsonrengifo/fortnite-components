@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A library of fortnite components",
   "author": "EddsonRT",
-  "repository": "EddsonRT/fortnite-components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddsonRT/fortnite-components.git"
+  },
   "license": "MIT",
   "keywords": [
     "Fortnite",
@@ -109,5 +112,9 @@
     "typescript": "^4.2.2",
     "webpack": "4.44.2",
     "webpack-merge": "^5.7.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/EddsonRT/fortnite-components/issues"
+  },
+  "homepage": "https://github.com/EddsonRT/fortnite-components#readme"
 }
