@@ -4,6 +4,7 @@ import 'twin.macro'
 import { EventCardProps } from './types'
 import liveIcon from '../../assets/icons/live.png'
 import lockIcon from '../../assets/icons/lock.png'
+import tournamentIcon from '../../assets/icons/tournament.png'
 import '../../styles/index.css'
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -139,7 +140,11 @@ const EventCard: React.FC<EventCardProps> = ({
             </span>
             <span tw='text-white'>------------</span>
           </div>
-          <img tw='m-auto w-10 h-10' src={lockIcon} alt='iconPICKAXE' />
+          <img
+            tw='m-auto w-10 h-10'
+            src={tournamentIcon}
+            alt='tournamentIcon'
+          />
         </div>
       </div>
     </div>
