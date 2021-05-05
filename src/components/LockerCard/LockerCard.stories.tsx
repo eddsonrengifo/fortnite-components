@@ -148,13 +148,13 @@ Medium.args = {
   type: 'outfit',
   size: 'medium',
   tag: true,
+  favorite: true,
   image:
     'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
 }
 
 export const Small = Template.bind({})
 Small.args = {
-  favorite: true,
   rarity: 'rare',
   type: 'emote',
   size: 'small',
@@ -164,6 +164,10 @@ Small.args = {
 
 export const Conflict = Template.bind({})
 Conflict.args = {
+  rarity: 'marvelSeries',
+  type: 'backpack',
+  image:
+    'https://media.fortniteapi.io/images/571c11d81bc81d2b6e706a1d3861b832/transparent.png',
   conflict: true
 }
 

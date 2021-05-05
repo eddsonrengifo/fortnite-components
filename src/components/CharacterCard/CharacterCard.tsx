@@ -67,7 +67,7 @@ const CharacterCard: React.FC<CharacterProps> = ({
           >
             {number > 99 ? '99' : number > 0 ? number : '0'}
           </span>
-          {featured === true && none !== true && (
+          {featured === true && none !== true && text > '0' && (
             <div tw='z-20 font-burbankFont italic transform -bottom-0.5 -skew-y-1 font-size[1.5rem] text-center line-height[1.6rem] flex items-center justify-center w-full pt-1.5 pb-0.5 px-3 uppercase absolute background[#fcff00] text-black group-hover:bg-white transition[100ms all ease]'>
               {text}
             </div>
