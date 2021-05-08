@@ -11,7 +11,7 @@ function getPackageDir(filepath) {
     const { dir, root } = path.parse(currDir)
     if (dir === root) {
       throw new Error(
-        `Could not find package.json in the parent directories starting from ${filepath}.`,
+        `Could not find package.json in the parent directories starting from ${filepath}.`
       )
     }
     currDir = dir
@@ -20,21 +20,16 @@ function getPackageDir(filepath) {
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-docs',
-    '@storybook/addon-controls',
-  ],
-  webpackFinal: async config => {
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  webpackFinal: async (config) => {
     return merge(config, {
       resolve: {
         alias: {
           '@emotion/core': getPackageDir('@emotion/react'),
           '@emotion/styled': getPackageDir('@emotion/styled'),
-          'emotion-theming': getPackageDir('@emotion/react'),
-        },
-      },
+          'emotion-theming': getPackageDir('@emotion/react')
+        }
+      }
     })
-  },
+  }
 }
