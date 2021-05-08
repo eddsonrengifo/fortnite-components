@@ -2,4 +2,4 @@
 /dist
 /node_modules
 /storybook-static
-/types/twin.d.ts
+/example
