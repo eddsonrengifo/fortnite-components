@@ -1,7 +1,5 @@
 export interface BattlepassProps {
   rarity?:
-    | 'unattainable'
-    | 'exotic'
     | 'darkSeries'
     | 'marvelSeries'
     | 'iconSeries'
@@ -12,15 +10,19 @@ export interface BattlepassProps {
     | 'lavaSeries'
     | 'gamingSeries'
     | 'starWars'
-    | 'mythic'
     | 'legendary'
     | 'epic'
     | 'rare'
     | 'uncommon'
     | 'common'
-  tier?: number
+  size?: 'small' | 'medium'
+  tier?: boolean
+  number?: number
   image: string
   free?: boolean
-  freeText: string
+  text: string
+  owned?: boolean
+  block?: boolean
+  unknown?: boolean
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
