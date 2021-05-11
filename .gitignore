@@ -2,6 +2,7 @@
 /node_modules
 /storybook-static
 yarn-error.log
+.env
 
 /example/node_modules
 /example/build
