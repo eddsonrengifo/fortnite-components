@@ -80,7 +80,7 @@ This component contain these props
 
 ## License
 
-MIT © [EddsonRT](https://github.com/EddsonRT)
+MIT © [EddsonRT](https://github.com/EddsonRT/fortnite-components/blob/main/LICENSE)
 
 ## Help me
 
