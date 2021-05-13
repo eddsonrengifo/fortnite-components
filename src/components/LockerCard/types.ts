@@ -1,7 +1,5 @@
 export interface LockerProps {
   rarity?:
-    | 'unattainable'
-    | 'exotic'
     | 'darkSeries'
     | 'marvelSeries'
     | 'iconSeries'
@@ -12,7 +10,6 @@ export interface LockerProps {
     | 'lavaSeries'
     | 'gamingSeries'
     | 'starWars'
-    | 'mythic'
     | 'legendary'
     | 'epic'
     | 'rare'
@@ -27,17 +24,16 @@ export interface LockerProps {
     | 'contrail'
     | 'emote'
     | 'wrap'
-    | 'bannertoken'
     | 'music'
     | 'loadingscreen'
   favorite?: boolean
   random?: boolean
   none?: boolean
   conflict?: boolean
-  conflictAnimation?: boolean
+  animation?: boolean
   image: string
   tag?: boolean
   alert?: boolean
-  newItems?: number
+  items?: number
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

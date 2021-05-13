@@ -35,6 +35,23 @@ export default {
     },
     rarity: {
       name: 'Rarity',
+      options: [
+        'darkSeries',
+        'marvelSeries',
+        'iconSeries',
+        'slurpSeries',
+        'shadowSeries',
+        'frozenSeries',
+        'dc',
+        'lavaSeries',
+        'gamingSeries',
+        'starWars',
+        'legendary',
+        'epic',
+        'rare',
+        'uncommon',
+        'common'
+      ],
       defaultValue: 'rare',
       description: 'Rarity',
       table: {
@@ -102,8 +119,8 @@ export default {
         defaultValue: { summary: false }
       }
     },
-    newItems: {
-      name: 'New Items',
+    items: {
+      name: 'Items',
       type: { name: 'number' },
       defaultValue: 0,
       description: 'New Items',
@@ -122,8 +139,8 @@ export default {
         defaultValue: { summary: false }
       }
     },
-    conflictAnimation: {
-      name: 'Conflict Animation',
+    animation: {
+      name: 'Animation',
       type: { name: 'boolean' },
       defaultValue: true,
       description: 'Conflict Animation?',

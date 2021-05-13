@@ -2,9 +2,20 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { LockerProps } from './types'
+import outfit from '../../assets/icons/T_Ui_Outfit_256.png'
+import backpack from '../../assets/icons/T_Ui_BackBling_256.png'
+import pickaxe from '../../assets/icons/T_Ui_HarvestingTool_256.png'
+import glider from '../../assets/icons/T_Ui_Glider_256.png'
+import contrail from '../../assets/icons/T_Ui_Trail_256.png'
+import emote from '../../assets/icons/T_Ui_Dance_256.png'
+import wrap from '../../assets/icons/T_Ui_Wrap_256.png'
+import music from '../../assets/icons/T_Ui_Music_256.png'
+import bgLocker from '../../assets/backgrounds/bgLocker.png'
+import loadingscreen from '../../assets/icons/T_Ui_LoadingScreen_256.png'
 import favoriteIcon from '../../assets/icons/favorite.png'
 import conflictIcon from '../../assets/icons/conflict.png'
 import variants from '../../assets/icons/styles.png'
+import darkSeriesSmoke from '../../assets/backgrounds/DarkSeriesSmoke.png'
 import darkSeries from '../../assets/backgrounds/DarkSeriesBackground.png'
 import marvel from '../../assets/backgrounds/marvelBackground.png'
 import iconSeries from '../../assets/backgrounds/IconSeriesBackground.png'
@@ -26,33 +37,31 @@ const LockerCard: React.FC<LockerProps> = ({
   type = 'outfit',
   image = 'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
   tag = false,
-  newItems = 0,
+  items = 0,
   alert = false,
   conflict = false,
-  conflictAnimation = true,
+  animation = true,
   onClick
 }) => {
   const NoneIcons =
     type === 'outfit'
-      ? 'https://media.fortniteapi.io/images/152e76654c1692c459615bec5d257d5d/transparent.png'
+      ? outfit
       : type === 'backpack'
-      ? 'https://media.fortniteapi.io/images/1e9e4228da5d341f4ce6b7d7cb0e49ca/transparent.png'
+      ? backpack
       : type === 'pickaxe'
-      ? 'https://media.fortniteapi.io/images/8e6be9cac78727818c8007506b6f6e01/transparent.png'
+      ? pickaxe
       : type === 'glider'
-      ? 'https://media.fortniteapi.io/images/bd0c3aa5268ea70f868cc23f772346f4/transparent.png'
+      ? glider
       : type === 'contrail'
-      ? 'https://media.fortniteapi.io/images/d114ffdd528988a5264be0928cc89144/transparent.png'
+      ? contrail
       : type === 'emote'
-      ? 'https://media.fortniteapi.io/images/c4ce9db-b8a72a1-a3a8d78-ea263bb/transparent.png'
+      ? emote
       : type === 'wrap'
-      ? 'https://media.fortniteapi.io/images/44187a860182ed12604de0f1568a5106/transparent.png'
-      : type === 'bannertoken'
-      ? 'https://media.fortniteapi.io/images/1e9e4228da5d341f4ce6b7d7cb0e49ca/transparent.png'
+      ? wrap
       : type === 'music'
-      ? 'https://media.fortniteapi.io/images/f5b95465b739164c9176ecfce4f9c560/transparent.png'
+      ? music
       : type === 'loadingscreen'
-      ? 'https://media.fortniteapi.io/images/82123cc3aec9317ea1f4bd9bb16ecfc6/transparent.png'
+      ? loadingscreen
       : ''
 
   const RandomIcons =
@@ -70,8 +79,6 @@ const LockerCard: React.FC<LockerProps> = ({
       ? 'https://media.fortniteapi.io/images/c4ce9db-b8a72a1-a3a8d78-ea263bb/transparent.png'
       : type === 'wrap'
       ? 'https://media.fortniteapi.io/images/44187a860182ed12604de0f1568a5106/transparent.png'
-      : type === 'bannertoken'
-      ? 'https://media.fortniteapi.io/images/1e9e4228da5d341f4ce6b7d7cb0e49ca/transparent.png'
       : type === 'music'
       ? 'https://media.fortniteapi.io/images/f5b95465b739164c9176ecfce4f9c560/transparent.png'
       : type === 'loadingscreen'
@@ -82,37 +89,54 @@ const LockerCard: React.FC<LockerProps> = ({
     <div
       className='group'
       css={[
-        tw`cursor-pointer relative box-border border[#f4e933] hover:border[5px solid yellow] max-width[200px] height[250px] transition ease-in-out duration-500`,
+        tw`box-border border-0 border-solid border-white outline-width[0] outline-color[#fdea36] outline-style[solid] transition ease-in-out duration-500`,
+        tw`relative cursor-pointer hover:outline-width[5px] max-width[200px] height[250px]`,
         size === 'small' && tw`max-width[150px] height[200px]`
       ]}
       onClick={onClick}
     >
       {alert === true && random !== true && none !== true && (
-        <span tw='transition[100ms all ease] group-hover:opacity-0 top[-6px] right[7px] z-30 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white transition ease-in-out duration-100`,
+            tw`group-hover:opacity-0 top[-6px] right[7px] z-30 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black`
+          ]}
+        >
           !
-        </span>
+        </div>
       )}
       {none !== true && random !== true && alert === true
         ? []
-        : typeof newItems === 'number' &&
-          newItems > 0 && (
-            <span tw='box-shadow[black 1px 2px] z-30 transition[100ms all ease] top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black'>
-              {newItems > 99 ? '+99' : newItems}
-            </span>
+        : typeof items === 'number' &&
+          items > 0 && (
+            <div
+              css={[
+                tw`box-border border-0 border-solid border-white transition ease-in-out duration-100`,
+                tw`box-shadow[black 1px 2px] z-30 top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black`
+              ]}
+            >
+              {items > 99 ? '+99' : items}
+            </div>
           )}
       {favorite === true &&
         alert !== true &&
         random !== true &&
         none !== true && (
           <img
-            tw='absolute right-0 top[-0.28rem] h-12 w-12 z-10'
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`absolute right-0 top[-0.28rem] h-12 w-12 z-10`
+            ]}
             src={favoriteIcon}
             alt='favorite'
           />
         )}
       {tag === true && random !== true && none !== true && (
         <img
-          tw='absolute w-10 m-1.5 opacity-90 bottom-0 right-0 z-20 group-hover:margin-bottom[0.8rem] group-hover:opacity-100'
+          css={[
+            tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+            tw`absolute w-10 m-1.5 opacity-90 bottom-0 right-0 z-20 group-hover:margin-bottom[0.8rem] group-hover:opacity-100`
+          ]}
           src={variants}
           alt='tag'
         />
@@ -123,7 +147,7 @@ const LockerCard: React.FC<LockerProps> = ({
             none === true
               ? ''
               : random === true
-              ? ''
+              ? `url(${bgLocker}), radial-gradient(transparent, black 500%), radial-gradient(#31aaff, #006288)`
               : rarity === 'starWars'
               ? `url(${starwars}), radial-gradient(black, black 100%)`
               : rarity === 'gamingSeries'
@@ -143,58 +167,73 @@ const LockerCard: React.FC<LockerProps> = ({
               : rarity === 'marvelSeries'
               ? `url(${marvel}), radial-gradient(#ff2024 0%, #520e0e 100%)`
               : rarity === 'darkSeries'
-              ? `url(${darkSeries}), url(${darkSeries}), radial-gradient(#16042a, #16042a)`
-              : ''
+              ? `url(${darkSeriesSmoke}), url(${darkSeries}), radial-gradient(#16042a, #16042a)`
+              : `url(${bgLocker}), radial-gradient(transparent, black 500%), radial-gradient(#31aaff, #006288)`
         }}
         css={[
-          tw`background[radial-gradient(#008acc, #006288)] h-full w-full flex relative justify-center items-center m-auto shadow-xl overflow-hidden bg-center background-size[auto 100%]`,
+          tw`box-border border-0 border-solid border-white`,
+          tw`h-full w-full flex relative justify-center items-center m-auto shadow-lg overflow-hidden bg-center background-size[auto 100%]`,
           none === true && tw`background[radial-gradient(#00219a, #0d0079)]`
         ]}
       >
-        {conflictAnimation === true &&
+        {animation === true &&
           conflict === true &&
           none !== true &&
           random !== true && (
             <div
               className='animate-conflict'
-              tw='margin-bottom[25px] absolute width[100px] height[100px] z-30'
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`margin-bottom[25px] absolute width[100px] height[100px] z-30`
+              ]}
             >
-              <span
-                style={{
-                  borderRight: '50px solid transparent',
-                  borderTop: '0 solid transparent',
-                  borderLeft: '50px solid transparent',
-                  borderBottom: '100px solid #f4e933'
-                }}
-                tw='z-30 relative inline-flex h-0 w-0 right-1 bottom[5px] transform -rotate-6'
+              <div
+                css={[
+                  tw`box-border border-0 border-solid border-white`,
+                  tw`border-bottom[100px solid #f4e933] border-right[50px solid transparent] border-top[0 solid transparent] border-left[50px solid transparent] z-30 relative inline-flex h-0 w-0 right-1 bottom[5px] transform -rotate-6`
+                ]}
               />
-              <span
-                style={{
-                  borderRight: '45px solid transparent',
-                  borderTop: '0 solid transparent',
-                  borderLeft: '45px solid transparent',
-                  borderBottom: '90px solid black'
-                }}
-                tw='z-30 absolute inline-flex h-0 w-0 right[9px] bottom-2 transform -rotate-6'
+              <div
+                css={[
+                  tw`box-border border-0 border-solid border-white`,
+                  tw`border-bottom[90px solid black] border-right[45px solid transparent] border-top[0 solid transparent] border-left[45px solid transparent] z-30 absolute inline-flex h-0 w-0 right[9px] bottom-2 transform -rotate-6`
+                ]}
               />
             </div>
           )}
         {conflict === true && none !== true && random !== true && (
-          <img tw='absolute z-30 w-36' src={conflictIcon} alt='Conflict' />
+          <img
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`absolute w-36 z-30`
+            ]}
+            src={conflictIcon}
+            alt='Conflict'
+          />
         )}
         {conflict === true && none !== true && random !== true && (
-          <div tw='absolute z-20 w-full h-full bg-black opacity-50' />
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`absolute w-full h-full bg-black opacity-50 z-20`
+            ]}
+          />
         )}
         {none === true ? (
           <img
-            css={[tw`h-52 opacity-80 max-w-none`, size === 'small' && tw`h-40`]}
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`h-40 opacity-50 max-w-none`,
+              size === 'small' && tw`h-28`
+            ]}
             src={NoneIcons}
             alt={`${type} none`}
           />
         ) : random === true ? (
           <img
             css={[
-              tw`h-52 max-w-none transform group-hover:scale-110 transition ease-in-out duration-500`,
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white transition ease-in-out duration-500`,
+              tw`h-52 max-w-none transform group-hover:scale-110`,
               size === 'small' && tw`h-40`
             ]}
             src={RandomIcons}
@@ -202,54 +241,78 @@ const LockerCard: React.FC<LockerProps> = ({
           />
         ) : (
           <img
-            tw='h-full max-w-none transform group-hover:scale-110 transition ease-in-out duration-500'
-            src={
-              typeof image === 'string'
-                ? image
-                : 'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
-            }
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white transition ease-in-out duration-500`,
+              tw`h-full max-w-none transform group-hover:scale-110`
+            ]}
+            src={image}
             alt={`${type} image`}
           />
         )}
         {random !== true && none !== true && (
           <div
             css={[
-              tw`absolute h-11 width[205px] border-t-8 border-opacity-100 opacity-90 transform[rotate(-5deg)] scale-105 -bottom-5 background[#02e7fc] border-color[#02ffff] group-hover:-bottom-6`,
+              tw`box-border border-0 border-solid border-white`,
+              tw`absolute w-full h-full background[linear-gradient(transparent 75%, #024eff)] opacity-50`,
               rarity === 'starWars' &&
-                tw`background[#3974fe] border-color[#3974fe]`,
+                tw`background[linear-gradient(transparent 75%, #3e76fb)]`,
               rarity === 'gamingSeries' &&
-                tw`background[#7b6fd9] border-color[#7c70da]`,
+                tw`background[linear-gradient(transparent 75%, #7c70da)]`,
               rarity === 'lavaSeries' &&
-                tw`background[#eaac2e] border-color[#ecad2e]`,
-              rarity === 'dc' && tw`background[#04a5ff] border-color[#05beff]`,
+                tw`background[linear-gradient(transparent 75%, #ecad2e)]`,
+              rarity === 'dc' &&
+                tw`background[linear-gradient(transparent 75%, #036dda)]`,
               rarity === 'frozenSeries' &&
-                tw`background[#7dcbfb] border-color[#90e9ff]`,
+                tw`background[linear-gradient(transparent 75%, #90e9ff)]`,
               rarity === 'shadowSeries' &&
-                tw`background[#b4b3dc] border-color[#cfcefd]`,
+                tw`background[linear-gradient(transparent 75%, #cfcefd)]`,
               rarity === 'slurpSeries' &&
-                tw`background[#26c7f1] border-color[#2ce4ff]`,
+                tw`background[linear-gradient(transparent 75%, #2ce4ff)]`,
               rarity === 'iconSeries' &&
-                tw`background[#77dbeb] border-color[#89fcff]`,
+                tw`background[linear-gradient(transparent 75%, #89fcff)]`,
               rarity === 'marvelSeries' &&
-                tw`background[#e6101c] border-color[#ff1220]`,
+                tw`background[linear-gradient(transparent 75%, #e23b34)]`,
               rarity === 'darkSeries' &&
-                tw`background[#f046c0] border-color[#ff50dd]`,
-              rarity === 'exotic' &&
-                tw`background[#90d7ff] border-color[#90d7ff]`,
-              rarity === 'unattainable' &&
-                tw`background[#f56773] border-color[#f56773]`,
-              rarity === 'mythic' &&
-                tw`background[#fce14c] border-color[#fce14c]`,
+                tw`background[linear-gradient(transparent 75%, #ff50dd)]`
+            ]}
+          />
+        )}
+        {random !== true && none !== true && (
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`absolute h-11 width[205px] border-t-8 transform[rotate(-4deg)] scale-105 -bottom-5 background[#02e7fcf2] border-color[#02ffff] group-hover:-bottom-6`,
+              size === 'small' && tw`-bottom-6 group-hover:bottom[-1.7rem]`,
+              rarity === 'starWars' &&
+                tw`background[#3976fbf2] border-color[#3e76fb]`,
+              rarity === 'gamingSeries' &&
+                tw`background[#7b6fd9f2] border-color[#7c70da]`,
+              rarity === 'lavaSeries' &&
+                tw`background[#eaac2ef2] border-color[#ecad2e]`,
+              rarity === 'dc' &&
+                tw`background[#0992fbf2] border-color[#04a6fa]`,
+              rarity === 'frozenSeries' &&
+                tw`background[#7dcbfbf2] border-color[#90e9ff]`,
+              rarity === 'shadowSeries' &&
+                tw`background[#b4b3dcf2] border-color[#cfcefd]`,
+              rarity === 'slurpSeries' &&
+                tw`background[#26c7f1f2] border-color[#2ce4ff]`,
+              rarity === 'iconSeries' &&
+                tw`background[#6bd4ebf2] border-color[#78daea]`,
+              rarity === 'marvelSeries' &&
+                tw`background[#f9423af2] border-color[#e23b34]`,
+              rarity === 'darkSeries' &&
+                tw`background[#f046c0f2] border-color[#ff50dd]`,
               rarity === 'legendary' &&
-                tw`background[#ffd96d] border-color[#ffd96d]`,
+                tw`background[#fc9c46f2] border-color[#f8b154]`,
               rarity === 'epic' &&
-                tw`background[#df3ffb] border-color[#ff48ff]`,
+                tw`background[#eb82fdf2] border-color[#e381fd]`,
               rarity === 'rare' &&
-                tw`background[#02e7fc] border-color[#02ffff]`,
+                tw`background[#02e7fcf2] border-color[#02ffff]`,
               rarity === 'uncommon' &&
-                tw`background[#8ce90e] border-color[#a0ff10]`,
+                tw`background[#84e40bf2] border-color[#88e41c]`,
               rarity === 'common' &&
-                tw`background[#B9BBC1] border-color[#C9CFDF]`
+                tw`background[#bebfc3f2] border-color[#C9CFDF]`
             ]}
           />
         )}
