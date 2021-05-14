@@ -4555,6 +4555,13 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
 
+babel-plugin-twin@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-twin/-/babel-plugin-twin-1.0.2.tgz#7ed6622d2a6268fdb76cad414a1f2486df59dc96"
+  integrity sha512-723f0tizypoy3Fn9ZAuidTCQ+sKh6sn/jX+Cjj3Pk148ew/hUa+fRUyqAPKACIFaVNqRFnZgI1DoNhNMDL+6QA==
+  dependencies:
+    "@babel/template" "^7.12.13"
+
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"

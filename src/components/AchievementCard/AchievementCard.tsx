@@ -1,5 +1,4 @@
 import React from 'react'
-import 'twin.macro'
 
 import { AchievementCardProps } from './types'
 import '../../styles/index.css'
