@@ -7,7 +7,7 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ['prettier', '@typescript-eslint'],
+  plugins: ['prettier', '@typescript-eslint', '@emotion'],
   env: {
     browser: true,
     es6: true
