@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import { LockerProps } from './types'
+import { LockerCardProps } from './types'
 import outfit from '../../assets/icons/T_Ui_Outfit_256.png'
 import backpack from '../../assets/icons/T_Ui_BackBling_256.png'
 import pickaxe from '../../assets/icons/T_Ui_HarvestingTool_256.png'
@@ -28,9 +28,8 @@ import gamingSeries from '../../assets/backgrounds/platformSeriesBackground.png'
 import starwars from '../../assets/backgrounds/starwarsBackground.png'
 import '../../styles/index.css'
 
-const LockerCard: React.FC<LockerProps> = ({
+const LockerCard: React.FC<LockerCardProps> = ({
   rarity = 'rare',
-  size = 'medium',
   favorite = false,
   random = false,
   none = false,
@@ -90,8 +89,7 @@ const LockerCard: React.FC<LockerProps> = ({
       className='group'
       css={[
         tw`box-border border-0 border-solid border-white outline-width[0] outline-color[#fdea36] outline-style[solid] transition ease-in-out duration-500`,
-        tw`relative cursor-pointer hover:outline-width[5px] max-width[200px] height[250px]`,
-        size === 'small' && tw`max-width[150px] height[200px]`
+        tw`relative cursor-pointer hover:outline-width[5px] w-full h-full`
       ]}
       onClick={onClick}
     >
@@ -223,8 +221,7 @@ const LockerCard: React.FC<LockerProps> = ({
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`h-40 opacity-50 max-w-none`,
-              size === 'small' && tw`h-28`
+              tw`h-2/3 opacity-50 max-w-none`
             ]}
             src={NoneIcons}
             alt={`${type} none`}
@@ -233,8 +230,7 @@ const LockerCard: React.FC<LockerProps> = ({
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white transition ease-in-out duration-500`,
-              tw`h-52 max-w-none transform group-hover:scale-110`,
-              size === 'small' && tw`h-40`
+              tw`h-3/4 max-w-none transform group-hover:scale-110`
             ]}
             src={RandomIcons}
             alt={`${type} random`}
@@ -281,8 +277,7 @@ const LockerCard: React.FC<LockerProps> = ({
           <div
             css={[
               tw`box-border border-0 border-solid border-white`,
-              tw`absolute h-11 width[205px] border-t-8 transform[rotate(-4deg)] scale-105 -bottom-5 background[#02e7fcf2] border-color[#02ffff] group-hover:-bottom-6`,
-              size === 'small' && tw`-bottom-6 group-hover:bottom[-1.7rem]`,
+              tw`absolute h-11 width[103%] border-t-8 transform[rotate(-4deg)] scale-105 -bottom-5 background[#02e7fcf2] border-color[#02ffff] group-hover:-bottom-6`,
               rarity === 'starWars' &&
                 tw`background[#3976fbf2] border-color[#3e76fb]`,
               rarity === 'gamingSeries' &&

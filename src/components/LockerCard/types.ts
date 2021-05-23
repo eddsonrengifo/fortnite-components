@@ -1,4 +1,5 @@
-export interface LockerProps {
+export interface LockerCardProps {
+  image: string
   rarity?:
     | 'darkSeries'
     | 'marvelSeries'
@@ -15,7 +16,6 @@ export interface LockerProps {
     | 'rare'
     | 'uncommon'
     | 'common'
-  size?: 'medium' | 'small'
   type?:
     | 'outfit'
     | 'backpack'
@@ -26,14 +26,13 @@ export interface LockerProps {
     | 'wrap'
     | 'music'
     | 'loadingscreen'
+  tag?: boolean
   favorite?: boolean
   random?: boolean
   none?: boolean
-  conflict?: boolean
-  animation?: boolean
-  image: string
-  tag?: boolean
   alert?: boolean
   items?: number
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  conflict?: boolean
+  animation?: boolean
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

@@ -46,9 +46,15 @@ const App = () => {
       <BattlepassCard />
       <BattlepassCard />
       <BattlepassCard />
-      <LockerCard tag conflict />
-      <LockerCard random />
-      <LockerCard none />
+      <div style={{ maxWidth: '200px', height: '250px' }}>
+        <LockerCard tag conflict />
+      </div>
+      <div style={{ maxWidth: '200px', height: '250px' }}>
+        <LockerCard random />
+      </div>
+      <div style={{ maxWidth: '150px', height: '200px' }}>
+        <LockerCard none />
+      </div>
       <CharacterCard />
       <CharacterCard alert featured />
       <CharacterCard none />

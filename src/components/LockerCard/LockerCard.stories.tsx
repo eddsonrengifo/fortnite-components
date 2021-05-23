@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import LockerCard from './LockerCard'
-import { LockerProps } from './types'
+import { LockerCardProps } from './types'
 
 export default {
   title: 'Example/LockerCard',
@@ -19,17 +19,6 @@ export default {
         defaultValue: {
           summary:
             'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
-        }
-      }
-    },
-    size: {
-      name: 'Size',
-      defaultValue: 'medium',
-      description: 'Card Size',
-      table: {
-        category: 'Card',
-        defaultValue: {
-          summary: 'medium'
         }
       }
     },
@@ -154,16 +143,22 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '200px', height: '250px' }}>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<LockerProps> = (args) => <LockerCard {...args} />
+const Template: Story<LockerCardProps> = (args) => <LockerCard {...args} />
 
 export const Medium = Template.bind({})
 Medium.args = {
   rarity: 'rare',
   type: 'outfit',
-  size: 'medium',
   tag: true,
   favorite: true,
   image:
@@ -171,10 +166,16 @@ Medium.args = {
 }
 
 export const Small = Template.bind({})
+Small.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: '150px', height: '200px' }}>
+      <Story />
+    </div>
+  )
+]
 Small.args = {
   rarity: 'rare',
   type: 'emote',
-  size: 'small',
   image:
     'https://media.fortniteapi.io/images/e47b426b5a69b3e3ea1f4d9eb174cd20/transparent.png'
 }
