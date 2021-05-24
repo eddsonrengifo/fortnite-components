@@ -2,9 +2,9 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { CharacterCardProps } from './types'
-import characterIcon from '../../assets/icons/character.png'
-import starIcon from '../../assets/icons/star.png'
-import '../../styles/index.css'
+import characterIcon from '@assets/icons/character.png'
+import starIcon from '@assets/icons/star.png'
+import '@styles/index.css'
 
 const CharacterCard: React.FC<CharacterCardProps> = ({
   number = 0,

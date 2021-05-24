@@ -2,10 +2,10 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { EventCardProps } from './types'
-import liveIcon from '../../assets/icons/live.png'
-import lockIcon from '../../assets/icons/lock.png'
-import tournamentIcon from '../../assets/icons/tournament.png'
-import '../../styles/index.css'
+import liveIcon from '@assets/icons/live.png'
+import lockIcon from '@assets/icons/lock.png'
+import tournamentIcon from '@assets/icons/tournament.png'
+import '@styles/index.css'
 
 const EventCard: React.FC<EventCardProps> = ({
   live = false,

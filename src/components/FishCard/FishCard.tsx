@@ -2,8 +2,8 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { FishCardProps } from './types'
-import fish from '../../assets/icons/fish.png'
-import '../../styles/index.css'
+import fish from '@assets/icons/fish.png'
+import '@styles/index.css'
 
 const FishCard: React.FC<FishCardProps> = ({
   number = 0,

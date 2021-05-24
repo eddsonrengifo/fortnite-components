@@ -7,6 +7,17 @@
   "plugins": [
     "@emotion/babel-plugin",
     "babel-plugin-twin",
-    "babel-plugin-macros"
+    "babel-plugin-macros",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@styles": "./src/styles"
+        }
+      }
+    ]
   ]
 }

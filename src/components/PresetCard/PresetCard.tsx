@@ -2,14 +2,14 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { PresetCardProps } from './types'
-import preset from '../../assets/icons/preset.png'
-import presetPlus from '../../assets/icons/presetPlus.png'
-import outfitIcon from '../../assets/icons/T_Ui_Outfit_256.png'
-import backpackIcon from '../../assets/icons/T_Ui_BackBling_256.png'
-import pickaxeIcon from '../../assets/icons/T_Ui_HarvestingTool_256.png'
-import gliderIcon from '../../assets/icons/T_Ui_Glider_256.png'
-import wrapIcon from '../../assets/icons/T_Ui_Wrap_256.png'
-import '../../styles/index.css'
+import preset from '@assets/icons/preset.png'
+import presetPlus from '@assets/icons/presetPlus.png'
+import outfitIcon from '@assets/icons/T_Ui_Outfit_256.png'
+import backpackIcon from '@assets/icons/T_Ui_BackBling_256.png'
+import pickaxeIcon from '@assets/icons/T_Ui_HarvestingTool_256.png'
+import gliderIcon from '@assets/icons/T_Ui_Glider_256.png'
+import wrapIcon from '@assets/icons/T_Ui_Wrap_256.png'
+import '@styles/index.css'
 
 const PresetCard: React.FC<PresetCardProps> = ({
   name = 'Load Preset',

@@ -2,11 +2,11 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { BattlepassCardProps } from './types'
-import bgLocker from '@/assets/backgrounds/bgLocker.png'
-import unknownIcon from '../../assets/icons/unknown.png'
-import ownedIcon from '../../assets/icons/owned.png'
-import blockIcon from '../../assets/icons/block.png'
-import '../../styles/index.css'
+import bgLocker from '@assets/backgrounds/bgLocker.png'
+import unknownIcon from '@assets/icons/unknown.png'
+import ownedIcon from '@assets/icons/owned.png'
+import blockIcon from '@assets/icons/block.png'
+import '@styles/index.css'
 
 const BattlepassCard: React.FC<BattlepassCardProps> = ({
   rarity = 'rare',

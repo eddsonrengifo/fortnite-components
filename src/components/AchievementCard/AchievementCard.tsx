@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { AchievementCardProps } from './types'
-import '../../styles/index.css'
+import '@styles/index.css'
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
   name = 'Achievement',
