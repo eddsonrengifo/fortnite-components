@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import { StoreProps } from './types'
+import { StoreCardProps } from './types'
 import vBucks from '../../assets/icons/vBucks.png'
 import battlepassFree from '../../assets/icons/battlepassFree.png'
 import battlepassPaid from '../../assets/icons/battlepassPaid.png'
@@ -18,13 +18,11 @@ import gamingSeries from '../../assets/backgrounds/platformSeriesBackground.png'
 import starwars from '../../assets/backgrounds/starwarsBackground.png'
 import '../../styles/index.css'
 
-const StoreCard: React.FC<StoreProps> = ({
+const StoreCard: React.FC<StoreCardProps> = ({
   name = 'Name',
   type = 'Type',
   rarity = 'rare',
-  size = 'medium',
   image = 'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png',
-  shopVersion = false,
   priceType = 'vBucks',
   tag = 'none',
   banner = 'none',
@@ -44,7 +42,8 @@ const StoreCard: React.FC<StoreProps> = ({
       return (
         <span
           css={[
-            tw`absolute z-10 -m-2 top-0 left-0 uppercase italic whitespace-nowrap tracking-wide font-medium font-burbankFont font-size[22px] line-height[1.6rem] padding-top[4px] padding-left[7px] padding-right[12px] transform-origin[50%] transform[perspective(245px) rotateX(-25deg)]`,
+            tw`box-border border-0 border-solid border-white`,
+            tw`absolute -m-2 padding-top[4px] padding-left[7px] padding-right[12px] font-size[22px] line-height[1.6rem] font-medium font-burbankFont uppercase italic whitespace-nowrap tracking-wide top-0 left-0 transform-origin[50%] transform[perspective(245px) rotateX(-25deg)] z-10`,
             banner === 'v2'
               ? tw`text-white background[#d3016a] border[4px solid #ff2b74]`
               : tw`text-black background[#fcff00] border[4px solid #fff]`
@@ -64,19 +63,40 @@ const StoreCard: React.FC<StoreProps> = ({
       tag === 'variants'
     )
       return (
-        <div tw='grid justify-end'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`grid justify-end`
+          ]}
+        >
           <img
-            tw='relative w-11 m-2 group-hover:hidden'
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`relative w-11 m-2 group-hover:hidden`
+            ]}
             src={styles}
             alt={`icon ${tag}`}
           />
-          <div tw='hidden transform -skew-x-12 -skew-y-2 group-hover:flex bg-black border-4 border-white m-2 mr-2.5 items-center pl-2 pr-3 pt-1'>
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`hidden items-center m-2 mr-2.5 pl-2 pr-3 pt-1 bg-black border-4 border-white transform -skew-x-12 -skew-y-2 group-hover:flex`
+            ]}
+          >
             <img
-              tw='relative transform -skew-y-1 skew-x-12 w-6 h-6 bottom-0.5'
+              css={[
+                tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+                tw`relative w-6 h-6 bottom-0.5 transform -skew-y-1 skew-x-12`
+              ]}
               src={styles}
               alt={tag}
             />
-            <span tw='transform skew-x-12 uppercase text-white italic text-xl font-medium font-burbankFont'>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`text-white text-xl font-medium font-burbankFont italic uppercase transform skew-x-12`
+              ]}
+            >
               {tag}
             </span>
           </div>
@@ -88,23 +108,46 @@ const StoreCard: React.FC<StoreProps> = ({
   const typePrice = () => {
     if (priceType === 'vBucks')
       return (
-        <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#b9f8f6]'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`flex justify-end items-center h-6 bg-black overflow-hidden group-hover:background[#b9f8f6]`
+          ]}
+        >
           {fullPrice > price && typeof fullPrice === 'number' && (
-            <span tw='relative line-through font-burbankFont italic text-lg opacity-50 top-0.5 text-white group-hover:color[#1d7d8b]'>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`relative text-lg text-white font-burbankFont italic line-through top-0.5 opacity-50 group-hover:color[#1d7d8b]`
+              ]}
+            >
               {fullPrice.toLocaleString()}
             </span>
           )}
           {typeof price === 'number' ? (
-            <span tw='relative font-burbankFont italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`relative mx-1 text-white text-lg font-burbankFont italic top-0.5 opacity-70 group-hover:color[#1d7d8b]`
+              ]}
+            >
               {price.toLocaleString()}
             </span>
           ) : (
-            <span tw='relative font-burbankFont italic text-white text-lg opacity-70 mx-1 top-0.5 group-hover:color[#1d7d8b]'>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`relative mx-1 text-white text-lg font-burbankFont italic top-0.5 opacity-70 group-hover:color[#1d7d8b]`
+              ]}
+            >
               0
             </span>
           )}
           <img
-            tw='w-7 h-7 opacity-60 transform rotate-12'
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`w-7 h-7 transform rotate-12 opacity-60`
+            ]}
             src={vBucks}
             alt='vBucks'
           />
@@ -112,35 +155,71 @@ const StoreCard: React.FC<StoreProps> = ({
       )
     if (priceType === 'money')
       return (
-        <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#cebb00]'>
-          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-2 top-0.5 group-hover:color[#3d3000]'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`flex justify-end items-center h-6 bg-black overflow-hidden group-hover:background[#cebb00]`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`relative mx-2 text-white text-lg font-burbankFont italic top-0.5 opacity-60 group-hover:color[#3d3000]`
+            ]}
+          >
             {money}USD
           </span>
         </div>
       )
     if (priceType === 'more')
       return (
-        <div tw='flex bg-black overflow-hidden h-6 items-center justify-end'>
-          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-2 top-0.5'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`flex justify-end items-center h-6 bg-black overflow-hidden`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`relative mx-2 text-white text-lg font-burbankFont italic top-0.5 opacity-60 `
+            ]}
+          >
             {typeof moreText === 'string' && moreText}
           </span>
         </div>
       )
     if (priceType === 'battlepass')
       return (
-        <div tw='flex bg-black overflow-hidden h-6 items-center justify-end group-hover:background[#07392e]'>
-          <span tw='relative font-burbankFont italic text-white text-lg opacity-60 mx-1.5 top-0.5'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`flex justify-end items-center h-6 bg-black overflow-hidden group-hover:background[#07392e]`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`relative mx-1.5 text-white text-lg font-burbankFont italic top-0.5 opacity-60`
+            ]}
+          >
             {typeof passText === 'string' && passText}
           </span>
           {passType === 'free' ? (
             <img
-              tw='h-7 opacity-60 transform rotate-12'
+              css={[
+                tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+                tw`h-7 transform rotate-12 opacity-60`
+              ]}
               src={battlepassFree}
               alt='Battlepass Free'
             />
           ) : (
             <img
-              tw='h-7 opacity-60 transform rotate-12'
+              css={[
+                tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+                tw`h-7 transform rotate-12 opacity-60`
+              ]}
               src={battlepassPaid}
               alt='Battlepass Paid'
             />
@@ -154,16 +233,8 @@ const StoreCard: React.FC<StoreProps> = ({
     <div
       className='group'
       css={[
-        tw`cursor-pointer relative m-0`,
-        size === 'extraLarge' &&
-          tw`width[850px] extra:width[562px] large:width[271px] medium:w-full`,
-        size === 'large' && tw`width[562px] large:width[271px] medium:w-full`,
-        size === 'medium' && tw`width[271px] medium:w-full`,
-        size === 'small'
-          ? shopVersion
-            ? tw`width[271px] medium:w-full`
-            : tw`width[250px] small:w-full`
-          : []
+        tw`box-border border-0 border-solid border-white`,
+        tw`relative w-full h-full m-0 cursor-pointer`
       ]}
       onClick={onClick}
     >
@@ -210,100 +281,100 @@ const StoreCard: React.FC<StoreProps> = ({
               : ''
         }}
         css={[
-          tw`bg-gradient-to-t from-bgDefaultBottom to-bgDefaultTop grid relative justify-center m-auto overflow-hidden bg-center background-size[auto 100%]`,
-          size === 'extraLarge' &&
-            tw`height[470px] width[850px] extra:width[562px] large:width[271px] medium:w-full`,
-          size === 'large' &&
-            tw`height[470px] width[562px] large:width[271px] medium:w-full`,
-          size === 'medium' && tw`height[470px] width[271px] medium:w-full`,
-          size === 'small'
-            ? shopVersion
-              ? tw`height[224px] width[271px] medium:w-full`
-              : tw`height[285px] width[250px] small:w-full`
-            : []
+          tw`box-border border-0 border-solid border-white`,
+          tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[auto 100%] overflow-hidden`
         ]}
       >
         <img
           css={[
-            tw`transition[500ms all ease] max-w-none transform group-hover:scale-110`,
-            size === 'extraLarge' &&
-              tw`height[470px] group-hover:translate-y-5`,
-            size === 'large' && tw`height[470px] group-hover:translate-y-5`,
-            size === 'medium' && tw`height[470px] group-hover:translate-y-5`,
-            size === 'small'
-              ? shopVersion
-                ? tw`height[175px]`
-                : tw`height[250px]`
-              : []
+            tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+            tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110`
           ]}
           src={image}
           alt={name}
         />
       </div>
-      <div tw='absolute w-full bottom-0'>
+      <div
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`absolute w-full bottom-0`
+        ]}
+      >
         {iconTag()}
-        {shopVersion === true && size === 'extraLarge' ? (
-          []
-        ) : (
-          <div
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`relative w-full h-2 top-0.5 background[#02e7fc] border-color[#02ffff]`,
+            rarity === 'starWars' &&
+              tw`background[#3974fe] border-color[#3974fe]`,
+            rarity === 'gamingSeries' &&
+              tw`background[#7b6fd9] border-color[#7c70da]`,
+            rarity === 'lavaSeries' &&
+              tw`background[#eaac2e] border-color[#ecad2e]`,
+            rarity === 'dc' && tw`background[#04a5ff] border-color[#05beff]`,
+            rarity === 'frozenSeries' &&
+              tw`background[#7dcbfb] border-color[#90e9ff]`,
+            rarity === 'shadowSeries' &&
+              tw`background[#b4b3dc] border-color[#cfcefd]`,
+            rarity === 'slurpSeries' &&
+              tw`background[#26c7f1] border-color[#2ce4ff]`,
+            rarity === 'iconSeries' &&
+              tw`background[#77dbeb] border-color[#89fcff]`,
+            rarity === 'marvelSeries' &&
+              tw`background[#e6101c] border-color[#ff1220]`,
+            rarity === 'darkSeries' &&
+              tw`background[#f046c0] border-color[#ff50dd]`,
+            rarity === 'exotic' &&
+              tw`background[#90d7ff] border-color[#90d7ff]`,
+            rarity === 'unattainable' &&
+              tw`background[#f56773] border-color[#f56773]`,
+            rarity === 'mythic' &&
+              tw`background[#fce14c] border-color[#fce14c]`,
+            rarity === 'legendary' &&
+              tw`background[#ffd96d] border-color[#ffd96d]`,
+            rarity === 'epic' && tw`background[#df3ffb] border-color[#ff48ff]`,
+            rarity === 'rare' && tw`background[#02e7fc] border-color[#02ffff]`,
+            rarity === 'uncommon' &&
+              tw`background[#8ce90e] border-color[#a0ff10]`,
+            rarity === 'common' && tw`background[#ced0cf] border-color[#edefee]`
+          ]}
+        />
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`background[#1c1b1a] overflow-hidden group-hover:bg-white`
+          ]}
+        >
+          <h1
             css={[
-              tw`relative h-2 w-full top-0.5 background[#02e7fc] border-color[#02ffff] transform`,
-              size === 'extraLarge' &&
-                tw`rotate[-0.3deg] extra:rotate[-0.4deg] large:rotate[-1deg]`,
-              size === 'large' && tw`rotate[-0.4deg] large:rotate[-1deg]`,
-              size === 'medium' && tw`rotate[-1deg]`,
-              size === 'small' && shopVersion
-                ? tw`rotate[-0.9deg]`
-                : tw`rotate[-0.9deg]`,
-              rarity === 'starWars' &&
-                tw`background[#3974fe] border-color[#3974fe]`,
-              rarity === 'gamingSeries' &&
-                tw`background[#7b6fd9] border-color[#7c70da]`,
-              rarity === 'lavaSeries' &&
-                tw`background[#eaac2e] border-color[#ecad2e]`,
-              rarity === 'dc' && tw`background[#04a5ff] border-color[#05beff]`,
-              rarity === 'frozenSeries' &&
-                tw`background[#7dcbfb] border-color[#90e9ff]`,
-              rarity === 'shadowSeries' &&
-                tw`background[#b4b3dc] border-color[#cfcefd]`,
-              rarity === 'slurpSeries' &&
-                tw`background[#26c7f1] border-color[#2ce4ff]`,
-              rarity === 'iconSeries' &&
-                tw`background[#77dbeb] border-color[#89fcff]`,
-              rarity === 'marvelSeries' &&
-                tw`background[#e6101c] border-color[#ff1220]`,
-              rarity === 'darkSeries' &&
-                tw`background[#f046c0] border-color[#ff50dd]`,
-              rarity === 'exotic' &&
-                tw`background[#90d7ff] border-color[#90d7ff]`,
-              rarity === 'unattainable' &&
-                tw`background[#f56773] border-color[#f56773]`,
-              rarity === 'mythic' &&
-                tw`background[#fce14c] border-color[#fce14c]`,
-              rarity === 'legendary' &&
-                tw`background[#ffd96d] border-color[#ffd96d]`,
-              rarity === 'epic' &&
-                tw`background[#df3ffb] border-color[#ff48ff]`,
-              rarity === 'rare' &&
-                tw`background[#02e7fc] border-color[#02ffff]`,
-              rarity === 'uncommon' &&
-                tw`background[#8ce90e] border-color[#a0ff10]`,
-              rarity === 'common' &&
-                tw`background[#ced0cf] border-color[#edefee]`
+              tw`box-border border-0 border-solid border-white`,
+              tw`relative mx-auto mt-3.5 mb-1 px-3 font-size[1.6rem] text-white font-burbankFont italic line-height[1.6rem] uppercase text-center group-hover:mt-3 group-hover:mb-0 group-hover:bg-white group-hover:text-black group-hover:top-0.5`
             ]}
-          />
-        )}
-        <div tw='background[#1c1b1a] overflow-hidden group-hover:bg-white'>
-          <h1 tw='relative text-white uppercase font-burbankFont italic px-3 text-center mx-auto mt-3.5 group-hover:mt-3 mb-1 font-size[1.6rem] group-hover:mb-0 group-hover:bg-white group-hover:text-black line-height[1.6rem] group-hover:top-0.5'>
+          >
             {name}
           </h1>
-          <span tw='hidden bg-white color[#a1a1a4] uppercase font-burbankFont px-3 text-center mx-auto mt-0.5 mb-1.5 font-size[1.125rem] group-hover:block line-height[1.2rem]'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`hidden mx-auto mt-0.5 mb-1.5 px-3 font-size[1.125rem] line-height[1.2rem] color[#a1a1a4] uppercase font-burbankFont text-center bg-white group-hover:block`
+            ]}
+          >
             {type}
           </span>
         </div>
         {owned === true ? (
-          <div tw='flex background[#126D45] overflow-hidden h-6 items-center justify-end'>
-            <span tw='relative font-burbankFont italic text-white text-lg opacity-60 my-0 mx-2 top-0.5 uppercase'>
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`flex justify-end items-center h-6 background[#126D45] overflow-hidden`
+            ]}
+          >
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`relative my-0 mx-2 text-white text-lg font-burbankFont italic uppercase top-0.5 opacity-60`
+              ]}
+            >
               {typeof ownedText === 'string' && ownedText}
             </span>
           </div>

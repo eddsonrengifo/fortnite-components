@@ -1,19 +1,19 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import { BattlepassProps } from './types'
+import { BattlepassCardProps } from './types'
+import bgLocker from '@/assets/backgrounds/bgLocker.png'
 import unknownIcon from '../../assets/icons/unknown.png'
 import ownedIcon from '../../assets/icons/owned.png'
 import blockIcon from '../../assets/icons/block.png'
 import '../../styles/index.css'
 
-const BattlepassCard: React.FC<BattlepassProps> = ({
+const BattlepassCard: React.FC<BattlepassCardProps> = ({
   rarity = 'rare',
   tier = true,
   number = 1,
   free = false,
   text = 'Free!',
-  size = 'small',
   owned = false,
   block = false,
   unknown = false,
@@ -25,8 +25,7 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
       className='group'
       css={[
         tw`box-border border-0 border-solid border-white`,
-        tw`relative w-32 transform -skew-x-6`,
-        size === 'medium' && tw`w-44`
+        tw`relative w-full h-full transform -skew-x-6`
       ]}
       onClick={onClick}
     >
@@ -37,7 +36,7 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
           <div
             css={[
               tw`box-border border-0 border-solid border-white`,
-              tw`cursor-pointer uppercase italic bg-white text-2xl text-black text-center pt-1 font-burbankFont border-2 border-b-0 border-gray-200 overflow-hidden`
+              tw`pt-1 text-2xl text-black text-center font-burbankFont uppercase italic cursor-pointer bg-white border-2 border-b-0 border-gray-200 overflow-hidden`
             ]}
           >
             {text}
@@ -45,17 +44,16 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
         )}
       <div
         css={[
-          tw`box-border border-0 border-solid transition ease-in-out duration-200 border-transparent group-hover:border-white`,
-          tw`cursor-pointer relative w-full h-40 group-hover:height[10.5rem] group-hover:border-width[3px] bg-transparent group-hover:bg-white group-hover:width[150px] group-hover:left[-8px]`,
-          size === 'medium' &&
-            tw`group-hover:border-width[5px] h-48 group-hover:height[12.5rem] group-hover:width[190px] group-hover:left[-5px]`
+          tw`box-border border-0 border-solid border-white`,
+          tw`relative w-full h-3/4 cursor-pointer outline-style[solid] outline-width[0] outline-color[white] bg-transparent transition-all ease-in-out duration-200 group-hover:bg-white group-hover:outline-width[7px]`,
+          unknown === true && tw`h-full`
         ]}
       >
         {owned === true && unknown !== true && (
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`absolute -top-2.5 -right-2.5 z-10 w-10`
+              tw`absolute w-10 z-10 -top-2.5 -right-2.5`
             ]}
             src={ownedIcon}
             alt='owned icon'
@@ -66,23 +64,25 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`absolute -top-2.5 -right-2.5 z-10 w-10 group-hover:filter[brightness(1.5)]`
+              tw`absolute w-10 -top-2.5 -right-2.5 z-10 group-hover:filter[brightness(1.5)]`
             ]}
             src={blockIcon}
             alt='block icon'
           />
         )}
         <div
+          style={{
+            background: `url(${bgLocker}), radial-gradient(transparent, black 500%), radial-gradient(#31aaff, #006288)`
+          }}
           css={[
-            tw`box-border border-0 border-solid transition ease-in-out duration-200 border-transparent group-hover:border-white`,
-            tw`background[radial-gradient(#1e9ffa, #206ac5)] grid relative justify-center m-auto overflow-hidden w-full h-full group-hover:border-width[3px] group-hover:transform group-hover:-skew-x-2`
+            tw`box-border border-0 border-solid border-white`,
+            tw`grid relative justify-center w-full h-full m-auto outline-width[0] outline-color[white] transform overflow-hidden transition-all ease-in-out duration-200 group-hover:outline-width[3px] group-hover:-skew-x-2`
           ]}
         >
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`transition ease-in-out duration-200 transform skew-x-6 h-40 group-hover:height[10.5rem] max-w-max group-hover:transform[skewX(8deg)]`,
-              size === 'medium' && tw`h-48 group-hover:height[12.2rem]`
+              tw`relative h-full min-h-full m-auto max-w-max transform skew-x-6 transition-all ease-in-out duration-200 group-hover:transform[skewX(8deg)]`
             ]}
             src={unknown === true ? unknownIcon : image}
             alt={image}
@@ -90,9 +90,13 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
           <div
             css={[
               tw`box-border border-0 border-solid border-white`,
-              tw`absolute h-11 w-full border-top-width[5px] transform -rotate-3 scale-105 -bottom-7 group-hover:-bottom-9 z-10 background[#23e0fae6] border-color[#27e4fa]`,
-              size === 'medium' &&
-                tw`border-top-width[6px] -bottom-6 group-hover:-bottom-8`,
+              tw`absolute w-full h-full background[linear-gradient(transparent 75%, #024eff)] opacity-50`
+            ]}
+          />
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`absolute w-full h-11 border-top-width[6px] border-color[#27e4fa] background[#23e0fae6] -bottom-6 transform -rotate-3 scale-105 z-10 group-hover:-bottom-8`,
               rarity === 'starWars' &&
                 tw`background[#3974fee6] border-color[#3974fe]`,
               rarity === 'gamingSeries' &&
@@ -134,9 +138,9 @@ const BattlepassCard: React.FC<BattlepassProps> = ({
           <div
             css={[
               tw`box-border border-0 border-solid border-white`,
-              tw`cursor-pointer italic mt-2 background[#10469b] group-hover:background[#1857bd] text-2xl color[#10b6fa] group-hover:color[#13b2fa] text-center pt-1 font-burbankFont border-4 border-color[#1853b5] group-hover:border-color[#1372f4] overflow-hidden`,
+              tw`mt-2 pt-1 text-2xl color[#10b6fa] text-center font-burbankFont italic cursor-pointer border-4 border-color[#1853b5] background[#10469b] overflow-hidden transition-all ease-in-out duration-200 group-hover:mt-4 group-hover:color[#13b2fa] group-hover:border-color[#1372f4] group-hover:background[#1857bd]`,
               owned === true &&
-                tw`background[#4dc969] group-hover:background[#4dc969] color[#1a5533] group-hover:color[#1a5533] border-color[#53d977] group-hover:border-color[#53d977]`
+                tw`color[#1a5533] border-color[#53d977] background[#4dc969] group-hover:color[#1a5533] group-hover:border-color[#53d977] group-hover:background[#4dc969]`
             ]}
           >
             {number > 999999 ? '999999+' : number}

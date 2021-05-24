@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -18,7 +19,6 @@
     "jsxImportSource": "@emotion/react",
     "pretty": true,
     "noImplicitAny": false,
-    "baseUrl": ".",
     "rootDir": "src",
     "paths": {
       "@/*": ["./src/*"]

@@ -1,4 +1,5 @@
 import React from 'react'
+import tw from 'twin.macro'
 
 import { EventCardProps } from './types'
 import liveIcon from '../../assets/icons/live.png'
@@ -34,69 +35,151 @@ const EventCard: React.FC<EventCardProps> = ({
   return (
     <div
       className='group'
-      tw='cursor-pointer relative max-width[312px]'
+      css={[
+        tw`box-border border-0 border-solid border-white`,
+        tw`relative w-full cursor-pointer`
+      ]}
       onClick={onClick}
     >
       {live && (
         <img
-          tw='absolute z-10 h-24 -right-6 -top-4 group-hover:opacity-0 transition ease-in-out duration-500'
+          css={[
+            tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+            tw`absolute h-24 -right-6 -top-4 z-10 transition-all ease-in-out duration-500 group-hover:opacity-0`
+          ]}
           src={liveIcon}
-          alt='live'
+          alt='Live Event'
         />
       )}
-      <div tw='transition ease-in-out duration-500 overflow-hidden opacity-100 group-hover:opacity-0'>
+      <div
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`opacity-100 overflow-hidden transition-all ease-in-out duration-500 group-hover:opacity-0`
+        ]}
+      >
         {lock && (
           <img
-            tw='absolute w-36 m-auto top-0 left-0 bottom-0 right-0 z-10'
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`absolute w-36 m-auto top-0 left-0 bottom-0 right-0 z-10`
+            ]}
             src={lockIcon}
             alt='lock'
           />
         )}
         {region !== 'none' && (
-          <span tw='absolute bottom-0 left-0 font-burbankFont text-white text-3xl mx-2.5'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`absolute mx-2.5 text-white text-3xl font-burbankFont bottom-0 left-0`
+            ]}
+            tw=''
+          >
             {region}
           </span>
         )}
-        <div tw='absolute bottom-10 left-0 right-0 w-10/12 m-auto'>
-          <span tw='block uppercase text-5xl font-burbankFont text-white text-center mt-4'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`absolute w-10/12 m-auto bottom-10 left-0 right-0`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`block mt-4 text-5xl font-burbankFont text-white text-center uppercase`
+            ]}
+          >
             {line1}
           </span>
-          <span tw='block uppercase text-6xl font-burbankFont text-white text-center'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`block text-6xl font-burbankFont text-white text-center uppercase`
+            ]}
+          >
             {line2}
           </span>
-          <span tw='block uppercase font-burbankFont text-white text-2xl text-center'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`block text-2xl font-burbankFont text-white text-center uppercase`
+            ]}
+          >
             {schedule}
           </span>
         </div>
-        <img tw='w-full' src={posterFront} alt={line1 + ' ' + line2} />
+        <img
+          css={[
+            tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+            tw`w-full`
+          ]}
+          src={posterFront}
+          alt={line1 + ' ' + line2}
+        />
       </div>
       <div
-        style={{
-          backgroundSize: 'contain',
-          backgroundImage: `url(${posterBack})`
-        }}
-        tw='w-full overflow-hidden h-full transition ease-in-out duration-500 absolute bottom-0 bg-gradient-to-t from-blue-500 to-blue-400 z-10 opacity-0 group-hover:opacity-100'
+        style={{ backgroundImage: `url(${posterBack})` }}
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`absolute w-full h-full bg-gradient-to-t from-blue-500 to-blue-400 bg-contain bottom-0 opacity-0 z-10 overflow-hidden transition-all ease-in-out duration-500 group-hover:opacity-100`
+        ]}
       >
-        <div tw='ml-16 mt-8 mb-4'>
-          <span tw='block uppercase text-2xl font-burbankFont text-white italic'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`ml-16 mt-8 mb-4`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`block text-2xl font-burbankFont text-white italic uppercase`
+            ]}
+          >
             {line1}
           </span>
-          <span tw='block uppercase text-3xl font-burbankFont text-white italic'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`block text-3xl font-burbankFont text-white italic uppercase`
+            ]}
+          >
             {line2}
           </span>
-          <span tw='font-bold uppercase text-white font-burbankFont italic'>
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`font-burbankFont text-white font-bold italic uppercase`
+            ]}
+          >
             {title}
           </span>
         </div>
-        <p tw='font-size[0.75rem] line-height[1rem] font-sans text-white mx-3.5'>
+        <p
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`mx-3.5 font-size[0.75rem] line-height[1rem] font-sans text-white`
+          ]}
+        >
           {description}
         </p>
         {dates && (
           <>
-            <span tw='block uppercase text-2xl font-burbankFont text-white text-center mt-3'>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`block mt-3 text-2xl font-burbankFont text-white text-center uppercase`
+              ]}
+            >
               Event Dates
             </span>
-            <div tw='text-center'>
+            <div
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`text-center`
+              ]}
+            >
               {dates.map((i: any) => {
                 return (
                   <span
@@ -108,7 +191,10 @@ const EventCard: React.FC<EventCardProps> = ({
                           }
                         : {}
                     }
-                    tw='block font-burbankFont text-white text-2xl'
+                    css={[
+                      tw`box-border border-0 border-solid border-white`,
+                      tw`block text-2xl font-burbankFont text-white`
+                    ]}
                   >
                     {new Date(i.start).toLocaleDateString()}{' '}
                     {new Date(i.start)
@@ -128,19 +214,56 @@ const EventCard: React.FC<EventCardProps> = ({
             </div>
           </>
         )}
-        <div tw='flex flex-col absolute m-2.5 bottom[2px] left-0 right-0 gap[3px]'>
-          <span tw='line-height[1] uppercase font-burbankFont text-white font-size[1.5rem] text-center'>
+        <div
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`flex absolute flex-col m-2.5 gap[3px] bottom-0.5 left-0 right-0`
+          ]}
+        >
+          <span
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`font-burbankFont text-white font-size[1.5rem] line-height[1] text-center uppercase`
+            ]}
+          >
             {format}
           </span>
-          <div tw='flex justify-between m-0'>
-            <span tw='text-white'>------------</span>
-            <span tw='line-height[1] uppercase font-burbankFont text-white font-size[1.5rem] text-center'>
+          <div
+            css={[
+              tw`box-border border-0 border-solid border-white`,
+              tw`flex justify-between m-0`
+            ]}
+          >
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`text-white`
+              ]}
+            >
+              ------------
+            </span>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`font-size[1.5rem] font-burbankFont text-white line-height[1] text-center uppercase`
+              ]}
+            >
               {schedule}
             </span>
-            <span tw='text-white'>------------</span>
+            <span
+              css={[
+                tw`box-border border-0 border-solid border-white`,
+                tw`text-white`
+              ]}
+            >
+              ------------
+            </span>
           </div>
           <img
-            tw='m-auto w-10 h-10'
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`w-10 h-10 m-auto`
+            ]}
             src={tournamentIcon}
             alt='tournamentIcon'
           />

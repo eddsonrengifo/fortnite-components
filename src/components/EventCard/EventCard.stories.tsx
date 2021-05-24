@@ -10,7 +10,7 @@ export default {
   argTypes: {
     line1: {
       name: 'Line 1',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Text',
       description: 'Line 1',
       table: {
@@ -20,7 +20,7 @@ export default {
     },
     line2: {
       name: 'Line 2',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Text 2',
       description: 'Line 1',
       table: {
@@ -30,7 +30,7 @@ export default {
     },
     posterFront: {
       name: 'Poster Front',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://cdn2.unrealengine.com/13br-competitive-in-game-dreamhackopen-poster-front-2-750x1080-319776257.jpg',
       description: 'Card Poster Front',
@@ -44,7 +44,7 @@ export default {
     },
     posterBack: {
       name: 'Poster Back',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://cdn2.unrealengine.com/13br-competitive-in-game-dreamhackopen-poster-back-750x1080-319770605.jpg',
       description: 'Card Poster Back',
@@ -186,7 +186,14 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[312px]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
 const Template: Story<EventCardProps> = (args) => <EventCard {...args} />

@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import StoreCard from './StoreCard'
-import { StoreProps } from './types'
+import { StoreCardProps } from './types'
 
 export default {
   title: 'Example/StoreCard',
@@ -10,7 +10,7 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Safari',
       description: 'Item Name',
       table: {
@@ -20,7 +20,7 @@ export default {
     },
     type: {
       name: 'Type',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Outfit',
       description: 'Item Type',
       table: {
@@ -30,7 +30,7 @@ export default {
     },
     image: {
       name: 'Image',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png',
       description: 'Card Image',
@@ -39,17 +39,6 @@ export default {
         defaultValue: {
           summary:
             'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png'
-        }
-      }
-    },
-    size: {
-      name: 'Size',
-      defaultValue: 'medium',
-      description: 'Card Size',
-      table: {
-        category: 'Card',
-        defaultValue: {
-          summary: 'medium'
         }
       }
     },
@@ -64,15 +53,6 @@ export default {
           detail: "What's the rarity of the item?"
         },
         defaultValue: { summary: 'rare' }
-      }
-    },
-    shopVersion: {
-      name: 'Shop Version',
-      defaultValue: false,
-      description: "Shop Version 'only affect small size!'",
-      table: {
-        category: 'Card',
-        defaultValue: { summary: false }
       }
     },
     tag: {
@@ -95,7 +75,7 @@ export default {
     },
     price: {
       name: 'Price v-bucks',
-      type: { name: 'number', required: false },
+      type: { name: 'number' },
       defaultValue: 0,
       description: "What's the price of vBucks?",
       table: {
@@ -106,7 +86,7 @@ export default {
     },
     fullPrice: {
       name: 'Full v-bucks',
-      type: { name: 'number', required: false },
+      type: { name: 'number' },
       defaultValue: 0,
       description: "What's the full price of vBucks?",
       table: {
@@ -181,26 +161,37 @@ export default {
   }
 } as Meta
 
-const Template: Story<StoreProps> = (args) => <StoreCard {...args} />
+const Template: Story<StoreCardProps> = (args) => <StoreCard {...args} />
 
 export const ExtraLarge = Template.bind({})
+ExtraLarge.decorators = [
+  (Story) => (
+    <div tw='max-width[850px] height[470px]'>
+      <Story />
+    </div>
+  )
+]
 ExtraLarge.args = {
   name: 'Fortnite crew: 1 month',
   type: 'Subscription',
   rarity: 'rare',
-  size: 'extraLarge',
   image:
     'https://cdn2.unrealengine.com/ui-itemshoptile-subscription-galaxia-fix-2048x1124-fc632eda06ba.png',
-  priceType: 'more',
-  shopVersion: true
+  priceType: 'more'
 }
 
 export const Large = Template.bind({})
+Large.decorators = [
+  (Story) => (
+    <div tw='max-width[562px] height[470px]'>
+      <Story />
+    </div>
+  )
+]
 Large.args = {
   name: 'Survivors in arms',
   type: 'Item bundle',
   rarity: 'epic',
-  size: 'large',
   image:
     'https://media.fortniteapi.io/images/3eac7e345b6a9f3fcb75a117a9093502/transparent.png',
   fullPrice: 3300,
@@ -210,10 +201,16 @@ Large.args = {
 }
 
 export const Medium = Template.bind({})
+Medium.decorators = [
+  (Story) => (
+    <div tw='max-width[271px] height[470px]'>
+      <Story />
+    </div>
+  )
+]
 Medium.args = {
   name: 'Safari',
   rarity: 'rare',
-  size: 'medium',
   banner: 'v1',
   bannerText: 'New!',
   price: 1200,
@@ -222,11 +219,36 @@ Medium.args = {
 }
 
 export const Small = Template.bind({})
+Small.decorators = [
+  (Story) => (
+    <div tw='max-width[250px] height[285px]'>
+      <Story />
+    </div>
+  )
+]
 Small.args = {
   name: 'Flail Bladesfari',
   type: 'Pickaxe',
   rarity: 'uncommon',
-  size: 'small',
+  image:
+    'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png',
+  fullPrice: 500,
+  price: 500,
+  priceType: 'battlepass'
+}
+
+export const SmallShop = Template.bind({})
+SmallShop.decorators = [
+  (Story) => (
+    <div tw='max-width[271px] height[250px]'>
+      <Story />
+    </div>
+  )
+]
+SmallShop.args = {
+  name: 'Flail Bladesfari',
+  type: 'Pickaxe',
+  rarity: 'uncommon',
   image:
     'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png',
   fullPrice: 500,

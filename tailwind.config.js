@@ -1,10 +1,5 @@
 module.exports = {
   theme: {
-    gradientColorStops: (theme) => ({
-      ...theme('colors'),
-      bgDefaultTop: '#2cc1ff',
-      bgDefaultBottom: '#143977'
-    }),
     extend: {
       fontFamily: {
         burbankFont: ['Burbank Big Condensed', 'system-ui'],
@@ -25,12 +20,6 @@ module.exports = {
       animation: {
         fish: 'fish 5s ease-in-out infinite'
       }
-    },
-    screens: {
-      extra: { max: '896px' },
-      large: { max: '578px' },
-      medium: { max: '287px' },
-      small: { max: '287px' }
     }
   },
   plugins: []

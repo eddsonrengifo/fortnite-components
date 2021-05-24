@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import BattlepassCard from './BattlepassCard'
-import { BattlepassProps } from './types'
+import { BattlepassCardProps } from './types'
 
 export default {
   title: 'Example/BattlepassCard',
@@ -10,7 +10,7 @@ export default {
   argTypes: {
     image: {
       name: 'Image',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
       description: 'Card Image',
@@ -50,17 +50,6 @@ export default {
           detail: 'What is the rarity of the item?'
         },
         defaultValue: { summary: 'rare' }
-      }
-    },
-    size: {
-      name: 'Size',
-      defaultValue: 'small',
-      description: 'Size?',
-      table: {
-        category: 'Card',
-        defaultValue: {
-          summary: 'small'
-        }
       }
     },
     owned: {
@@ -152,20 +141,35 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[11rem] height[15rem]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<BattlepassProps> = (args) => <BattlepassCard {...args} />
+const Template: Story<BattlepassCardProps> = (args) => (
+  <BattlepassCard {...args} />
+)
 
 export const Medium = Template.bind({})
 Medium.args = {
-  size: 'medium',
   rarity: 'dc',
   number: 77,
   image:
     'https://media.fortniteapi.io/images/3715149722b1aad7d1837ad3e4432a25/transparent.png'
 }
 export const Small = Template.bind({})
+Small.decorators = [
+  (Story) => (
+    <div tw='max-width[8rem] height[212px]'>
+      <Story />
+    </div>
+  )
+]
 Small.args = {
   rarity: 'rare',
   number: 12,
@@ -174,7 +178,6 @@ Small.args = {
 }
 export const Owned = Template.bind({})
 Owned.args = {
-  size: 'medium',
   rarity: 'legendary',
   number: 71,
   owned: true,
@@ -185,7 +188,6 @@ Owned.args = {
 export const Free = Template.bind({})
 Free.args = {
   rarity: 'legendary',
-  size: 'medium',
   number: 93,
   free: true,
   image:
@@ -194,7 +196,6 @@ Free.args = {
 
 export const Unknown = Template.bind({})
 Unknown.args = {
-  size: 'medium',
   rarity: 'rare',
   unknown: true
 }

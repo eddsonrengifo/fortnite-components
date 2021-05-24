@@ -8,12 +8,12 @@ export interface EventCardProps {
   lock?: boolean
   region?: 'none' | 'EU' | 'NAE' | 'NAW' | 'BR' | 'OCE' | 'ASIA' | 'ME'
   title?: string
-  line1: string
-  line2: string
+  line1?: string
+  line2?: string
   schedule?: string
   format?: string
-  posterFront: string
-  posterBack: string
+  posterFront?: string
+  posterBack?: string
   description?: string
   dates?: Dates[]
   datesColor?: string

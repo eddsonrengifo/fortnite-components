@@ -1,6 +1,6 @@
-export interface StoreProps {
-  name: string
-  type: string
+export interface StoreCardProps {
+  name?: string
+  type?: string
   rarity?:
     | 'unattainable'
     | 'exotic'
@@ -20,9 +20,7 @@ export interface StoreProps {
     | 'rare'
     | 'uncommon'
     | 'common'
-  size?: 'extraLarge' | 'large' | 'medium' | 'small'
-  image: string
-  shopVersion?: boolean
+  image?: string
   priceType?: 'none' | 'vBucks' | 'battlepass' | 'money' | 'more'
   tag?: 'none' | 'variants' | 'reactive' | 'builtIn-emote' | 'animated'
   banner?: 'none' | 'v1' | 'v2'

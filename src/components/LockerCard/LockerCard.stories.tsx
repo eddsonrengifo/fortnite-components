@@ -10,7 +10,7 @@ export default {
   argTypes: {
     image: {
       name: 'Image',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
       description: 'Card Image',
@@ -146,7 +146,7 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: '200px', height: '250px' }}>
+      <div tw='max-width[200px] height[250px]'>
         <Story />
       </div>
     )
@@ -168,7 +168,7 @@ Medium.args = {
 export const Small = Template.bind({})
 Small.decorators = [
   (Story) => (
-    <div style={{ maxWidth: '150px', height: '200px' }}>
+    <div tw='max-width[150px] height[200px]'>
       <Story />
     </div>
   )

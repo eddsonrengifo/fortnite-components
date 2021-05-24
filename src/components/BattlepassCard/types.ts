@@ -1,4 +1,4 @@
-export interface BattlepassProps {
+export interface BattlepassCardProps {
   rarity?:
     | 'darkSeries'
     | 'marvelSeries'
@@ -15,14 +15,13 @@ export interface BattlepassProps {
     | 'rare'
     | 'uncommon'
     | 'common'
-  size?: 'small' | 'medium'
   tier?: boolean
   number?: number
-  image: string
+  image?: string
   free?: boolean
-  text: string
+  text?: string
   owned?: boolean
   block?: boolean
   unknown?: boolean
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

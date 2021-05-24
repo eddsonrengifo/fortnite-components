@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import CharacterCard from './CharacterCard'
-import { CharacterProps } from './types'
+import { CharacterCardProps } from './types'
 
 export default {
   title: 'Example/CharacterCard',
@@ -31,6 +31,15 @@ export default {
           summary:
             'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
         }
+      }
+    },
+    star: {
+      name: 'Star',
+      defaultValue: true,
+      description: 'Star of the character',
+      table: {
+        category: 'Card',
+        defaultValue: { summary: true }
       }
     },
     alert: {
@@ -74,10 +83,19 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[200px] height[250px]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<CharacterProps> = (args) => <CharacterCard {...args} />
+const Template: Story<CharacterCardProps> = (args) => (
+  <CharacterCard {...args} />
+)
 
 export const Simple = Template.bind({})
 Simple.args = {

@@ -1,5 +1,5 @@
 export interface LockerCardProps {
-  image: string
+  image?: string
   rarity?:
     | 'darkSeries'
     | 'marvelSeries'

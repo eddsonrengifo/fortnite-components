@@ -1,8 +1,8 @@
 export interface AchievementCardProps {
-  name: string
-  image: string
-  description: string
-  time: string
+  name?: string
+  image?: string
+  description?: string
+  time?: string
   topColor?: string
   bottomColor?: string
   imageColor?: string

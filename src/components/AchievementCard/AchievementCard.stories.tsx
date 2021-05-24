@@ -10,7 +10,7 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Achievement',
       description: 'Name of achievement',
       table: {
@@ -20,7 +20,7 @@ export default {
     },
     image: {
       name: 'Image',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue:
         'https://media.fortniteapi.io/images/feats/s16_T_Ui_Explore_Comical.png',
       description: 'Card Image',
@@ -34,7 +34,7 @@ export default {
     },
     description: {
       name: 'Description',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: '',
       description: 'Description',
       table: {
@@ -46,7 +46,7 @@ export default {
     },
     time: {
       name: 'Time',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: '',
       description: 'Time of the achievement',
       table: {
@@ -121,18 +121,36 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[16rem]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
 const Template: Story<AchievementCardProps> = (args) => (
   <AchievementCard {...args} />
 )
 
-export const Example = Template.bind({})
-Example.args = {
+export const Season6 = Template.bind({})
+Season6.args = {
   name: 'Pocket change',
   description: 'Collected all the coins from a Purple XP Coin during Season 6.',
   image:
     'https://media.fortniteapi.io/images/feats/s16_T_Ui_Explore_Comical.png',
   time: '10:52 PM'
+}
+
+export const Season5 = Template.bind({})
+Season5.args = {
+  name: 'PRIMAL DISCOVERY',
+  description: 'Landed at the new map in Season 6.',
+  topColor: 'rgb(124 58 237)',
+  imageColor: 'rgb(124 58 237)',
+  image:
+    'https://media.fortniteapi.io/images/feats/s15_T_Ui_Explore_Celebratory.png',
+  time: '12:24 PM'
 }

@@ -1,4 +1,4 @@
-export interface FishProps {
+export interface FishCardProps {
   number?: number
   stars?: 1 | 2 | 3
   image?: string
@@ -8,5 +8,5 @@ export interface FishProps {
   text?: string
   none?: boolean
   unknown?: boolean
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

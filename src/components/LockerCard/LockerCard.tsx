@@ -88,16 +88,16 @@ const LockerCard: React.FC<LockerCardProps> = ({
     <div
       className='group'
       css={[
-        tw`box-border border-0 border-solid border-white outline-width[0] outline-color[#fdea36] outline-style[solid] transition ease-in-out duration-500`,
-        tw`relative cursor-pointer hover:outline-width[5px] w-full h-full`
+        tw`box-border border-0 border-solid border-white`,
+        tw`relative w-full h-full cursor-pointer outline-width[0] outline-color[#fdea36] outline-style[solid] hover:outline-width[5px]`
       ]}
       onClick={onClick}
     >
       {alert === true && random !== true && none !== true && (
         <div
           css={[
-            tw`box-border border-0 border-solid border-white transition ease-in-out duration-100`,
-            tw`group-hover:opacity-0 top[-6px] right[7px] z-30 pt-1.5 font-burbankFont font-size[2rem] line-height[0.9] px-2 absolute transform -skew-x-6 background[#fcff00] text-black`
+            tw`box-border border-0 border-solid border-white`,
+            tw`absolute px-2 pt-1.5 font-size[2rem] line-height[0.9] text-black font-burbankFont background[#fcff00] -top-1.5 right[7px] z-30 transform -skew-x-6 transition-all ease-in-out duration-100 group-hover:opacity-0`
           ]}
         >
           !
@@ -109,8 +109,8 @@ const LockerCard: React.FC<LockerCardProps> = ({
           items > 0 && (
             <div
               css={[
-                tw`box-border border-0 border-solid border-white transition ease-in-out duration-100`,
-                tw`box-shadow[black 1px 2px] z-30 top[-6px] right-0 pt-1.5 font-burbankFont font-size[1.5rem] line-height[0.9] px-3.5 absolute transform[skewX(-19deg)] background[#fcff00] text-black`
+                tw`box-border border-0 border-solid border-white`,
+                tw`absolute pt-1.5 px-3.5 font-size[1.5rem] font-burbankFont text-black line-height[0.9] -top-1.5 right-0 background[#fcff00] transform[skewX(-19deg)] box-shadow[black 1px 2px] z-30 transition-all ease-in-out duration-100`
               ]}
             >
               {items > 99 ? '+99' : items}
@@ -123,7 +123,7 @@ const LockerCard: React.FC<LockerCardProps> = ({
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`absolute right-0 top[-0.28rem] h-12 w-12 z-10`
+              tw`absolute w-12 h-12 right-0 top[-0.28rem] z-10`
             ]}
             src={favoriteIcon}
             alt='favorite'
@@ -133,7 +133,7 @@ const LockerCard: React.FC<LockerCardProps> = ({
         <img
           css={[
             tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-            tw`absolute w-10 m-1.5 opacity-90 bottom-0 right-0 z-20 group-hover:margin-bottom[0.8rem] group-hover:opacity-100`
+            tw`absolute w-10 m-1.5 bottom-0 right-0 opacity-90 z-20 group-hover:margin-bottom[0.8rem] group-hover:opacity-100`
           ]}
           src={variants}
           alt='tag'
@@ -170,7 +170,7 @@ const LockerCard: React.FC<LockerCardProps> = ({
         }}
         css={[
           tw`box-border border-0 border-solid border-white`,
-          tw`h-full w-full flex relative justify-center items-center m-auto shadow-lg overflow-hidden bg-center background-size[auto 100%]`,
+          tw`flex relative justify-center items-center h-full w-full m-auto bg-center background-size[auto 100%] shadow-lg overflow-hidden`,
           none === true && tw`background[radial-gradient(#00219a, #0d0079)]`
         ]}
       >
@@ -182,19 +182,19 @@ const LockerCard: React.FC<LockerCardProps> = ({
               className='animate-conflict'
               css={[
                 tw`box-border border-0 border-solid border-white`,
-                tw`margin-bottom[25px] absolute width[100px] height[100px] z-30`
+                tw`absolute width[100px] height[100px] margin-bottom[25px] z-30`
               ]}
             >
               <div
                 css={[
                   tw`box-border border-0 border-solid border-white`,
-                  tw`border-bottom[100px solid #f4e933] border-right[50px solid transparent] border-top[0 solid transparent] border-left[50px solid transparent] z-30 relative inline-flex h-0 w-0 right-1 bottom[5px] transform -rotate-6`
+                  tw`inline-flex relative w-0 h-0 border-bottom[100px solid #f4e933] border-right[50px solid transparent] border-top[0 solid transparent] border-left[50px solid transparent] right-1 bottom[5px] transform -rotate-6 z-30`
                 ]}
               />
               <div
                 css={[
                   tw`box-border border-0 border-solid border-white`,
-                  tw`border-bottom[90px solid black] border-right[45px solid transparent] border-top[0 solid transparent] border-left[45px solid transparent] z-30 absolute inline-flex h-0 w-0 right[9px] bottom-2 transform -rotate-6`
+                  tw`inline-flex absolute w-0 h-0 border-bottom[90px solid black] border-right[45px solid transparent] border-top[0 solid transparent] border-left[45px solid transparent] right[9px] bottom-2 transform -rotate-6 z-30`
                 ]}
               />
             </div>
@@ -221,7 +221,7 @@ const LockerCard: React.FC<LockerCardProps> = ({
           <img
             css={[
               tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-              tw`h-2/3 opacity-50 max-w-none`
+              tw`h-2/3 max-w-none opacity-50`
             ]}
             src={NoneIcons}
             alt={`${type} none`}
@@ -229,8 +229,8 @@ const LockerCard: React.FC<LockerCardProps> = ({
         ) : random === true ? (
           <img
             css={[
-              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white transition ease-in-out duration-500`,
-              tw`h-3/4 max-w-none transform group-hover:scale-110`
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`h-3/4 max-w-none transform transition-all ease-in-out duration-500 group-hover:scale-110`
             ]}
             src={RandomIcons}
             alt={`${type} random`}
@@ -238,8 +238,8 @@ const LockerCard: React.FC<LockerCardProps> = ({
         ) : (
           <img
             css={[
-              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white transition ease-in-out duration-500`,
-              tw`h-full max-w-none transform group-hover:scale-110`
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`h-full max-w-none transform transition-all ease-in-out duration-500 group-hover:scale-110`
             ]}
             src={image}
             alt={`${type} image`}
@@ -277,7 +277,7 @@ const LockerCard: React.FC<LockerCardProps> = ({
           <div
             css={[
               tw`box-border border-0 border-solid border-white`,
-              tw`absolute h-11 width[103%] border-t-8 transform[rotate(-4deg)] scale-105 -bottom-5 background[#02e7fcf2] border-color[#02ffff] group-hover:-bottom-6`,
+              tw`absolute width[103%] h-11 background[#02e7fcf2] border-t-8 border-color[#02ffff] -bottom-5 transform[rotate(-4deg)] scale-105 group-hover:-bottom-6`,
               rarity === 'starWars' &&
                 tw`background[#3976fbf2] border-color[#3e76fb]`,
               rarity === 'gamingSeries' &&
