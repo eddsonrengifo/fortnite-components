@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import { BattlepassCardProps } from './types'
-import bgLocker from '@assets/backgrounds/bgLocker.png'
+import bgLocker from '@assets/images/bgLocker.png'
 import unknownIcon from '@assets/icons/unknown.png'
 import ownedIcon from '@assets/icons/owned.png'
 import blockIcon from '@assets/icons/block.png'
