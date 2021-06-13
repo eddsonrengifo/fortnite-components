@@ -8,10 +8,10 @@ import '@styles/index.css'
 
 const CharacterCard: React.FC<CharacterCardProps> = ({
   number = 0,
-  image = 'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
+  image,
   star = true,
   alert = false,
-  none = false,
+  unknown = false,
   featured = false,
   text = 'Complete!',
   onClick
@@ -25,7 +25,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
       ]}
       onClick={onClick}
     >
-      {alert === true && none === false && (
+      {alert === true && unknown === false && (
         <div
           css={[
             tw`box-border border-0 border-solid border-white`,
@@ -39,18 +39,18 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
         css={[
           tw`box-border border-0 border-solid border-white`,
           tw`h-full max-w-full bg-white border-white overflow-hidden transition-all ease-in-out duration-100 group-hover:border-2`,
-          none === true &&
-            tw`border-transparent bg-transparent border-0 group-hover:border-0`
+          unknown === true &&
+          tw`border-transparent bg-transparent border-0 group-hover:border-0`
         ]}
       >
         <div
           css={[
             tw`box-border border-0 border-solid border-white`,
             tw`flex relative justify-center items-center h-full max-w-full background[radial-gradient(#00acff, #008abf)] border-white cursor-pointer overflow-hidden transition-all ease-in-out duration-100 group-hover:border-8 group-hover:transform[skewY(-1.5deg)]`,
-            none === true && tw`background[rgba(0, 0, 0, 0.5)]`
+            unknown === true && tw`background[rgba(0, 0, 0, 0.5)]`
           ]}
         >
-          {none !== true && star === true && (
+          {unknown !== true && star === true && (
             <img
               css={[
                 tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
@@ -64,12 +64,12 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
             css={[
               tw`box-border border-0 border-solid border-white`,
               tw`absolute color[#00b2d0] text-5xl font-burbankFont italic mt-1.5 mr-4 top-0 right-0 opacity-50 transition-all ease-in-out duration-200`,
-              none === true && tw`color[#005cd0] opacity-30`
+              unknown === true && tw`color[#005cd0] opacity-30`
             ]}
           >
             {number > 99 ? '99' : number > 0 ? number : '0'}
           </div>
-          {none !== true ? (
+          {unknown !== true ? (
             <>
               <img
                 css={[
@@ -96,7 +96,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
               alt='Unknown Character'
             />
           )}
-          {featured === true && none !== true && text > '0' && (
+          {featured === true && unknown !== true && text > '0' && (
             <div
               css={[
                 tw`box-border border-0 border-solid border-white`,

@@ -15,9 +15,16 @@ const App = () => {
   return (
     <div className='all'>
       <div style={{ width: '271px', height: '470px' }}>
-        <StoreCard name='Safari' type='outfit' rarity='rare' price={1200} />
+        <StoreCard
+          customBackground={{ background: 'linear-gradient(black, red)' }}
+          name='Safari'
+          type='outfit'
+          rarity='custom'
+          price={1200}
+          image='https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_784_F_RenegadeRaiderFire/MI_CID_784_F_RenegadeRaiderFire.png'
+        />
       </div>
-      <div style={{ width: '250px', height: '285px' }}>
+      {/* <div style={{ width: '250px', height: '285px' }}>
         <StoreCard
           name='Aspen'
           type='outfit'
@@ -34,7 +41,7 @@ const App = () => {
           price={800}
           image='https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_673_F_ArcticCamo_Slate/MI_CID_673_F_ArcticCamo_Slate.png'
         />
-      </div>
+      </div> */}
       <div style={{ width: '16rem' }}>
         <AchievementCard
           name='POCKET CHANGE'

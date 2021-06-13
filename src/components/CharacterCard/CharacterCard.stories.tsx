@@ -10,72 +10,44 @@ export default {
   argTypes: {
     number: {
       name: 'Number',
-      type: { name: 'number' },
-      defaultValue: 0,
-      description: 'Number of the character',
       table: {
-        category: 'Card',
-        defaultValue: {
-          summary: 0
-        }
+        category: 'Card'
       }
     },
     image: {
       name: 'Image',
-      defaultValue:
-        'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
-      description: 'Image of the character',
       table: {
-        category: 'Card',
-        defaultValue: {
-          summary:
-            'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
-        }
+        category: 'Card'
       }
     },
     star: {
       name: 'Star',
-      defaultValue: true,
-      description: 'Star of the character',
       table: {
-        category: 'Card',
-        defaultValue: { summary: true }
+        category: 'Card'
       }
     },
     alert: {
       name: 'Alert',
-      defaultValue: false,
-      description: 'Alert of the character',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
-    none: {
-      name: 'None',
-      defaultValue: false,
-      description: 'fish?',
+    unknown: {
+      name: 'Unknown',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
     featured: {
       name: 'Featured',
-      defaultValue: false,
-      description: 'Featured of the character',
       table: {
-        category: 'Featured',
-        defaultValue: { summary: false }
+        category: 'Featured'
       }
     },
     text: {
       name: 'Text',
-      defaultValue: 'Complete!',
-      description: 'Text',
       table: {
-        category: 'Featured',
-        defaultValue: { summary: 'Complete!' }
+        category: 'Featured'
       }
     },
     onClick: {
@@ -113,8 +85,8 @@ Featured.args = {
     'https://media.fortniteapi.io/images/41ba61fa6836f6272ac97055617aae5c/transparent.png'
 }
 
-export const None = Template.bind({})
-None.args = {
+export const Unknown = Template.bind({})
+Unknown.args = {
   number: 44,
-  none: true
+  unknown: true
 }
