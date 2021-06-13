@@ -120,9 +120,6 @@
     "webpack": "4.44.2",
     "webpack-merge": "5.7.3"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "bugs": {
     "url": "https://github.com/EddsonRT/fortnite-components/issues"
   },
