@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import PresetCard from './PresetCard'
-import { PresetProps } from './types'
+import { PresetCardProps } from './types'
 
 export default {
   title: 'Example/PresetCard',
@@ -10,7 +10,7 @@ export default {
   argTypes: {
     name: {
       name: 'Name',
-      type: { name: 'string', required: true },
+      type: { name: 'string' },
       defaultValue: 'Load Preset',
       description: 'Preset Image',
       table: {
@@ -22,6 +22,7 @@ export default {
     },
     outfit: {
       name: 'Outfit',
+      options: ['active', 'random', 'none'],
       defaultValue: 'active',
       description: 'Outfit',
       table: {
@@ -49,6 +50,7 @@ export default {
     },
     backpack: {
       name: 'Backpack',
+      options: ['active', 'random', 'none'],
       defaultValue: 'active',
       description: 'Backpack',
       table: {
@@ -76,6 +78,7 @@ export default {
     },
     pickaxe: {
       name: 'Pickaxe',
+      options: ['active', 'random', 'none'],
       defaultValue: 'active',
       description: 'Pickaxe',
       table: {
@@ -103,6 +106,7 @@ export default {
     },
     glider: {
       name: 'Glider',
+      options: ['active', 'random', 'none'],
       defaultValue: 'active',
       description: 'Glider',
       table: {
@@ -130,6 +134,7 @@ export default {
     },
     wrap: {
       name: 'Wrap',
+      options: ['active', 'random', 'none'],
       defaultValue: 'active',
       description: 'Wrap',
       table: {
@@ -180,10 +185,17 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[256px]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<PresetProps> = (args) => <PresetCard {...args} />
+const Template: Story<PresetCardProps> = (args) => <PresetCard {...args} />
 
 export const Example = Template.bind({})
 Example.args = {

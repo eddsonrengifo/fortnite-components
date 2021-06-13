@@ -7,7 +7,7 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ['prettier', '@typescript-eslint'],
+  plugins: ['prettier', '@typescript-eslint', '@emotion'],
   env: {
     browser: true,
     es6: true
@@ -30,6 +30,7 @@ module.exports = {
         allowedNames: ['ignoredFunctionName', 'ignoredMethodName']
       }
     ],
+    'multiline-ternary': ['off', 'always'],
     '@typescript-eslint/ban-ts-ignore': ['off'],
     '@typescript-eslint/camelcase': ['off'],
     '@typescript-eslint/explicit-function-return-type': ['off'],
@@ -44,8 +45,13 @@ module.exports = {
     'no-empty-pattern': ['off'],
     'no-undef': ['error'],
     'no-var': ['error'],
+    curly: ['error', 'multi'],
     'object-curly-spacing': ['error', 'always'],
-    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true }
+    ],
     semi: ['error', 'never'],
     'spaced-comment': ['off'],
     'no-prototype-builtins': ['off'],

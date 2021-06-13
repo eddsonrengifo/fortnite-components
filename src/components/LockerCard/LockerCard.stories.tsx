@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import LockerCard from './LockerCard'
-import { LockerProps } from './types'
+import { LockerCardProps } from './types'
 
 export default {
   title: 'Example/LockerCard',
@@ -10,126 +10,68 @@ export default {
   argTypes: {
     image: {
       name: 'Image',
-      type: { name: 'string', required: true },
-      defaultValue:
-        'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png',
-      description: 'Card Image',
       table: {
-        category: 'Card',
-        defaultValue: {
-          summary:
-            'https://media.fortniteapi.io/images/82805d371b0c5d8e61b410efc8c81bbd/transparent.png'
-        }
-      }
-    },
-    size: {
-      name: 'Size',
-      defaultValue: 'medium',
-      description: 'Card Size',
-      table: {
-        category: 'Card',
-        defaultValue: {
-          summary: 'medium'
-        }
+        category: 'Card'
       }
     },
     rarity: {
       name: 'Rarity',
-      defaultValue: 'rare',
-      description: 'Rarity',
       table: {
-        category: 'Card',
-        type: {
-          summary: 'more',
-          detail: "What's the rarity of the item?"
-        },
-        defaultValue: { summary: 'rare' }
+        category: 'Card'
       }
     },
     type: {
       name: 'Type',
-      defaultValue: 'outfit',
-      description: 'Type of the Card',
       table: {
-        category: 'Card',
-        defaultValue: { summary: 'outfit' }
+        category: 'Card'
       }
     },
     tag: {
       name: 'Tag',
-      defaultValue: false,
-      description: 'Item Tag',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
     favorite: {
       name: 'Favorite',
-      defaultValue: false,
-      description: 'Favorite?',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
     random: {
       name: 'Random',
-      type: { name: 'boolean' },
-      defaultValue: false,
-      description: 'Random',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
     none: {
       name: 'None',
-      type: { name: 'boolean' },
-      defaultValue: false,
-      description: 'None?',
       table: {
-        category: 'Card',
-        defaultValue: { summary: false }
+        category: 'Card'
       }
     },
     alert: {
       name: 'Alert',
-      defaultValue: false,
-      description: 'Alert',
       table: {
-        category: 'Alert',
-        defaultValue: { summary: false }
+        category: 'Alert'
       }
     },
-    newItems: {
-      name: 'New Items',
-      type: { name: 'number' },
-      defaultValue: 0,
-      description: 'New Items',
+    items: {
+      name: 'Items',
       table: {
-        category: 'Alert',
-        defaultValue: { summary: 0 }
+        category: 'Alert'
       }
     },
     conflict: {
       name: 'Conflict',
-      type: { name: 'boolean' },
-      defaultValue: false,
-      description: 'Conflict?',
       table: {
-        category: 'Conflict',
-        defaultValue: { summary: false }
+        category: 'Conflict'
       }
     },
-    conflictAnimation: {
-      name: 'Conflict Animation',
-      type: { name: 'boolean' },
-      defaultValue: true,
-      description: 'Conflict Animation?',
+    animation: {
+      name: 'Animation',
       table: {
-        category: 'Conflict',
-        defaultValue: { summary: true }
+        category: 'Conflict'
       }
     },
     onClick: {
@@ -137,16 +79,22 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[200px] height[250px]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<LockerProps> = (args) => <LockerCard {...args} />
+const Template: Story<LockerCardProps> = (args) => <LockerCard {...args} />
 
 export const Medium = Template.bind({})
 Medium.args = {
   rarity: 'rare',
   type: 'outfit',
-  size: 'medium',
   tag: true,
   favorite: true,
   image:
@@ -154,10 +102,16 @@ Medium.args = {
 }
 
 export const Small = Template.bind({})
+Small.decorators = [
+  (Story) => (
+    <div tw='max-width[150px] height[200px]'>
+      <Story />
+    </div>
+  )
+]
 Small.args = {
   rarity: 'rare',
   type: 'emote',
-  size: 'small',
   image:
     'https://media.fortniteapi.io/images/e47b426b5a69b3e3ea1f4d9eb174cd20/transparent.png'
 }

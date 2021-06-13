@@ -1,43 +1,38 @@
-export interface LockerProps {
+export interface LockerCardProps {
+  image: string
   rarity?:
-    | 'unattainable'
-    | 'exotic'
-    | 'darkSeries'
-    | 'marvelSeries'
-    | 'iconSeries'
-    | 'slurpSeries'
-    | 'shadowSeries'
-    | 'frozenSeries'
-    | 'dc'
-    | 'lavaSeries'
-    | 'gamingSeries'
-    | 'starWars'
-    | 'mythic'
-    | 'legendary'
-    | 'epic'
-    | 'rare'
-    | 'uncommon'
-    | 'common'
-  size?: 'medium' | 'small'
+  | 'darkSeries'
+  | 'marvelSeries'
+  | 'iconSeries'
+  | 'slurpSeries'
+  | 'shadowSeries'
+  | 'frozenSeries'
+  | 'dc'
+  | 'lavaSeries'
+  | 'gamingSeries'
+  | 'starWars'
+  | 'legendary'
+  | 'epic'
+  | 'rare'
+  | 'uncommon'
+  | 'common'
   type?:
-    | 'outfit'
-    | 'backpack'
-    | 'pickaxe'
-    | 'glider'
-    | 'contrail'
-    | 'emote'
-    | 'wrap'
-    | 'bannertoken'
-    | 'music'
-    | 'loadingscreen'
+  | 'outfit'
+  | 'backpack'
+  | 'pickaxe'
+  | 'glider'
+  | 'contrail'
+  | 'emote'
+  | 'wrap'
+  | 'music'
+  | 'loadingscreen'
+  tag?: boolean
   favorite?: boolean
   random?: boolean
   none?: boolean
-  conflict?: boolean
-  conflictAnimation?: boolean
-  image: string
-  tag?: boolean
   alert?: boolean
-  newItems?: number
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  items?: number
+  conflict?: boolean
+  animation?: boolean
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

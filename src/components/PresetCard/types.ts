@@ -1,5 +1,5 @@
-export interface PresetProps {
-  name: string
+export interface PresetCardProps {
+  name?: string
   outfit?: 'active' | 'random' | 'none'
   outfitImage?: string
   backpack?: 'active' | 'random' | 'none'
@@ -10,7 +10,7 @@ export interface PresetProps {
   gliderImage?: string
   wrap?: 'active' | 'random' | 'none'
   wrapImage?: string
-  none?: boolean
   add?: boolean
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  none?: boolean
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import FishCard from './FishCard'
-import { FishProps } from './types'
+import { FishCardProps } from './types'
 
 export default {
   title: 'Example/FishCard',
@@ -103,10 +103,17 @@ export default {
         category: 'Events'
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div tw='max-width[200px] height[250px]'>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
-const Template: Story<FishProps> = (args) => <FishCard {...args} />
+const Template: Story<FishCardProps> = (args) => <FishCard {...args} />
 
 export const Simple = Template.bind({})
 Simple.args = {

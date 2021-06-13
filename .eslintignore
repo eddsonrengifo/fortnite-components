@@ -1,5 +1,5 @@
-/build
-/dist
-/node_modules
-/storybook-static
-/example
+**/build/*
+**/dist/*
+**/node_modules/*
+**/storybook-static/*
+**/.yarn/*

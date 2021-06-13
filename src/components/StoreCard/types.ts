@@ -1,39 +1,42 @@
-export interface StoreProps {
+import React, { CSSProperties } from 'react'
+
+export interface StoreCardProps {
   name: string
-  type: string
+  type?: string
   rarity?:
-    | 'unattainable'
-    | 'exotic'
-    | 'darkSeries'
-    | 'marvelSeries'
-    | 'iconSeries'
-    | 'slurpSeries'
-    | 'shadowSeries'
-    | 'frozenSeries'
-    | 'dc'
-    | 'lavaSeries'
-    | 'gamingSeries'
-    | 'starWars'
-    | 'mythic'
-    | 'legendary'
-    | 'epic'
-    | 'rare'
-    | 'uncommon'
-    | 'common'
-  size?: 'extraLarge' | 'large' | 'medium' | 'small'
+  | 'custom'
+  | 'unattainable'
+  | 'exotic'
+  | 'darkSeries'
+  | 'marvelSeries'
+  | 'iconSeries'
+  | 'slurpSeries'
+  | 'shadowSeries'
+  | 'frozenSeries'
+  | 'dc'
+  | 'lavaSeries'
+  | 'gamingSeries'
+  | 'starWars'
+  | 'mythic'
+  | 'legendary'
+  | 'epic'
+  | 'rare'
+  | 'uncommon'
+  | 'common'
   image: string
-  shopVersion?: boolean
   priceType?: 'none' | 'vBucks' | 'battlepass' | 'money' | 'more'
-  tag?: 'none' | 'variants' | 'reactive' | 'builtIn-emote' | 'animated'
+  tag?: boolean
+  tagText?: string
   banner?: 'none' | 'v1' | 'v2'
   bannerText?: string
-  price?: number
-  fullPrice?: number
+  price?: string
+  fullPrice?: string
   passText?: string
   passType?: 'free' | 'paid'
   money?: string
   moreText?: string
   owned?: boolean
   ownedText?: string
+  customBackground?: CSSProperties | undefined
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import 'twin.macro'
+import tw from 'twin.macro'
 
 import { AchievementCardProps } from './types'
-import '../../styles/index.css'
+import '@styles/index.css'
 
 const AchievementCard: React.FC<AchievementCardProps> = ({
   name = 'Achievement',
@@ -22,48 +22,96 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       style={{
         background: `linear-gradient(0, ${bottomBackground},  ${topBackground})`
       }}
-      tw='relative flex flex-col max-width[16rem] cursor-pointer hover:mt-6 transition[300ms all ease] mb-5'
+      css={[
+        tw`box-border border-0 border-solid border-white`,
+        tw`flex relative flex-col w-full mb-5 cursor-pointer transition-all ease-in-out duration-300 hover:mt-6`
+      ]}
       onClick={onClick}
     >
-      <div tw='absolute top-0 w-full h-10 overflow-hidden transition[300ms all ease]'>
+      <div
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`absolute w-full h-10 top-0 overflow-hidden transition-all ease-in-out duration-300`
+        ]}
+      >
         <div
           style={{ background: topColor }}
-          tw='relative transform -rotate-1 bottom-2.5 w-80 h-6 group-hover:rotate-2 group-hover:bottom-3 group-hover:h-10 transition[300ms all ease]'
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`relative w-full h-6 bottom-2.5 transform -rotate-1 transition-all ease-in-out duration-300 group-hover:rotate-2 group-hover:bottom-3 group-hover:h-10`
+          ]}
         />
       </div>
-      <div tw='relative text-center my-14 bottom-6 group-hover:bottom-20 transition[300ms all ease]'>
+      <div
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`relative text-center my-14 bottom-6 transition-all ease-in-out duration-300 group-hover:bottom-20`
+        ]}
+      >
         <img
           style={{
             background: imageColor,
             border: `6px solid ${imageColor}`
           }}
-          tw='block box-border relative m-auto w-28'
+          css={[
+            tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+            tw`relative w-28 m-auto`
+          ]}
           src={image}
           alt={name}
         />
-        <h1 tw='italic uppercase font-burbankFont text-white text-center font-bold text-2xl mx-2 mt-2 mb-0'>
+        <h1
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`mx-2 mt-2 mb-0 text-2xl text-white font-burbankFont text-center font-bold italic uppercase`
+          ]}
+        >
           {name}
         </h1>
-        <p tw='font-sans hidden text-center text-blue-300 group-hover:block text-lg font-semibold mx-2.5 my-0 leading-6'>
+        <p
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`hidden mx-2.5 my-0 text-lg text-blue-300 font-sans text-center font-semibold leading-6 group-hover:block`
+          ]}
+        >
           {description}
         </p>
       </div>
-      <span tw='absolute text-xl color[#3CD3FE] group-hover:text-white text-center z-10 bottom-0 left-0 right-0 font-burbankFont margin-bottom[3px]'>
+      <span
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`absolute margin-bottom[3px] text-xl color[#3CD3FE] text-center bottom-0 left-0 right-0 font-burbankFont z-10 group-hover:text-white`
+        ]}
+      >
         {time}
       </span>
-      <div tw='hidden absolute bottom-0 w-full h-12 overflow-hidden group-hover:block transition[300ms all ease]'>
+      <div
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`hidden absolute w-full h-12 bottom-0 overflow-hidden transition-all ease-in-out duration-300 group-hover:block`
+        ]}
+      >
         <div
           style={{ background: bottomColor }}
-          tw='relative transform w-64 h-12 group-hover:top[11px] group-hover:-rotate-2 transition[300ms all ease]'
+          css={[
+            tw`box-border border-0 border-solid border-white`,
+            tw`relative w-full h-12 transform transition-all ease-in-out duration-300 group-hover:top[11px] group-hover:-rotate-2`
+          ]}
         />
       </div>
       <div
         style={{ background: bottomBackground }}
-        tw='absolute transform rotate-45 -bottom-3 left-0 right-0 m-auto h-10 w-10 group-hover:hidden'
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`absolute w-10 h-10 m-auto -bottom-3 left-0 right-0 transform rotate-45 group-hover:hidden`
+        ]}
       />
       <div
         style={{ background: bottomColor }}
-        tw='hidden absolute transform rotate-45 -bottom-3 left-0 right-0 m-auto h-10 w-10 group-hover:block'
+        css={[
+          tw`box-border border-0 border-solid border-white`,
+          tw`hidden absolute w-10 h-10 m-auto -bottom-3 left-0 right-0 transform rotate-45 group-hover:block`
+        ]}
       />
     </div>
   )

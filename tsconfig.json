@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -11,22 +12,20 @@
     "module": "ESNext",
     "strict": true,
     "skipLibCheck": true,
-    // Ensure that .d.ts files are created by tsc, but not .js files
     "declaration": true,
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
-    // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true,
     "jsxImportSource": "@emotion/react",
-    // new compiler options
     "pretty": true,
     "noImplicitAny": false,
-    "baseUrl": ".",
     "rootDir": "src",
     "paths": {
-      "@/*": ["src/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["src/**/*.tsx", "types", "src"],
+  "include": ["twin.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "**/*.stories.tsx"]
 }
