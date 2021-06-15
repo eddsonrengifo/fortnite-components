@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import tw from 'twin.macro'
 
 import { StoreCardProps } from './types'
@@ -23,8 +23,9 @@ const StoreCard: React.FC<StoreCardProps> = ({
   name,
   type,
   rarity = 'rare',
-  image,
+  images,
   priceType = 'vBucks',
+  positionImage = 'centered',
   tag = false,
   tagText = 'Variants',
   banner = 'none',
@@ -37,9 +38,11 @@ const StoreCard: React.FC<StoreCardProps> = ({
   moreText = 'More Info',
   owned = false,
   ownedText = 'Owned',
-  customBackground = { background: 'linear-gradient(black, red)' },
+  customBackground,
+  customSpotlight,
   onClick
 }) => {
+  const [changeVersion, setChangeVersion] = useState(0)
   const banners = () => {
     if (banner === 'v1' || banner === 'v2')
       return (
@@ -219,6 +222,19 @@ const StoreCard: React.FC<StoreCardProps> = ({
     else return null
   }
 
+  const ChangeImage = () => {
+    let i = 1
+    const allImages = images.length
+    setInterval(() => {
+      setChangeVersion(i)
+      i = i === allImages - 1 ? 0 : i + 1
+    }, 3000)
+  }
+
+  useEffect(() => {
+    images !== undefined && images.length > 1 && ChangeImage()
+  }, [])
+
   return (
     <div
       className='group'
@@ -230,8 +246,8 @@ const StoreCard: React.FC<StoreCardProps> = ({
     >
       {banners()}
       <div
-        style={rarity === 'custom' ? customBackground : {
-          backgroundPosition: 'center',
+        className={`backgroundSlider-${changeVersion}`}
+        style={customBackground !== undefined ? customBackground[changeVersion] : {
           backgroundImage:
             rarity === 'starWars'
               ? `url(${starwars}), radial-gradient(black, black 100%)`
@@ -273,15 +289,18 @@ const StoreCard: React.FC<StoreCardProps> = ({
         }}
         css={[
           tw`box-border border-0 border-solid border-white`,
-          tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[auto 100%] overflow-hidden`
+          tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[100% 100%] overflow-hidden`
         ]}
       >
+        {customSpotlight && <div style={customSpotlight[changeVersion]} tw="h-full w-full z-0 absolute" />}
         <img
+          className={`imageSlider-${changeVersion}`}
           css={[
             tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-            tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110`
+            tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110 group-hover:translate-y-2.5`,
+            positionImage === 'centered' && tw`min-height[0] height[calc(100% - 70px)] margin[0 auto] group-hover:translate-y-0`
           ]}
-          src={image}
+          src={images === undefined ? '' : images[changeVersion]}
           alt={name}
         />
       </div>

@@ -16,21 +16,41 @@ const App = () => {
     <div className='all'>
       <div style={{ width: '271px', height: '470px' }}>
         <StoreCard
-          customBackground={{ background: 'linear-gradient(black, red)' }}
           name='Safari'
           type='outfit'
           rarity='custom'
           price={1200}
-          image='https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_784_F_RenegadeRaiderFire/MI_CID_784_F_RenegadeRaiderFire.png'
+          customBackground={[
+            { background: 'linear-gradient(rgb(1, 1, 1), rgb(88, 54, 10))' },
+            { background: 'linear-gradient(rgb(9, 0, 8), rgb(255, 9, 77))' }
+          ]}
+          customSpotlight={[
+            {
+              backgroundImage:
+                'radial-gradient(circle at 35.8758% 62.278%, rgb(35, 23, 6) 0%, transparent 100%)',
+              filter: 'brightness(9.6973)'
+            },
+            {
+              backgroundImage:
+                'radial-gradient(circle at 52.128% 19.7794%, rgb(255, 0, 68) 0%, transparent 100%)',
+              filter: 'brightness(10)'
+            }
+          ]}
+          images={[
+            'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_748_F_Hitman/MI_CID_748_F_Hitman.png',
+            'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_899_F_Poison/MI_CID_899_F_Poison_02.png'
+          ]}
         />
       </div>
-      {/* <div style={{ width: '250px', height: '285px' }}>
+      <div style={{ width: '250px', height: '285px' }}>
         <StoreCard
           name='Aspen'
           type='outfit'
           rarity='uncommon'
           price={800}
-          image='https://media.fortniteapi.io/images/eecf2181d510e4144792399c371bdd2b/transparent.png'
+          images={[
+            'https://media.fortniteapi.io/images/eecf2181d510e4144792399c371bdd2b/transparent.png'
+          ]}
         />
       </div>
       <div style={{ width: '271px', height: '250px' }}>
@@ -39,9 +59,11 @@ const App = () => {
           type='outfit'
           rarity='uncommon'
           price={800}
-          image='https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_673_F_ArcticCamo_Slate/MI_CID_673_F_ArcticCamo_Slate.png'
+          images={[
+            'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_673_F_ArcticCamo_Slate/MI_CID_673_F_ArcticCamo_Slate.png'
+          ]}
         />
-      </div> */}
+      </div>
       <div style={{ width: '16rem' }}>
         <AchievementCard
           name='POCKET CHANGE'
