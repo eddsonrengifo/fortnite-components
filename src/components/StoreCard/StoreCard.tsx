@@ -250,58 +250,66 @@ const StoreCard: React.FC<StoreCardProps> = ({
           customBackground !== undefined
             ? customBackground[changeVersion]
             : {
-              backgroundSize: rarity === 'gamingSeries' ? 'auto 100%' : '100% 100%',
-              backgroundImage:
-                rarity === 'starWars'
-                  ? `url(${starwars}), radial-gradient(black, black 100%)`
-                  : rarity === 'gamingSeries'
+                backgroundSize:
+                  rarity === 'gamingSeries' ? 'auto 100%' : '100% 100%',
+                backgroundImage:
+                  rarity === 'starWars'
+                    ? `url(${starwars}), radial-gradient(black, black 100%)`
+                    : rarity === 'gamingSeries'
                     ? `linear-gradient(transparent 60%, #3d4a9dbd), radial-gradient(transparent, black 100%), url(${gamingSeries}), radial-gradient(#4e1750 50%, #12061a)`
                     : rarity === 'lavaSeries'
-                      ? `url(${lavaSeries})`
-                      : rarity === 'dc'
-                        ? `url(${dc})`
-                        : rarity === 'frozenSeries'
-                          ? `url(${frozenSeries})`
-                          : rarity === 'shadowSeries'
-                            ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
-                            : rarity === 'slurpSeries'
-                              ? `url(${slurpSeries})`
-                              : rarity === 'iconSeries'
-                                ? `url(${iconSeries})`
-                                : rarity === 'marvelSeries'
-                                  ? `url(${marvel})`
-                                  : rarity === 'darkSeries'
-                                    ? `url(${darkSeries})`
-                                    : rarity === 'exotic'
-                                      ? 'radial-gradient(#90d7ff 0%, #7f5399 100%)'
-                                      : rarity === 'unattainable'
-                                        ? 'linear-gradient(#e1505c 0%, #8d3039 100%)'
-                                        : rarity === 'mythic'
-                                          ? 'linear-gradient(#fce14c, #d28f27)'
-                                          : rarity === 'legendary'
-                                            ? 'linear-gradient(#ea8d23, #78371d)'
-                                            : rarity === 'epic'
-                                              ? 'linear-gradient(#c359ff, #4b2483)'
-                                              : rarity === 'rare'
-                                                ? 'linear-gradient(#2cc1ff, #143977)'
-                                                : rarity === 'uncommon'
-                                                  ? 'linear-gradient(#69bb1e, #175117)'
-                                                  : rarity === 'common'
-                                                    ? 'linear-gradient(#bebebe, #646464)'
-                                                    : ''
-            }}
+                    ? `url(${lavaSeries}), linear-gradient(45deg, #fb9c39 32%, #943222 71%, #00000000), linear-gradient(#501629 1%, #782723)`
+                    : rarity === 'dc'
+                    ? `url(${dc}), linear-gradient(to left top, #3187ff 29%, #133d88, black)`
+                    : rarity === 'frozenSeries'
+                    ? `url(${frozenSeries}), radial-gradient(#b1d5e6 42%, #3e95c2)`
+                    : rarity === 'shadowSeries'
+                    ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
+                    : rarity === 'slurpSeries'
+                    ? `url(${slurpSeries}), linear-gradient(#39d2fa, #1f92f2 50%)`
+                    : rarity === 'iconSeries'
+                    ? `url(${iconSeries}), linear-gradient(#07616f, #3df9fa)`
+                    : rarity === 'marvelSeries'
+                    ? `url(${marvel}), radial-gradient(#fd2219, #741a16)`
+                    : rarity === 'darkSeries'
+                    ? `url(${darkSeries}), radial-gradient(#ae41c5, #351c41, #15091e 150%)`
+                    : rarity === 'exotic'
+                    ? 'radial-gradient(#90d7ff 0%, #7f5399 100%)'
+                    : rarity === 'unattainable'
+                    ? 'linear-gradient(#e1505c 0%, #8d3039 100%)'
+                    : rarity === 'mythic'
+                    ? 'linear-gradient(#fce14c, #d28f27)'
+                    : rarity === 'legendary'
+                    ? 'linear-gradient(#ea8d23, #78371d)'
+                    : rarity === 'epic'
+                    ? 'linear-gradient(#c359ff, #4b2483)'
+                    : rarity === 'rare'
+                    ? 'linear-gradient(#2cc1ff, #143977)'
+                    : rarity === 'uncommon'
+                    ? 'linear-gradient(#69bb1e, #175117)'
+                    : rarity === 'common'
+                    ? 'linear-gradient(#bebebe, #646464)'
+                    : ''
+              }
+        }
         css={[
           tw`box-border border-0 border-solid border-white`,
           tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[100% 100%] overflow-hidden`
         ]}
       >
-        {customSpotlight && <div style={customSpotlight[changeVersion]} tw="h-full w-full z-0 absolute" />}
+        {customSpotlight && (
+          <div
+            style={customSpotlight[changeVersion]}
+            tw='h-full w-full z-0 absolute'
+          />
+        )}
         <img
           className={`imageSlider-${changeVersion}`}
           css={[
             tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
             tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110 group-hover:translate-y-2.5`,
-            positionImage === 'centered' && tw`min-height[0] height[calc(100% - 70px)] margin[0 auto] group-hover:translate-y-0`
+            positionImage === 'centered' &&
+              tw`min-height[0] height[calc(100% - 70px)] margin[0 auto] group-hover:translate-y-0`
           ]}
           src={images === undefined ? '' : images[changeVersion]}
           alt={name}
@@ -319,36 +327,36 @@ const StoreCard: React.FC<StoreCardProps> = ({
             tw`box-border border-0 border-solid border-white`,
             tw`relative w-full h-2 top-0.5 background[#02e7fc] border-color[#02ffff]`,
             rarity === 'starWars' &&
-            tw`background[#3974fe] border-color[#3974fe]`,
+              tw`background[#3974fe] border-color[#3974fe]`,
             rarity === 'gamingSeries' &&
-            tw`background[#7b6fd9] border-color[#7c70da]`,
+              tw`background[#7b6fd9] border-color[#7c70da]`,
             rarity === 'lavaSeries' &&
-            tw`background[#eaac2e] border-color[#ecad2e]`,
+              tw`background[#eaac2e] border-color[#ecad2e]`,
             rarity === 'dc' && tw`background[#04a5ff] border-color[#05beff]`,
             rarity === 'frozenSeries' &&
-            tw`background[#7dcbfb] border-color[#90e9ff]`,
+              tw`background[#7dcbfb] border-color[#90e9ff]`,
             rarity === 'shadowSeries' &&
-            tw`background[#b4b3dc] border-color[#cfcefd]`,
+              tw`background[#b4b3dc] border-color[#cfcefd]`,
             rarity === 'slurpSeries' &&
-            tw`background[#26c7f1] border-color[#2ce4ff]`,
+              tw`background[#26c7f1] border-color[#2ce4ff]`,
             rarity === 'iconSeries' &&
-            tw`background[#77dbeb] border-color[#89fcff]`,
+              tw`background[#77dbeb] border-color[#89fcff]`,
             rarity === 'marvelSeries' &&
-            tw`background[#e6101c] border-color[#ff1220]`,
+              tw`background[#e6101c] border-color[#ff1220]`,
             rarity === 'darkSeries' &&
-            tw`background[#f046c0] border-color[#ff50dd]`,
+              tw`background[#f046c0] border-color[#ff50dd]`,
             rarity === 'exotic' &&
-            tw`background[#90d7ff] border-color[#90d7ff]`,
+              tw`background[#90d7ff] border-color[#90d7ff]`,
             rarity === 'unattainable' &&
-            tw`background[#f56773] border-color[#f56773]`,
+              tw`background[#f56773] border-color[#f56773]`,
             rarity === 'mythic' &&
-            tw`background[#fce14c] border-color[#fce14c]`,
+              tw`background[#fce14c] border-color[#fce14c]`,
             rarity === 'legendary' &&
-            tw`background[#ffd96d] border-color[#ffd96d]`,
+              tw`background[#ffd96d] border-color[#ffd96d]`,
             rarity === 'epic' && tw`background[#df3ffb] border-color[#ff48ff]`,
             rarity === 'rare' && tw`background[#02e7fc] border-color[#02ffff]`,
             rarity === 'uncommon' &&
-            tw`background[#8ce90e] border-color[#a0ff10]`,
+              tw`background[#8ce90e] border-color[#a0ff10]`,
             rarity === 'common' && tw`background[#ced0cf] border-color[#edefee]`
           ]}
         />
