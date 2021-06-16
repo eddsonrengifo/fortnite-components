@@ -40,7 +40,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
           tw`box-border border-0 border-solid border-white`,
           tw`h-full max-w-full bg-white border-white overflow-hidden transition-all ease-in-out duration-100 group-hover:border-2`,
           unknown === true &&
-          tw`border-transparent bg-transparent border-0 group-hover:border-0`
+            tw`border-transparent bg-transparent border-0 group-hover:border-0`
         ]}
       >
         <div
