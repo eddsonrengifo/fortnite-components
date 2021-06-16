@@ -15,15 +15,14 @@ import loadingscreen from '@assets/icons/T_Ui_LoadingScreen_256.png'
 import favoriteIcon from '@assets/icons/favorite.png'
 import conflictIcon from '@assets/icons/conflict.png'
 import variants from '@assets/icons/styles.png'
-import darkSeriesSmoke from '@assets/images/DarkSeriesSmoke.png'
-import darkSeries from '@assets/images/DarkSeriesBackground.png'
-import marvel from '@assets/images/marvelBackground.png'
-import iconSeries from '@assets/images/IconSeriesBackground.png'
-import slurpSeries from '@assets/images/slurpSeriesBackground.png'
+import darkSeries from '@assets/images/CUBESeries.png'
+import marvel from '@assets/images/MarvelSeries.png'
+import iconSeries from '@assets/images/CreatorCollabSeries.png'
+import slurpSeries from '@assets/images/SlurpSeries.png'
 import shadowSeries from '@assets/images/shadowSeriesBackground.png'
-import frozenSeries from '@assets/images/frozenSeriesBackground.png'
-import dc from '@assets/images/dcSeriesBackground.png'
-import lavaSeries from '@assets/images/lavaSeriesBackground.png'
+import frozenSeries from '@assets/images/FrozenSeries.png'
+import dc from '@assets/images/DCUSeries.png'
+import lavaSeries from '@assets/images/LavaSeries.png'
 import gamingSeries from '@assets/images/platformSeriesBackground.png'
 import starwars from '@assets/images/starwarsBackground.png'
 import '@styles/index.css'
@@ -151,21 +150,21 @@ const LockerCard: React.FC<LockerCardProps> = ({
                   : rarity === 'gamingSeries'
                     ? `linear-gradient(transparent 60%, #3d4a9dbd), radial-gradient(transparent, black 100%), url(${gamingSeries}), radial-gradient(#4e1750 50%, #12061a)`
                     : rarity === 'lavaSeries'
-                      ? `linear-gradient(transparent 55%, #e38636 100%, #fbb43e), url(${lavaSeries}), radial-gradient(#4e0c33 0%, #4e0c33 100%)`
+                      ? `url(${lavaSeries})`
                       : rarity === 'dc'
-                        ? `url(${dc}), radial-gradient(#3187ff, #133d88, black)`
+                        ? `url(${dc})`
                         : rarity === 'frozenSeries'
-                          ? `url(${frozenSeries}), linear-gradient(#2e87ba 0%, #8db1d0 100%)`
+                          ? `url(${frozenSeries})`
                           : rarity === 'shadowSeries'
                             ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
                             : rarity === 'slurpSeries'
-                              ? `url(${slurpSeries}), radial-gradient(transparent, #45cad3 100%), radial-gradient(#0c2f52 0%, #0c2f52 100%)`
+                              ? `url(${slurpSeries})`
                               : rarity === 'iconSeries'
-                                ? `url(${iconSeries}), linear-gradient(#074753 0%, #45fcfe 100%)`
+                                ? `url(${iconSeries})`
                                 : rarity === 'marvelSeries'
-                                  ? `url(${marvel}), radial-gradient(#ff2024 0%, #520e0e 100%)`
+                                  ? `url(${marvel})`
                                   : rarity === 'darkSeries'
-                                    ? `url(${darkSeriesSmoke}), url(${darkSeries}), radial-gradient(#16042a, #16042a)`
+                                    ? `url(${darkSeries})`
                                     : `url(${bgLocker}), radial-gradient(transparent, black 500%), radial-gradient(#31aaff, #006288)`
         }}
         css={[

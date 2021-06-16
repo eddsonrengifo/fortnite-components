@@ -3,8 +3,8 @@ import React, { CSSProperties } from 'react'
 export interface StoreCardProps {
   name: string
   type?: string
+  positionImage?: | 'fill' | 'centered'
   rarity?:
-  | 'custom'
   | 'unattainable'
   | 'exotic'
   | 'darkSeries'
@@ -23,7 +23,7 @@ export interface StoreCardProps {
   | 'rare'
   | 'uncommon'
   | 'common'
-  image: string
+  images: [string]
   priceType?: 'none' | 'vBucks' | 'battlepass' | 'money' | 'more'
   tag?: boolean
   tagText?: string
@@ -37,6 +37,7 @@ export interface StoreCardProps {
   moreText?: string
   owned?: boolean
   ownedText?: string
-  customBackground?: CSSProperties | undefined
+  customBackground?: [CSSProperties]
+  customSpotlight?: [CSSProperties]
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

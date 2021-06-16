@@ -20,8 +20,14 @@ export default {
         category: 'Main information'
       }
     },
-    image: {
-      name: 'Image',
+    images: {
+      name: 'Images',
+      table: {
+        category: 'Main information'
+      }
+    },
+    positionImage: {
+      name: 'Position Image',
       table: {
         category: 'Main information'
       }
@@ -29,7 +35,6 @@ export default {
     rarity: {
       name: 'Rarity',
       options: [
-        'custom',
         'mythic',
         'exotic',
         'unattainable',
@@ -137,6 +142,12 @@ export default {
         category: 'Custom'
       }
     },
+    customSpotlight: {
+      name: 'Custom Background',
+      table: {
+        category: 'Custom'
+      }
+    },
     onClick: {
       table: {
         category: 'Events'
@@ -157,10 +168,10 @@ ExtraLarge.decorators = [
 ]
 ExtraLarge.args = {
   name: 'Fortnite crew: 1 month',
+  positionImage: 'fill',
   type: 'Subscription',
   rarity: 'rare',
-  image:
-    'https://cdn2.unrealengine.com/ui-itemshoptile-subscription-galaxia-fix-2048x1124-fc632eda06ba.png',
+  images: ['https://cdn2.unrealengine.com/ui-itemshoptile-subscription-galaxia-fix-2048x1124-fc632eda06ba.png'],
   priceType: 'more'
 }
 
@@ -175,9 +186,9 @@ Large.decorators = [
 Large.args = {
   name: 'Survivors in arms',
   type: 'Item bundle',
+  positionImage: 'fill',
   rarity: 'epic',
-  image:
-    'https://media.fortniteapi.io/images/3eac7e345b6a9f3fcb75a117a9093502/transparent.png',
+  images: ['https://media.fortniteapi.io/images/3eac7e345b6a9f3fcb75a117a9093502/transparent.png'],
   fullPrice: '3,300',
   price: '2,500',
   bannerText: '800 v-bucks off',
@@ -194,13 +205,13 @@ Medium.decorators = [
 ]
 Medium.args = {
   name: 'Safari',
+  positionImage: 'fill',
   type: 'Outfit',
   rarity: 'rare',
   banner: 'v1',
   bannerText: 'New!',
   price: '1,200',
-  image:
-    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png'
+  images: ['https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png']
 }
 
 export const Small = Template.bind({})
@@ -215,8 +226,8 @@ Small.args = {
   name: 'Flail Bladesfari',
   type: 'Pickaxe',
   rarity: 'uncommon',
-  image:
-    'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png',
+  positionImage: 'centered',
+  images: ['https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'],
   price: '500',
   priceType: 'battlepass'
 }
@@ -224,17 +235,17 @@ Small.args = {
 export const SmallShop = Template.bind({})
 SmallShop.decorators = [
   (Story) => (
-    <div tw='max-width[271px] height[250px]'>
+    <div tw='max-width[271px] height[224px]'>
       <Story />
     </div>
   )
 ]
 SmallShop.args = {
   name: 'Flail Bladesfari',
+  positionImage: 'centered',
   type: 'Pickaxe',
   rarity: 'uncommon',
-  image:
-    'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png',
+  images: ['https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'],
   price: '500',
   priceType: 'battlepass'
 }
@@ -248,13 +259,28 @@ Custom.decorators = [
   )
 ]
 Custom.args = {
-  name: 'Safari',
+  name: 'Mayhem',
+  positionImage: 'fill',
   type: 'Outfit',
-  rarity: 'custom',
-  customBackground: { background: 'green' },
-  banner: 'v1',
-  bannerText: 'New!',
-  price: '1,200',
-  image:
-    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png'
+  rarity: 'rare',
+  tag: true,
+  customBackground: [
+    { background: 'linear-gradient(rgb(17, 6, 4), rgb(165, 152, 87))' },
+    { background: 'linear-gradient(rgb(1, 1, 4), rgb(34, 34, 146))' }
+  ],
+  customSpotlight: [
+    {
+      backgroundImage: 'radial-gradient(circle at 21.7573% 102.918%, rgb(109, 27, 9) 0%, transparent 100%)',
+      filter: 'brightness(8.92776)'
+    },
+    {
+      backgroundImage: 'radial-gradient(circle at 41.0339% 50.1322%, rgb(13, 6, 145) 0%, transparent 100%)',
+      filter: 'brightness(8.92776)'
+    }
+  ],
+  images: [
+    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_263_F_MadCommander/MI_CID_263_F_MadCommander.png',
+    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_263_F_MadCommander/MI_CID_263_F_MadCommander_2.png'
+  ],
+  price: '1,200'
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import tw from 'twin.macro'
 
 import { StoreCardProps } from './types'
@@ -6,15 +6,14 @@ import vBucks from '@assets/icons/vBucks.png'
 import battlepassFree from '@assets/icons/battlepassFree.png'
 import battlepassPaid from '@assets/icons/battlepassPaid.png'
 import styles from '@assets/icons/styles.png'
-import darkSeriesSmoke from '@assets/images/DarkSeriesSmoke.png'
-import darkSeries from '@assets/images/DarkSeriesBackground.png'
-import marvel from '@assets/images/marvelBackground.png'
-import iconSeries from '@assets/images/IconSeriesBackground.png'
-import slurpSeries from '@assets/images/slurpSeriesBackground.png'
+import darkSeries from '@assets/images/CUBESeries.png'
+import marvel from '@assets/images/MarvelSeries.png'
+import iconSeries from '@assets/images/CreatorCollabSeries.png'
+import slurpSeries from '@assets/images/SlurpSeries.png'
 import shadowSeries from '@assets/images/shadowSeriesBackground.png'
-import frozenSeries from '@assets/images/frozenSeriesBackground.png'
-import dc from '@assets/images/dcSeriesBackground.png'
-import lavaSeries from '@assets/images/lavaSeriesBackground.png'
+import frozenSeries from '@assets/images/FrozenSeries.png'
+import dc from '@assets/images/DCUSeries.png'
+import lavaSeries from '@assets/images/LavaSeries.png'
 import gamingSeries from '@assets/images/platformSeriesBackground.png'
 import starwars from '@assets/images/starwarsBackground.png'
 import '@styles/index.css'
@@ -23,8 +22,9 @@ const StoreCard: React.FC<StoreCardProps> = ({
   name,
   type,
   rarity = 'rare',
-  image,
+  images,
   priceType = 'vBucks',
+  positionImage = 'centered',
   tag = false,
   tagText = 'Variants',
   banner = 'none',
@@ -37,9 +37,11 @@ const StoreCard: React.FC<StoreCardProps> = ({
   moreText = 'More Info',
   owned = false,
   ownedText = 'Owned',
-  customBackground = { background: 'linear-gradient(black, red)' },
+  customBackground,
+  customSpotlight,
   onClick
 }) => {
+  const [changeVersion, setChangeVersion] = useState(0)
   const banners = () => {
     if (banner === 'v1' || banner === 'v2')
       return (
@@ -219,6 +221,19 @@ const StoreCard: React.FC<StoreCardProps> = ({
     else return null
   }
 
+  const ChangeImage = () => {
+    let i = 1
+    const allImages = images.length
+    setInterval(() => {
+      setChangeVersion(i)
+      i = i === allImages - 1 ? 0 : i + 1
+    }, 3000)
+  }
+
+  useEffect(() => {
+    images !== undefined && images.length > 1 && ChangeImage()
+  }, [])
+
   return (
     <div
       className='group'
@@ -230,58 +245,65 @@ const StoreCard: React.FC<StoreCardProps> = ({
     >
       {banners()}
       <div
-        style={rarity === 'custom' ? customBackground : {
-          backgroundPosition: 'center',
-          backgroundImage:
-            rarity === 'starWars'
-              ? `url(${starwars}), radial-gradient(black, black 100%)`
-              : rarity === 'gamingSeries'
-                ? `linear-gradient(transparent 60%, #3d4a9dbd), radial-gradient(transparent, black 100%), url(${gamingSeries}), radial-gradient(#4e1750 50%, #12061a)`
-                : rarity === 'lavaSeries'
-                  ? `linear-gradient(transparent 55%, #e38636 100%, #fbb43e), url(${lavaSeries}), radial-gradient(#4e0c33 0%, #4e0c33 100%)`
-                  : rarity === 'dc'
-                    ? `url(${dc}), radial-gradient(#3187ff, #133d88, black)`
-                    : rarity === 'frozenSeries'
-                      ? `url(${frozenSeries}), linear-gradient(#2e87ba 0%, #8db1d0 100%)`
-                      : rarity === 'shadowSeries'
-                        ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
-                        : rarity === 'slurpSeries'
-                          ? `url(${slurpSeries}), radial-gradient(transparent, #45cad3 100%), radial-gradient(#0c2f52 0%, #0c2f52 100%)`
-                          : rarity === 'iconSeries'
-                            ? `url(${iconSeries}), linear-gradient(#074753 0%, #45fcfe 100%)`
-                            : rarity === 'marvelSeries'
-                              ? `url(${marvel}), radial-gradient(#ff2024 0%, #520e0e 100%)`
-                              : rarity === 'darkSeries'
-                                ? `url(${darkSeriesSmoke}), url(${darkSeries}), radial-gradient(#16042a, #16042a)`
-                                : rarity === 'exotic'
-                                  ? 'radial-gradient(#90d7ff 0%, #7f5399 100%)'
-                                  : rarity === 'unattainable'
-                                    ? 'linear-gradient(#e1505c 0%, #8d3039 100%)'
-                                    : rarity === 'mythic'
-                                      ? 'linear-gradient(#fce14c, #d28f27)'
-                                      : rarity === 'legendary'
-                                        ? 'linear-gradient(#ea8d23, #78371d)'
-                                        : rarity === 'epic'
-                                          ? 'linear-gradient(#c359ff, #4b2483)'
-                                          : rarity === 'rare'
-                                            ? 'linear-gradient(#2cc1ff, #143977)'
-                                            : rarity === 'uncommon'
-                                              ? 'linear-gradient(#69bb1e, #175117)'
-                                              : rarity === 'common'
-                                                ? 'linear-gradient(#bebebe, #646464)'
-                                                : ''
-        }}
+        className={`backgroundSlider-${changeVersion}`}
+        style={
+          customBackground !== undefined
+            ? customBackground[changeVersion]
+            : {
+              backgroundSize: rarity === 'gamingSeries' ? 'auto 100%' : '100% 100%',
+              backgroundImage:
+                rarity === 'starWars'
+                  ? `url(${starwars}), radial-gradient(black, black 100%)`
+                  : rarity === 'gamingSeries'
+                    ? `linear-gradient(transparent 60%, #3d4a9dbd), radial-gradient(transparent, black 100%), url(${gamingSeries}), radial-gradient(#4e1750 50%, #12061a)`
+                    : rarity === 'lavaSeries'
+                      ? `url(${lavaSeries})`
+                      : rarity === 'dc'
+                        ? `url(${dc})`
+                        : rarity === 'frozenSeries'
+                          ? `url(${frozenSeries})`
+                          : rarity === 'shadowSeries'
+                            ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
+                            : rarity === 'slurpSeries'
+                              ? `url(${slurpSeries})`
+                              : rarity === 'iconSeries'
+                                ? `url(${iconSeries})`
+                                : rarity === 'marvelSeries'
+                                  ? `url(${marvel})`
+                                  : rarity === 'darkSeries'
+                                    ? `url(${darkSeries})`
+                                    : rarity === 'exotic'
+                                      ? 'radial-gradient(#90d7ff 0%, #7f5399 100%)'
+                                      : rarity === 'unattainable'
+                                        ? 'linear-gradient(#e1505c 0%, #8d3039 100%)'
+                                        : rarity === 'mythic'
+                                          ? 'linear-gradient(#fce14c, #d28f27)'
+                                          : rarity === 'legendary'
+                                            ? 'linear-gradient(#ea8d23, #78371d)'
+                                            : rarity === 'epic'
+                                              ? 'linear-gradient(#c359ff, #4b2483)'
+                                              : rarity === 'rare'
+                                                ? 'linear-gradient(#2cc1ff, #143977)'
+                                                : rarity === 'uncommon'
+                                                  ? 'linear-gradient(#69bb1e, #175117)'
+                                                  : rarity === 'common'
+                                                    ? 'linear-gradient(#bebebe, #646464)'
+                                                    : ''
+            }}
         css={[
           tw`box-border border-0 border-solid border-white`,
-          tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[auto 100%] overflow-hidden`
+          tw`grid relative justify-center w-full h-full m-auto bg-center background[linear-gradient(#2cc1ff, #143977)] background-size[100% 100%] overflow-hidden`
         ]}
       >
+        {customSpotlight && <div style={customSpotlight[changeVersion]} tw="h-full w-full z-0 absolute" />}
         <img
+          className={`imageSlider-${changeVersion}`}
           css={[
             tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-            tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110`
+            tw`h-full max-w-none min-h-full m-auto transform transition-all ease-in-out duration-500 group-hover:scale-110 group-hover:translate-y-2.5`,
+            positionImage === 'centered' && tw`min-height[0] height[calc(100% - 70px)] margin[0 auto] group-hover:translate-y-0`
           ]}
-          src={image}
+          src={images === undefined ? '' : images[changeVersion]}
           alt={name}
         />
       </div>
