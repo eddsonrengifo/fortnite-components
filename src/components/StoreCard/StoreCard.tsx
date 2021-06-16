@@ -258,21 +258,21 @@ const StoreCard: React.FC<StoreCardProps> = ({
                     : rarity === 'gamingSeries'
                     ? `linear-gradient(transparent 60%, #3d4a9dbd), radial-gradient(transparent, black 100%), url(${gamingSeries}), radial-gradient(#4e1750 50%, #12061a)`
                     : rarity === 'lavaSeries'
-                    ? `url(${lavaSeries})`
+                    ? `url(${lavaSeries}), linear-gradient(45deg, #fb9c39 32%, #943222 71%, #00000000), linear-gradient(#501629 1%, #782723)`
                     : rarity === 'dc'
-                    ? `url(${dc})`
+                    ? `url(${dc}), linear-gradient(to left top, #3187ff 29%, #133d88, black)`
                     : rarity === 'frozenSeries'
-                    ? `url(${frozenSeries})`
+                    ? `url(${frozenSeries}), radial-gradient(#b1d5e6 42%, #3e95c2)`
                     : rarity === 'shadowSeries'
                     ? `url(${shadowSeries}), radial-gradient(#5755ab, #232338)`
                     : rarity === 'slurpSeries'
-                    ? `url(${slurpSeries})`
+                    ? `url(${slurpSeries}), linear-gradient(#39d2fa, #1f92f2 50%)`
                     : rarity === 'iconSeries'
-                    ? `url(${iconSeries})`
+                    ? `url(${iconSeries}), linear-gradient(#07616f, #3df9fa)`
                     : rarity === 'marvelSeries'
-                    ? `url(${marvel})`
+                    ? `url(${marvel}), radial-gradient(#fd2219, #741a16)`
                     : rarity === 'darkSeries'
-                    ? `url(${darkSeries})`
+                    ? `url(${darkSeries}), radial-gradient(#ae41c5, #351c41, #15091e 150%)`
                     : rarity === 'exotic'
                     ? 'radial-gradient(#90d7ff 0%, #7f5399 100%)'
                     : rarity === 'unattainable'
