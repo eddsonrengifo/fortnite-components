@@ -22,12 +22,13 @@
     "prebuild": "rimraf dist",
     "build": "tsc && rollup -c",
     "build:watch": "rollup -c --watch",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes",
-    "lint": "eslint --fix './src/**/*.ts'",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "yarn type-check -- --watch",
     "prepublish": "yarn build"
   },
   "engines": {
@@ -40,8 +41,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
+    "*.@(js|jsx|ts|tsx)": [
+      "yarn lint"
+    ],
+    "*.@(js|jsx|ts|tsx|json|css|scss|md|yaml|yml)": [
+      "yarn format"
     ]
   },
   "babelMacros": {

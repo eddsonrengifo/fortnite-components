@@ -171,7 +171,9 @@ ExtraLarge.args = {
   positionImage: 'fill',
   type: 'Subscription',
   rarity: 'rare',
-  images: ['https://cdn2.unrealengine.com/ui-itemshoptile-subscription-galaxia-fix-2048x1124-fc632eda06ba.png'],
+  images: [
+    'https://cdn2.unrealengine.com/ui-itemshoptile-subscription-galaxia-fix-2048x1124-fc632eda06ba.png'
+  ],
   priceType: 'more'
 }
 
@@ -188,7 +190,9 @@ Large.args = {
   type: 'Item bundle',
   positionImage: 'fill',
   rarity: 'epic',
-  images: ['https://media.fortniteapi.io/images/3eac7e345b6a9f3fcb75a117a9093502/transparent.png'],
+  images: [
+    'https://media.fortniteapi.io/images/3eac7e345b6a9f3fcb75a117a9093502/transparent.png'
+  ],
   fullPrice: '3,300',
   price: '2,500',
   bannerText: '800 v-bucks off',
@@ -211,7 +215,9 @@ Medium.args = {
   banner: 'v1',
   bannerText: 'New!',
   price: '1,200',
-  images: ['https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png']
+  images: [
+    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_CID_802_f_HeartBreaker/MI_CID_802_f_HeartBreaker.png'
+  ]
 }
 
 export const Small = Template.bind({})
@@ -227,7 +233,9 @@ Small.args = {
   type: 'Pickaxe',
   rarity: 'uncommon',
   positionImage: 'centered',
-  images: ['https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'],
+  images: [
+    'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'
+  ],
   price: '500',
   priceType: 'battlepass'
 }
@@ -245,7 +253,9 @@ SmallShop.args = {
   positionImage: 'centered',
   type: 'Pickaxe',
   rarity: 'uncommon',
-  images: ['https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'],
+  images: [
+    'https://media.fortniteapi.io/images/d910353f522b63a2c895ef3dfcab4477/transparent.png'
+  ],
   price: '500',
   priceType: 'battlepass'
 }
@@ -270,11 +280,13 @@ Custom.args = {
   ],
   customSpotlight: [
     {
-      backgroundImage: 'radial-gradient(circle at 21.7573% 102.918%, rgb(109, 27, 9) 0%, transparent 100%)',
+      backgroundImage:
+        'radial-gradient(circle at 21.7573% 102.918%, rgb(109, 27, 9) 0%, transparent 100%)',
       filter: 'brightness(8.92776)'
     },
     {
-      backgroundImage: 'radial-gradient(circle at 41.0339% 50.1322%, rgb(13, 6, 145) 0%, transparent 100%)',
+      backgroundImage:
+        'radial-gradient(circle at 41.0339% 50.1322%, rgb(13, 6, 145) 0%, transparent 100%)',
       filter: 'brightness(8.92776)'
     }
   ],
