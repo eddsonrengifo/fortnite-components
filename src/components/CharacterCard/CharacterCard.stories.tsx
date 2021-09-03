@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard'
 import { CharacterCardProps } from './types'
 
 export default {
-  title: 'Example/CharacterCard',
+  title: 'Components/CharacterCard',
   component: CharacterCard,
   argTypes: {
     number: {

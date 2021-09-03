@@ -5,7 +5,7 @@ import Button from './Button'
 import { ButtonProps } from './types'
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   decorators: [
     (Story) => (

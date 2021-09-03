@@ -5,7 +5,7 @@ import EventCard from './EventCard'
 import { EventCardProps } from './types'
 
 export default {
-  title: 'Example/EventCard',
+  title: 'Components/EventCard',
   component: EventCard,
   argTypes: {
     line1: {

@@ -5,7 +5,7 @@ import LockerCard from './LockerCard'
 import { LockerCardProps } from './types'
 
 export default {
-  title: 'Example/LockerCard',
+  title: 'Components/LockerCard',
   component: LockerCard,
   argTypes: {
     image: {

@@ -5,7 +5,7 @@ import StoreCard from './StoreCard'
 import { StoreCardProps } from './types'
 
 export default {
-  title: 'Example/StoreCard',
+  title: 'Components/StoreCard',
   component: StoreCard,
   argTypes: {
     name: {

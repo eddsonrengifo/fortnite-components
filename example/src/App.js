@@ -7,13 +7,26 @@ import {
   FishCard,
   EventCard,
   CharacterCard,
-  PresetCard
+  PresetCard,
+  GameCard
 } from 'fortnite-components'
 import './index.css'
 
 const App = () => {
   return (
     <div className='all'>
+      <div style={{ width: '270px', height: '150px' }}>
+        <GameCard />
+      </div>
+      <div style={{ width: '270px', height: '150px' }}>
+        <GameCard epic />
+      </div>
+      <div style={{ width: '270px', height: '150px' }}>
+        <GameCard />
+      </div>
+      <div style={{ width: '270px', height: '150px' }}>
+        <GameCard teams='Squads' />
+      </div>
       <div style={{ width: '271px', height: '470px' }}>
         <StoreCard
           name='Safari'
