@@ -75,7 +75,6 @@
     "@babel/preset-typescript": "7.13.0",
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
-    "@emotion/babel-plugin-jsx-pragmatic": "0.1.5",
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/eslint-plugin": "11.2.0",
     "@rollup/plugin-image": "2.0.6",
