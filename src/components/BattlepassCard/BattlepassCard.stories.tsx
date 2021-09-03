@@ -5,7 +5,7 @@ import BattlepassCard from './BattlepassCard'
 import { BattlepassCardProps } from './types'
 
 export default {
-  title: 'Example/BattlepassCard',
+  title: 'Components/BattlepassCard',
   component: BattlepassCard,
   argTypes: {
     image: {

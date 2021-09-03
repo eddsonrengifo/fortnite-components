@@ -5,7 +5,7 @@ import PresetCard from './PresetCard'
 import { PresetCardProps } from './types'
 
 export default {
-  title: 'Example/PresetCard',
+  title: 'Components/PresetCard',
   component: PresetCard,
   argTypes: {
     name: {

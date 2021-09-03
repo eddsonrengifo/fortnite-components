@@ -26,6 +26,7 @@
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
+    "test-all": "yarn format && yarn lint && yarn type-check",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes",

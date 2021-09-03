@@ -5,7 +5,7 @@ import FishCard from './FishCard'
 import { FishCardProps } from './types'
 
 export default {
-  title: 'Example/FishCard',
+  title: 'Components/FishCard',
   component: FishCard,
   argTypes: {
     number: {

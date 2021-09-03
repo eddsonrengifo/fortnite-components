@@ -5,7 +5,7 @@ import AchievementCard from './AchievementCard'
 import { AchievementCardProps } from './types'
 
 export default {
-  title: 'Example/AchievementCard',
+  title: 'Components/AchievementCard',
   component: AchievementCard,
   argTypes: {
     name: {
