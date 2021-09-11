@@ -25,6 +25,8 @@
         "library:build": "yarn workspace library run build-storybook",
         "type-check": "yarn workspaces run type-check",
         "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
+        "test": "yarn workspace app run test",
+        "chromatic": "yarn workspace library run chromatic",
         "format": "prettier --write .",
         "clear:node_modules": "rimraf '**/node_modules'"
     },
