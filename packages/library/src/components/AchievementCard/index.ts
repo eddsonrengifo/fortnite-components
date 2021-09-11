@@ -1,1 +1,1 @@
-export { default } from './AchievementCard'
+export { default } from './AchievementCard';

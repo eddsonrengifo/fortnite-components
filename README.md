@@ -19,24 +19,24 @@ YARN: yarn add fortnite-components --dev
 it's easy to use, just import the components you need
 
 ```tsx
-import React from 'react'
-import { StoreCard } from 'fortnite-components'
+import React from 'react';
+import { StoreCard } from 'fortnite-components';
 
 const App = () => {
-  return <StoreCard name='Safari' />
-}
+    return <StoreCard name='Safari' />;
+};
 ```
 
 ## Components
 
-- StoreCard
-- LockerCard
-- CharacterCard
-- FishCard
-- BattlepassCard
-- EventCard
-- AchievementCard
-- PresetCard
+-   StoreCard
+-   LockerCard
+-   CharacterCard
+-   FishCard
+-   BattlepassCard
+-   EventCard
+-   AchievementCard
+-   PresetCard
 
 You can see the components in my Storybook
 
@@ -49,7 +49,7 @@ The components have a variety of props, so the component can be very customizabl
 #### for example
 
 ```tsx
-import { FishCard } from 'fortnite-components'
+import { FishCard } from 'fortnite-components';
 ```
 
 This component contain these props

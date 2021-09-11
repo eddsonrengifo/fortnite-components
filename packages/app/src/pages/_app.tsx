@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { appWithTranslation } from 'next-i18next';
 import { DefaultSeo } from 'next-seo';
-import GlobalStyles from 'packages/library/src/styles/GlobalStyles';
+import GlobalStyles from '@styles/GlobalStyles';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import * as gtag from '@shared/libs/gtag';

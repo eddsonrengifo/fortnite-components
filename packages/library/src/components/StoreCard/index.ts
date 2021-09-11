@@ -1,1 +1,1 @@
-export { default } from './StoreCard'
+export { default } from './StoreCard';

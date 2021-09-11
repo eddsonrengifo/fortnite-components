@@ -1,1 +1,1 @@
-export { default } from './FishCard'
+export { default } from './FishCard';

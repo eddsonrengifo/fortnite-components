@@ -1,1 +1,1 @@
-export { default } from './BattlepassCard'
+export { default } from './BattlepassCard';

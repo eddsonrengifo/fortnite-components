@@ -1,5 +1,5 @@
 {
-    "name": "fortnite-components-site",
+    "name": "app",
     "version": "1.0.0",
     "private": true,
     "description": "The official website for Fortnite components",
@@ -106,8 +106,8 @@
         "webpack-merge": "5.8.0"
     },
     "engines": {
-        "node": "14.x",
-        "yarn": "1.22.10"
+        "node": ">=14",
+        "yarn": ">=1.22.10"
     },
     "bugs": {
         "url": "https://github.com/EddsonRT/fortnite-components-site/issues"

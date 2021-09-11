@@ -1,12 +1,16 @@
+**/node_modules/*
+**/.yarn/*
+
 **/packages/library/build/*
 **/packages/library/dist/*
 **/packages/library/node_modules/*
+**/packages/library/src/shared/stories/*
 **/packages/library/storybook-static/*
 **/packages/library/.yarn/*
 
 **/packages/app/.next/*
 **/packages/app/node_modules/*
-**/packages/app/stories/*
+**/packages/app/src/shared/stories/*
 **/packages/app/storybook-static/*
 **/packages/app/.yarn/*
 **/packages/app/public/workbox-*.js

@@ -1,1 +1,1 @@
-export { default } from './PresetCard'
+export { default } from './PresetCard';

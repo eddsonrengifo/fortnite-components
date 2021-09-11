@@ -1,1 +1,1 @@
-export { default } from './LockerCard'
+export { default } from './LockerCard';

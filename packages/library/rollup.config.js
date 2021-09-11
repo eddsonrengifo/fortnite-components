@@ -2,7 +2,7 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from 'rollup-plugin-node-resolve';
-import pkg from '../../package.json';
+import pkg from './package.json';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
