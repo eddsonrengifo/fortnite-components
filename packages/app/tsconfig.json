@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "allowJs": true,
+        "alwaysStrict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "lib": ["dom", "es2017"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "esnext",
+        "noImplicitAny": false,
+        "paths": {
+            "@/*": ["./src/*"],
+            "@api/*": ["./src/apps/api/*"],
+            "@web/*": ["./src/apps/web/*"],
+            "@layouts/*": ["./src/apps/web/layouts/*"],
+            "@pages/*": ["./src/apps/web/pages/*"],
+            "@styles/*": ["./src/apps/web/styles/*"],
+            "@shared/*": ["./src/shared/*"],
+            "@utils/*": ["./src/shared/utils/*"],
+            "@error": ["./src/pages/404"]
+        }
+    },
+    "exclude": ["node_modules", ".next"],
+    "include": ["next-env.d.ts", "twin.d.ts", "**/*.ts", "**/*.tsx"]
+}

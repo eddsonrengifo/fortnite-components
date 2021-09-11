@@ -17,6 +17,10 @@
   "files": [
     "dist"
   ],
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
     "dev": "yarn build && cd example && yarn && yarn start",
     "prebuild": "rimraf dist",

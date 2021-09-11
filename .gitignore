@@ -1,10 +1,13 @@
-/dist
 /node_modules
-/storybook-static
-build-storybook.log*
-yarn-error.log
+/yarn-error.log
 .env
 
-/example/node_modules
-/example/build
-/example/yarn-error.log
+/packages/library/dist
+/packages/library/node_modules
+/packages/library/storybook-static
+/packages/library/build-storybook.log*
+/packages/library/yarn-error.log
+
+/examples/**/node_modules
+/examples/**/build
+/examples/**/yarn-error.log

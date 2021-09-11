@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+    node: circleci/node@4.5.1
+
+jobs:
+    test:
+        executor:
+            name: node/default
+            tag: '14.17.0'
+        steps:
+            - checkout
+            - node/install-packages:
+                  pkg-manager: yarn
+            - run:
+                  command: CI=true yarn lint
+                  name: Run YARN lint
+            - run:
+                  command: CI=true yarn type-check
+                  name: Run YARN type-check
+            - run:
+                  command: CI=true yarn chromatic
+                  name: Run YARN chromatic
+
+            - run:
+                  command: CI=true yarn test
+                  name: Run YARN test

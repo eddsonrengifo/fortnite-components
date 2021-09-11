@@ -19,11 +19,11 @@
     "jsxImportSource": "@emotion/react",
     "pretty": true,
     "noImplicitAny": false,
-    "rootDir": "src",
+    "rootDir": "packages/library/src",
     "paths": {
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@assets/*": ["packages/library/src/assets/*"],
+      "@components/*": ["packages/library/src/components/*"],
+      "@styles/*": ["packages/library/src/styles/*"]
     }
   },
   "include": ["twin.d.ts", "**/*.ts", "**/*.tsx"],
