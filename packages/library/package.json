@@ -1,6 +1,6 @@
 {
-    "name": "library",
-    "version": "1.29.0",
+    "name": "fortnite-components",
+    "version": "1.42.0",
     "description": "A library of fortnite components",
     "author": "EddsonRT",
     "repository": {
@@ -28,6 +28,7 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "chromatic": "chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes",
+        "publish": "npm version minor && npm publish",
         "prepublish": "yarn build"
     },
     "engines": {

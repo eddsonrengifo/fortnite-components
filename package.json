@@ -1,8 +1,8 @@
 {
     "name": "fortnite-components",
     "version": "1.29.0",
+    "private": true,
     "description": "A library of fortnite components",
-    "private": "true",
     "author": "EddsonRT",
     "repository": {
         "type": "git",
@@ -20,13 +20,14 @@
     "scripts": {
         "dev": "yarn workspace app run dev",
         "build": "yarn workspace app run build",
-        "library": "yarn workspace library run storybook",
-        "library:storybook": "yarn workspace library run build-storybook",
-        "library:build": "yarn workspace library run build-storybook",
+        "library": "yarn workspace fortnite-components run storybook",
+        "library:storybook": "yarn workspace fortnite-components run build-storybook",
+        "library:build": "yarn workspace fortnite-components run build-storybook",
+        "library:publish": "cd packages/library && yarn publish",
         "type-check": "yarn workspaces run type-check",
         "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
         "test": "yarn workspace app run test",
-        "chromatic": "yarn workspace library run chromatic",
+        "chromatic": "yarn workspace fortnite-components run chromatic",
         "format": "prettier --write .",
         "clear:node_modules": "rimraf '**/node_modules'"
     },
