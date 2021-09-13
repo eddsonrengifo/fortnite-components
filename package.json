@@ -1,14 +1,12 @@
 {
     "name": "fortnite-components",
-    "version": "1.29.0",
+    "version": "1.0.0",
     "private": true,
-    "description": "A library of fortnite components",
     "author": "EddsonRT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/EddsonRT/fortnite-components.git"
     },
-    "license": "MIT",
     "keywords": [
         "Fortnite",
         "Component"
@@ -19,11 +17,13 @@
     ],
     "scripts": {
         "dev": "yarn workspace app run dev",
+        "example:basic": "yarn workspace basic run start",
+        "storybook": "yarn workspace app run storybook",
         "build": "yarn workspace app run build",
         "library": "yarn workspace fortnite-components run storybook",
         "library:storybook": "yarn workspace fortnite-components run build-storybook",
-        "library:build": "yarn workspace fortnite-components run build-storybook",
-        "library:publish": "cd packages/library && yarn publish",
+        "library:build": "yarn workspace fortnite-components run build",
+        "library:publish": "yarn workspace fortnite-components run publish",
         "type-check": "yarn workspaces run type-check",
         "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
         "test": "yarn workspace app run test",
@@ -70,10 +70,7 @@
         "@commitlint/config-conventional": "12.1.4",
         "@emotion/babel-preset-css-prop": "11.2.0",
         "@emotion/eslint-plugin": "11.2.0",
-        "@rollup/plugin-image": "2.0.6",
-        "@storybook/addon-essentials": "6.2.9",
-        "@storybook/addon-links": "6.2.9",
-        "@storybook/react": "6.2.9",
+        "@next/eslint-plugin-next": "^11.1.2",
         "@types/node": "14.17.3",
         "@types/react": "17.0.11",
         "@types/react-dom": "17.0.7",
@@ -85,8 +82,8 @@
         "babel-plugin-macros": "3.1.0",
         "babel-plugin-module-resolver": "4.1.0",
         "babel-plugin-twin": "1.0.2",
-        "chromatic": "5.9.2",
         "eslint": "7.28.0",
+        "eslint-config-next": "^11.1.2",
         "eslint-config-prettier": "8.3.0",
         "eslint-config-standard": "16.0.3",
         "eslint-plugin-import": "2.23.4",
@@ -101,21 +98,12 @@
         "prettier": "2.3.1",
         "react": "17.0.2",
         "react-dom": "17.0.2",
-        "react-is": "17.0.2",
         "react-scripts": "4.0.3",
         "rimraf": "3.0.2",
-        "rollup": "2.52.0",
-        "rollup-plugin-babel": "4.4.0",
-        "rollup-plugin-commonjs": "10.1.0",
-        "rollup-plugin-copy": "3.4.0",
-        "rollup-plugin-node-resolve": "5.2.0",
-        "rollup-plugin-peer-deps-external": "2.2.4",
-        "rollup-plugin-postcss": "4.0.0",
         "tailwindcss": "2.1.4",
         "twin.macro": "2.5.0",
         "typescript": "4.3.3",
-        "webpack": "4.44.2",
-        "webpack-merge": "5.8.0"
+        "webpack": "4.44.2"
     },
     "bugs": {
         "url": "https://github.com/EddsonRT/fortnite-components/issues"

@@ -13,13 +13,11 @@
         "strict": true,
         "skipLibCheck": true,
         "declaration": true,
-        "declarationDir": "dist/types",
         "emitDeclarationOnly": true,
         "isolatedModules": true,
-        "jsxImportSource": "@emotion/react",
         "pretty": true,
         "noImplicitAny": false
     },
-    "include": ["twin.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", ".yarn"]
 }

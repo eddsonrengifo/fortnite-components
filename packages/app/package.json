@@ -5,7 +5,7 @@
     "author": "EddsonRT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/EddsonRT/fortnite-components-site.git"
+        "url": "git+https://github.com/EddsonRT/fortnite-components.git"
     },
     "scripts": {
         "dev": "next dev",
@@ -19,14 +19,6 @@
         "tests:watch": "jest --watch",
         "tests:coverage": "jest --coverage",
         "test-all": "yarn format && yarn lint && yarn type-check && yarn test"
-    },
-    "lint-staged": {
-        "*.@(js|jsx|ts|tsx)": [
-            "yarn lint"
-        ],
-        "*.@(js|jsx|ts|tsx|json|css|scss|md|yaml|yml)": [
-            "yarn format"
-        ]
     },
     "babelMacros": {
         "twin": {
@@ -57,12 +49,8 @@
         "@babel/preset-env": "^7.15.4",
         "@babel/preset-react": "7.13.13",
         "@babel/preset-typescript": "7.13.0",
-        "@commitlint/cli": "12.1.4",
-        "@commitlint/config-conventional": "12.1.4",
         "@emotion/babel-plugin": "11.3.0",
         "@emotion/babel-preset-css-prop": "11.2.0",
-        "@emotion/eslint-plugin": "11.2.0",
-        "@next/eslint-plugin-next": "11.1.2",
         "@storybook/addon-actions": "6.3.7",
         "@storybook/addon-essentials": "6.3.7",
         "@storybook/addon-links": "6.3.7",
@@ -72,30 +60,14 @@
         "@types/node": "15.0.3",
         "@types/react": "17.0.17",
         "@types/react-dom": "17.0.9",
-        "@typescript-eslint/eslint-plugin": "4.29.1",
-        "@typescript-eslint/parser": "4.29.1",
         "autoprefixer": "10.3.1",
-        "babel-eslint": "10.1.0",
         "babel-jest": "^27.1.1",
         "babel-loader": "8.1.0",
         "babel-plugin-macros": "3.1.0",
         "babel-plugin-twin": "1.0.2",
         "chromatic": "5.9.2",
-        "eslint": "7.32.0",
-        "eslint-config-next": "11.1.2",
-        "eslint-config-prettier": "8.3.0",
-        "eslint-config-standard": "16.0.3",
-        "eslint-plugin-import": "2.24.0",
-        "eslint-plugin-node": "11.1.0",
-        "eslint-plugin-prettier": "3.4.0",
-        "eslint-plugin-promise": "5.1.0",
-        "eslint-plugin-react": "7.23.2",
-        "eslint-plugin-standard": "5.0.0",
-        "husky": "6.0.0",
         "jest": "^27.1.1",
-        "lint-staged": "11.1.2",
         "postcss": "8.3.6",
-        "prettier": "2.3.2",
         "react-i18next": "11.11.4",
         "tailwindcss": "2.2.7",
         "twin.macro": "2.6.2",
@@ -107,9 +79,9 @@
         "yarn": ">=1.22.10"
     },
     "bugs": {
-        "url": "https://github.com/EddsonRT/fortnite-components-site/issues"
+        "url": "https://github.com/EddsonRT/fortnite-components/issues"
     },
-    "homepage": "https://github.com/EddsonRT/fortnite-components-site#readme",
+    "homepage": "https://github.com/EddsonRT/fortnite-components#readme",
     "eslintConfig": {
         "overrides": [
             {
