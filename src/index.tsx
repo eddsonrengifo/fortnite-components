@@ -1,6 +1,7 @@
 export { default as StoreCard } from './components/StoreCard'
 export { default as LockerCard } from './components/LockerCard'
 export { default as BattlepassCard } from './components/BattlepassCard'
+export { default as PunchCard } from './components/PunchCard'
 export { default as AchievementCard } from './components/AchievementCard'
 export { default as EventCard } from './components/EventCard'
 export { default as FishCard } from './components/FishCard'
