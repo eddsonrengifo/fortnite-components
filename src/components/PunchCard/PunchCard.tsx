@@ -103,75 +103,76 @@ const PunchCard: FC<PunchCardProps> = ({
           tw`flex flex-col gap-2 p-4 height[78%] overflow-y-auto`
         ]}
       >
-        {quests && quests.map((i, index) => (
-          <div
-            key={index}
-            css={[
-              tw`box-border border-0 border-solid border-white`,
-              tw`flex gap-4`
-            ]}
-          >
+        {quests &&
+          quests.map((i, index) => (
             <div
+              key={index}
               css={[
                 tw`box-border border-0 border-solid border-white`,
-                tw`w-full`
+                tw`flex gap-4`
               ]}
             >
               <div
                 css={[
                   tw`box-border border-0 border-solid border-white`,
-                  tw`font-burbankFont color[#c1eafd] truncate`
-                ]}
-              >
-                {i.text}
-              </div>
-              <div
-                css={[
-                  tw`box-border border-0 border-solid border-white`,
-                  tw`flex items-center gap-4`
+                  tw`w-full`
                 ]}
               >
                 <div
                   css={[
                     tw`box-border border-0 border-solid border-white`,
-                    tw`w-full h-1.5 rounded-xl background[#00000080]`
-                  ]}
-                />
-                <div
-                  css={[
-                    tw`box-border border-0 border-solid border-white`,
-                    tw`whitespace-nowrap color[#c1eafd] font-burbankFont`
+                    tw`font-burbankFont color[#c1eafd] truncate`
                   ]}
                 >
-                  <span
+                  {i.text}
+                </div>
+                <div
+                  css={[
+                    tw`box-border border-0 border-solid border-white`,
+                    tw`flex items-center gap-4`
+                  ]}
+                >
+                  <div
                     css={[
                       tw`box-border border-0 border-solid border-white`,
-                      tw`text-white`
+                      tw`w-full h-1.5 rounded-xl background[#00000080]`
+                    ]}
+                  />
+                  <div
+                    css={[
+                      tw`box-border border-0 border-solid border-white`,
+                      tw`whitespace-nowrap color[#c1eafd] font-burbankFont`
                     ]}
                   >
-                    0
-                  </span>{' '}
-                  / {i.max}
+                    <span
+                      css={[
+                        tw`box-border border-0 border-solid border-white`,
+                        tw`text-white`
+                      ]}
+                    >
+                      0
+                    </span>{' '}
+                    / {i.max}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              css={[
-                tw`box-border border-0 border-solid border-white`,
-                tw`background[#021131] rounded-full`
-              ]}
-            >
-              <img
+              <div
                 css={[
-                  tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
-                  tw`h-14 max-w-none`
+                  tw`box-border border-0 border-solid border-white`,
+                  tw`background[#021131] rounded-full`
                 ]}
-                src={i.image}
-                alt={i.text}
-              />
+              >
+                <img
+                  css={[
+                    tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+                    tw`h-14 max-w-none`
+                  ]}
+                  src={i.image}
+                  alt={i.text}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   )
