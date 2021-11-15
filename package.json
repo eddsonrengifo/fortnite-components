@@ -64,6 +64,7 @@
   "dependencies": {
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.3"
@@ -86,7 +87,7 @@
     "@types/react-dom": "17.0.7",
     "@typescript-eslint/eslint-plugin": "4.27.0",
     "@typescript-eslint/parser": "4.27.0",
-    "autoprefixer": "10.2.6",
+    "autoprefixer": "^10.4.0",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "babel-plugin-macros": "3.1.0",
