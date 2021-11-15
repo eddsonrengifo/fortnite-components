@@ -27,5 +27,5 @@
     }
   },
   "include": ["twin.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx"]
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "__tests__"]
 }
