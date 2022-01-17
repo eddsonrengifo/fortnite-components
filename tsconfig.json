@@ -26,6 +26,7 @@
       "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["twin.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "__tests__"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "__tests__"],
+  "types": ["types"]
 }
