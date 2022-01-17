@@ -17,7 +17,8 @@ module.exports = {
     'standard',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended'
   ],
   settings: {
     react: {
