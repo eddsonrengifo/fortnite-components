@@ -8,6 +8,18 @@ export default {
   title: 'Components/EventCard',
   component: EventCard,
   argTypes: {
+    details: {
+      name: 'Details',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'The event is details?',
+      table: {
+        category: 'Poster',
+        defaultValue: {
+          summary: false
+        }
+      }
+    },
     line1: {
       name: 'Line 1',
       type: { name: 'string' },
@@ -198,6 +210,21 @@ export default {
 
 const Template: Story<EventCardProps> = (args) => <EventCard {...args} />
 
+export const Simple = Template.bind({})
+Simple.args = {
+  line1: 'Fncs',
+  line2: 'Week 4',
+  schedule: 'April 10th - 12th',
+  posterFront:
+    'https://cdn2.unrealengine.com/Fortnite/fortnite-game/tournamentinformation/12BR_Competitive_In-Game_FNCS_Week4_Poster_Front-750x1080-c5ae877fbb33dfe3365ac45cf3d6837a25330689.jpg',
+  posterBack:
+    'https://cdn2.unrealengine.com/Fortnite/fortnite-game/tournamentinformation/12BR_Competitive_In-Game_FNCS_Poster_Back_ALL-750x1080-1ed3adf9261d51f716889ccbadd77463015dc009.jpg',
+  description:
+    'Compete in the Fortnite Champion Series: Chapter 2 - Season 2 for a share of the $5,000,000 total prize pool.',
+  format: 'Fncs',
+  datesColor: '#B2A01A'
+}
+
 export const Fncs = Template.bind({})
 Fncs.args = {
   line1: 'Fncs',
@@ -210,7 +237,8 @@ Fncs.args = {
   description:
     'Compete in the Fortnite Champion Series: Chapter 2 - Season 2 for a share of the $5,000,000 total prize pool.',
   format: 'Fncs',
-  datesColor: '#B2A01A'
+  datesColor: '#B2A01A',
+  details: true
 }
 
 export const DreamHack = Template.bind({})
@@ -226,7 +254,8 @@ DreamHack.args = {
     'https://cdn2.unrealengine.com/13br-competitive-in-game-dreamhackopen-poster-back-750x1080-319770605.jpg',
   description:
     'This community focused tournament features a $250,000 prize pool up for grabs. Best of luck!',
-  format: 'Duos Tournament'
+  format: 'Duos Tournament',
+  details: true
 }
 
 export const CashCup = Template.bind({})
@@ -239,7 +268,8 @@ CashCup.args = {
   posterBack:
     'https://cdn2.unrealengine.com/15br-comp-in-game-contendercup-poster-back-750x1080-68e13f266f52.jpg',
   description: 'Compete among the best in Fortnite for prizes!',
-  format: 'Trios Tournament'
+  format: 'Trios Tournament',
+  details: true
 }
 
 export const LTM = Template.bind({})
@@ -252,5 +282,6 @@ LTM.args = {
   posterBack:
     'https://cdn2.unrealengine.com/16br-comp-in-game-ltmcup-poster-back-750x1080-deab055de9c7.jpg',
   description: 'Mixing it up each week!',
-  format: 'Solo Tournament'
+  format: 'Solo Tournament',
+  details: true
 }
