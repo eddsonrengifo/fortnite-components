@@ -9,6 +9,9 @@ jobs:
   chromatic-deployment:
     # Operating System
     runs-on: ubuntu-latest
+    executor:
+      name: node/default
+      tag: '14.17.1'
     # Job steps
     steps:
       - uses: actions/checkout@v1

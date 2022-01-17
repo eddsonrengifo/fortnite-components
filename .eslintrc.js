@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: ['prettier', '@typescript-eslint', '@emotion'],
   env: {
+    jest: true,
     browser: true,
     es6: true
   },
