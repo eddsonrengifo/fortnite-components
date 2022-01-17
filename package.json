@@ -24,7 +24,7 @@
     "build:watch": "rollup -c --watch",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc",
     "type-check:watch": "yarn type-check -- --watch",
     "test": "jest",
     "tests:watch": "jest --watch",
@@ -33,15 +33,17 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "commit": "git-cz",
+    "postinstall": "husky install"
   },
   "engines": {
     "node": "14.x",
     "yarn": "1.22.10"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
     }
   },
   "lint-staged": {
@@ -77,8 +79,8 @@
     "@babel/preset-env": "7.14.5",
     "@babel/preset-react": "7.13.13",
     "@babel/preset-typescript": "7.13.0",
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/eslint-plugin": "11.2.0",
     "@rollup/plugin-image": "2.0.6",
@@ -99,6 +101,8 @@
     "babel-plugin-module-resolver": "4.1.0",
     "babel-plugin-twin": "1.0.2",
     "chromatic": "5.9.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
@@ -111,7 +115,7 @@
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-standard": "5.0.0",
-    "husky": "6.0.0",
+    "husky": "^7.0.4",
     "jest": "^27.3.1",
     "lint-staged": "11.0.0",
     "postcss": "8.3.4",
