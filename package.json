@@ -83,7 +83,7 @@
     "@commitlint/config-conventional": "16.0.0",
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/eslint-plugin": "11.2.0",
-    "@rollup/plugin-image": "2.0.6",
+    "@rollup/plugin-image": "2.1.1",
     "@storybook/addon-essentials": "6.4.13",
     "@storybook/addon-links": "6.4.13",
     "@storybook/react": "6.4.13",
