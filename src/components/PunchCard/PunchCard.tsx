@@ -103,7 +103,7 @@ const PunchCard: FC<PunchCardProps> = ({
           tw`flex flex-col gap-2 p-4 height[78%] overflow-y-auto`
         ]}
       >
-        {quests?.map((i, index) => (
+        {quests && quests.map((i, index) => (
           <div
             key={index}
             css={[
