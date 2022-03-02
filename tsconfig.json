@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "dist/types",
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "isolatedModules": true,
     "jsxImportSource": "@emotion/react",
     "pretty": true,
