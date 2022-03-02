@@ -4,7 +4,6 @@ interface Dates {
 }
 
 export interface EventCardProps {
-  details?: boolean
   live?: boolean
   lock?: boolean
   region?: 'none' | 'EU' | 'NAE' | 'NAW' | 'BR' | 'OCE' | 'ASIA' | 'ME'

@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: ['prettier', '@typescript-eslint', '@emotion'],
   env: {
-    jest: true,
     browser: true,
     es6: true
   },
@@ -17,8 +16,7 @@ module.exports = {
     'standard',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:storybook/recommended'
+    'plugin:@typescript-eslint/recommended'
   ],
   settings: {
     react: {
