@@ -180,37 +180,39 @@ const EventCard: React.FC<EventCardProps> = ({
                 tw`text-center`
               ]}
             >
-              {dates.map((i: any) => {
-                return (
-                  <span
-                    style={
-                      new Date(i.end) < new Date()
-                        ? {
-                            color: datesColor,
-                            textDecoration: 'line-through #fff'
-                          }
-                        : {}
-                    }
-                    css={[
-                      tw`box-border border-0 border-solid border-white`,
-                      tw`block text-2xl font-burbankFont text-white`
-                    ]}
-                  >
-                    {new Date(i.start).toLocaleDateString()}{' '}
-                    {new Date(i.start)
-                      .toLocaleTimeString([], {
-                        hour12: true
-                      })
-                      .replace(/:\d{2}\s/, ' ')}{' '}
-                    -{' '}
-                    {new Date(i.end)
-                      .toLocaleTimeString([], {
-                        hour12: true
-                      })
-                      .replace(/:\d{2}\s/, ' ')}
-                  </span>
-                )
-              })}
+              {dates &&
+                dates.map((i: any, index) => {
+                  return (
+                    <span
+                      key={index}
+                      style={
+                        new Date(i.end) < new Date()
+                          ? {
+                              color: datesColor,
+                              textDecoration: 'line-through #fff'
+                            }
+                          : {}
+                      }
+                      css={[
+                        tw`box-border border-0 border-solid border-white`,
+                        tw`block text-2xl font-burbankFont text-white`
+                      ]}
+                    >
+                      {new Date(i.start).toLocaleDateString()}{' '}
+                      {new Date(i.start)
+                        .toLocaleTimeString([], {
+                          hour12: true
+                        })
+                        .replace(/:\d{2}\s/, ' ')}{' '}
+                      -{' '}
+                      {new Date(i.end)
+                        .toLocaleTimeString([], {
+                          hour12: true
+                        })
+                        .replace(/:\d{2}\s/, ' ')}
+                    </span>
+                  )
+                })}
             </div>
           </>
         )}

@@ -39,6 +39,7 @@ const StoreCard: FC<StoreCardProps> = ({
   ownedText = 'Owned',
   customBackground,
   customSpotlight,
+  backgroundTexture = null,
   onClick
 }) => {
   const [changeVersion, setChangeVersion] = useState(0)
@@ -301,6 +302,16 @@ const StoreCard: FC<StoreCardProps> = ({
           <div
             style={customSpotlight[changeVersion]}
             tw='h-full w-full z-0 absolute'
+          />
+        )}
+        {backgroundTexture && (
+          <img
+            css={[
+              tw`block max-w-full h-auto align-middle box-border border-0 border-solid border-white`,
+              tw`absolute inset-0 h-auto w-full max-w-none min-h-full m-auto min-w-min`
+            ]}
+            src={backgroundTexture}
+            alt={name}
           />
         )}
         <img
