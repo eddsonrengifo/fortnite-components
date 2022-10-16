@@ -32,6 +32,12 @@ export default {
         category: 'Main information'
       }
     },
+    backgroundTexture: {
+      name: 'Background Texture',
+      table: {
+        category: 'Main information'
+      }
+    },
     rarity: {
       name: 'Rarity',
       options: [
@@ -197,6 +203,29 @@ Large.args = {
   price: '2,500',
   bannerText: '800 v-bucks off',
   banner: 'v2'
+}
+
+export const MediumBackground = Template.bind({})
+MediumBackground.decorators = [
+  (Story) => (
+    <div tw='max-width[271px] height[470px]'>
+      <Story />
+    </div>
+  )
+]
+MediumBackground.args = {
+  name: 'Undying Sorrow',
+  positionImage: 'fill',
+  type: 'Outfit',
+  rarity: 'rare',
+  banner: 'v1',
+  bannerText: 'New!',
+  price: '1,200',
+  backgroundTexture:
+    'https://media.fortniteapi.io/images/textures/FNMares2022.png',
+  images: [
+    'https://media.fortniteapi.io/images/displayAssets/v2/DAv2_Character_Ruins/MI_Character_Ruins.png'
+  ]
 }
 
 export const Medium = Template.bind({})

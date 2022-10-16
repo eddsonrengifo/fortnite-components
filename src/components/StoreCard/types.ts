@@ -39,5 +39,6 @@ export interface StoreCardProps {
   ownedText?: string
   customBackground?: [CSSProperties]
   customSpotlight?: [CSSProperties]
+  backgroundTexture?: string
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
