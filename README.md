@@ -84,4 +84,4 @@ MIT © [EddsonRT](https://github.com/EddsonRT/fortnite-components/blob/main/LICE
 
 ## Help me
 
-Use code **EddsonRT** in the Item Shop of Fortnite
+Use code **Eddson** in the Item Shop of Fortnite
